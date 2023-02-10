@@ -1,6 +1,6 @@
 import { showLoginModalState } from "@/atoms/ShowLoginModal";
 import { APP_NAME, DESCRIPTION } from "@/modules/const";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
 /**
@@ -14,6 +14,9 @@ export const LoginModal = () => {
   useEffect(() => {
     document.body.style.overflow = showLoginModal ? "hidden" : "auto";
   }, [showLoginModal]);
+
+  const [host, setHost] = useState<string>("https://misskey.io");
+  const loginUrl = `/api/auth/signin?host=${host}`;
 
   const close = () => {
     setShowLoginModal(false);
@@ -31,6 +34,15 @@ export const LoginModal = () => {
 
                   {/* 説明文 */}
                   <p className="text-xl">{DESCRIPTION}</p>
+
+                  {/* インスタンスのホスト名 */}
+                  <input
+                    value={host}
+                    onChange={(e) => setHost(e.target.value)}
+                  />
+
+                  {/* ログイン */}
+                  <a href={loginUrl}>Login</a>
 
                   <button className="light-btn" onClick={close}>
                     Close

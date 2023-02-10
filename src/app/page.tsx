@@ -1,7 +1,7 @@
 "use client";
 
-import { Container } from "@chakra-ui/react";
 import { Splash } from "@/components/Top/Splash";
+import { Container } from "@chakra-ui/react";
 
 /**
  * トップ画面

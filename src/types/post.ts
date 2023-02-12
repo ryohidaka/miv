@@ -7,7 +7,7 @@ export type Post = {
   user: User;
   text: string;
   title?: string;
-  description?: string;
+  description?: string | null;
 };
 
 export type Posts = Post[];

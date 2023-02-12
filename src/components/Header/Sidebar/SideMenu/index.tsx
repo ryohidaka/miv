@@ -16,7 +16,15 @@ export default function SideMenu({ onClose }: Props) {
   const pages = [
     {
       url: "/",
-      label: "Top",
+      label: "Gallery",
+    },
+    {
+      url: "/featured",
+      label: "Gallery (Featured)",
+    },
+    {
+      url: "/popular",
+      label: "Gallery (Popular)",
     },
     {
       url: "/home",

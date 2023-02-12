@@ -10,7 +10,7 @@ import { Post } from "@/types/post";
 import useSWRInfinite from "swr/infinite";
 
 /**
- * ホームタイムライン取得
+ * ギャラリー一覧取得
  * @returns
  */
 export const useGalleryPosts = () => {

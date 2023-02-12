@@ -78,7 +78,6 @@ export const getFlatGalleryPosts = (data: GalleryPost[][]) => {
  */
 export const convertGalleryPost = (post?: GalleryPost) => {
   if (post) {
-    console.log(post);
     return {
       id: post.id,
       images: post.files.map((file) => {
@@ -90,6 +89,8 @@ export const convertGalleryPost = (post?: GalleryPost) => {
         image_url: post.user.avatarUrl,
       },
       text: `${post.title} ${post.description}`,
+      title: post.title,
+      description: post.description,
     };
   }
 

@@ -6,6 +6,8 @@ export type Post = {
   images: Image[];
   user: User;
   text: string;
+  title?: string;
+  description?: string;
 };
 
 export type Posts = Post[];

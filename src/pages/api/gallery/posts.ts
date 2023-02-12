@@ -6,7 +6,7 @@ const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const url = "/api/gallery/posts";
     let params: GalleryParams = {
-      limit: 20,
+      limit: 40,
     };
 
     const untilId = req.query["until_id"] as string;

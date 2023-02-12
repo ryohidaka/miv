@@ -29,7 +29,7 @@ export const galleryFetcher = (url: string): Promise<GalleryPost[]> => {
 };
 
 // 投稿取得処理
-export const postFetcher = (url: string): Promise<Post> => {
+export const postFetcher = (url: string): Promise<GalleryPost> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {
@@ -57,29 +57,43 @@ export const getFlatPosts = (data: Posts[]): Posts => {
  * @param data
  * @returns
  */
-export const getFlatGalleryPosts = (data: GalleryPost[][]): Post[] => {
+export const getFlatGalleryPosts = (data: GalleryPost[][]) => {
   const flatDatas = data
     ? data.filter((data) => typeof data !== "undefined").flat()
     : [];
 
-  const posts: Post[] = flatDatas
+  const posts = flatDatas
     .filter((data) => data.files.length > 0)
     .map((post) => {
-      return {
-        id: post.id,
-        images: post.files.map((file) => {
-          return { id: file.id, url: file.url };
-        }),
-        user: {
-          id: post.user.id,
-          name: post.user.name,
-          image_url: post.user.avatarUrl,
-        },
-        text: `${post.title} ${post.description}`,
-      };
+      return convertGalleryPost(post);
     });
 
   return posts;
+};
+
+/**
+ * ギャラリーの投稿データをPost形式に変換し返却する
+ * @param post
+ * @returns
+ */
+export const convertGalleryPost = (post?: GalleryPost) => {
+  if (post) {
+    console.log(post);
+    return {
+      id: post.id,
+      images: post.files.map((file) => {
+        return { id: file.id, url: file.url };
+      }),
+      user: {
+        id: post.user.id,
+        name: post.user.name,
+        image_url: post.user.avatarUrl,
+      },
+      text: `${post.title} ${post.description}`,
+    };
+  }
+
+  return undefined;
 };
 
 /**

@@ -1,26 +1,19 @@
-import { showLoginModalState } from "@/atoms/ShowLoginModal";
+"use client";
+
+import { useShowLoginModal } from "@/hooks/auth";
 import { APP_NAME, DESCRIPTION } from "@/modules/const";
-import { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useState } from "react";
 
 /**
  * ログインモーダル
  * @returns
  */
 export const LoginModal = () => {
-  const [showLoginModal, setShowLoginModal] =
-    useRecoilState(showLoginModalState);
-
-  useEffect(() => {
-    document.body.style.overflow = showLoginModal ? "hidden" : "auto";
-  }, [showLoginModal]);
+  const { showLoginModal } = useShowLoginModal();
 
   const [host, setHost] = useState<string>("https://misskey.io");
   const loginUrl = `/api/auth/signin?host=${host}`;
 
-  const close = () => {
-    setShowLoginModal(false);
-  };
   return (
     <>
       {showLoginModal && (
@@ -43,10 +36,6 @@ export const LoginModal = () => {
 
                   {/* ログイン */}
                   <a href={loginUrl}>Login</a>
-
-                  <button className="light-btn" onClick={close}>
-                    Close
-                  </button>
                 </div>
               </div>
             </div>

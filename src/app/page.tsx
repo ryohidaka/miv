@@ -2,15 +2,14 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useHomeTimeline } from "@/hooks/timeline/home";
+import { useGalleryPosts } from "@/hooks/gallery";
 
 /**
- * ホームタイムライン画面
+ * ギャラリー画面
  * @returns
  */
-export default function Home() {
-  // 投稿を取得
-  const { data, error, isLoading, size, setSize } = useHomeTimeline();
+export default function GalleryPosts() {
+  const { data, error, isLoading, size, setSize } = useGalleryPosts();
 
   const next = () => {
     setSize(size + 1);

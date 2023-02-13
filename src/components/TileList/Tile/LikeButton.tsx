@@ -35,7 +35,14 @@ export const LikeButton = ({ postId }: Props) => {
       )}
       onClick={toggleLike}
     >
-      {isLiked ? <AiFillHeart /> : <AiOutlineHeart />}
+      {isLiked ? (
+        <AiFillHeart className="fill-rose-500" />
+      ) : (
+        <>
+          <AiOutlineHeart className="absolute fill-black" />
+          <AiFillHeart />
+        </>
+      )}
     </span>
   );
 };

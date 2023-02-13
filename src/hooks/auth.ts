@@ -14,6 +14,8 @@ export const useShowLoginModal = () => {
 
     if (hasToken) {
       setShowLoginModal(false);
+    }else{
+      setShowLoginModal(true);
     }
   }, [showLoginModal, setShowLoginModal, hasToken]);
 

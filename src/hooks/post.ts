@@ -2,8 +2,9 @@
 
 import useSWR from "swr";
 
-import { Post } from "@/types/post";
-import { postFetcher } from "@/modules/client";
+import { postFetcher } from "@/modules/swr";
+import { GalleryPost } from "@/types/gallery";
+import { convertGalleryPost } from "@/modules/client";
 
 /**
  * 投稿取得
@@ -12,7 +13,12 @@ import { postFetcher } from "@/modules/client";
 export const usePost = (postId: string) => {
   const url = `/api/posts/${postId}`;
 
-  const { data, error, isLoading } = useSWR<Post, Error>(url, postFetcher);
+  const { data, error, isLoading } = useSWR<GalleryPost, Error>(
+    url,
+    postFetcher
+  );
 
-  return { data, error, isLoading };
+  const post = convertGalleryPost(data);
+
+  return { data: post, error, isLoading };
 };

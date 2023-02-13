@@ -13,6 +13,7 @@ export default function GalleryFeatured() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
+      {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} />
     </ViewerLayout>
   );

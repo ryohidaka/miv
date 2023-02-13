@@ -8,6 +8,8 @@ export type Post = {
   text: string;
   title?: string;
   description?: string | null;
+  isLiked?: boolean;
+  likedCount?: number;
 };
 
 export type Posts = Post[];

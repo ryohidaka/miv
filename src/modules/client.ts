@@ -1,5 +1,5 @@
 import { GalleryPost } from "@/types/gallery";
-import { Posts } from "@/types/post";
+import { Post, Posts } from "@/types/post";
 
 /**
  * 投稿の配列を平坦化して返却する
@@ -40,7 +40,7 @@ export const getFlatGalleryPosts = (data: GalleryPost[][]) => {
  */
 export const convertGalleryPost = (post?: GalleryPost) => {
   if (post) {
-    return {
+    const convertedPost: Post = {
       id: post.id,
       images: post.files.map((file) => {
         return { id: file.id, url: file.url };
@@ -53,7 +53,10 @@ export const convertGalleryPost = (post?: GalleryPost) => {
       text: `${post.title} ${post.description}`,
       title: post.title,
       description: post.description,
+      isLiked: post.isLiked,
+      likedCount: post.likedCount,
     };
+    return convertedPost;
   }
 
   return undefined;

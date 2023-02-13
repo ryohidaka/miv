@@ -43,8 +43,8 @@ export default function SideMenu({ onClose }: Props) {
           label: "Hybrid Timeline",
         },
         {
-          url: "/search",
-          label: "Search",
+          url: "/global",
+          label: "Global Timeline",
         },
       ],
     },

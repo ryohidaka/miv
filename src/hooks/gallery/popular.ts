@@ -2,8 +2,9 @@
 
 import useSWR from "swr";
 
-import { galleryFetcher, getFlatGalleryPosts } from "@/modules/client";
+import { getFlatGalleryPosts } from "@/modules/client";
 import { GalleryPost } from "@/types/gallery";
+import { galleryFetcher } from "@/modules/swr";
 
 /**
  * 人気の投稿取得

@@ -2,8 +2,9 @@
 
 import useSWR from "swr";
 
-import { convertGalleryPost, postFetcher } from "@/modules/client";
+import { convertGalleryPost } from "@/modules/client";
 import { GalleryPost } from "@/types/gallery";
+import { postFetcher } from "@/modules/swr";
 
 /**
  * ギャラリー投稿取得

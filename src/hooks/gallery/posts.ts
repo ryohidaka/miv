@@ -1,10 +1,7 @@
 "use client";
 
-import {
-  swrInfiniteConfig,
-  getFlatGalleryPosts,
-  galleryFetcher,
-} from "@/modules/client";
+import { getFlatGalleryPosts } from "@/modules/client";
+import { galleryFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { GalleryPost } from "@/types/gallery";
 import { Post } from "@/types/post";
 import useSWRInfinite from "swr/infinite";

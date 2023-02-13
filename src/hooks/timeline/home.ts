@@ -1,6 +1,7 @@
 "use client";
 
-import { fetcher, swrInfiniteConfig, getFlatPosts } from "@/modules/client";
+import { getFlatPosts } from "@/modules/client";
+import { fetcher, swrInfiniteConfig } from "@/modules/swr";
 import { Posts } from "@/types/post";
 import useSWRInfinite from "swr/infinite";
 

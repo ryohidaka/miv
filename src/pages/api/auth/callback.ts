@@ -14,7 +14,7 @@ const callback = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const session = req.query["session"] as string;
     const host = getCookie("host", { req, res });
-    const url = `${host}/api/miauth/${session}/check`;
+    const url = `https://${host}/api/miauth/${session}/check`;
 
     const response = await fetch(url, {
       method: "POST",

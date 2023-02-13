@@ -54,15 +54,20 @@ export const LoginModal = () => {
                           >
                             インスタンスのURL
                           </label>
-                          <input
-                            type="url"
-                            id="host"
-                            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                            placeholder="misskey.io"
-                            value={host}
-                            onChange={(e) => setHost(e.target.value)}
-                            required
-                          />
+                          <div className="flex">
+                            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">
+                              https://
+                            </span>
+                            <input
+                              type="url"
+                              id="host"
+                              className="block w-full min-w-0 flex-1 rounded-none rounded-r-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                              placeholder="misskey.io"
+                              value={host}
+                              onChange={(e) => setHost(e.target.value)}
+                              required
+                            />
+                          </div>
                         </div>
 
                         <a href={loginUrl} className="light-btn text-center">

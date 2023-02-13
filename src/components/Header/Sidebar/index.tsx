@@ -36,7 +36,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
       open={isOpen}
       onClose={onClose}
       direction="right"
-      className="h-screen w-80 bg-white p-4 dark:!bg-gray-800"
+      className="h-screen w-80 overflow-y-scroll bg-white p-4 dark:!bg-gray-800"
       lockBackgroundScroll={true}
     >
       <h5

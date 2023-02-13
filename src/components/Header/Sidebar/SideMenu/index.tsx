@@ -19,15 +19,15 @@ export default function SideMenu({ onClose }: Props) {
       label: "Gallery",
       pages: [
         {
-          url: "gallery/posts",
+          url: "/gallery/posts",
           label: "Posts",
         },
         {
-          url: "gallery/featured",
+          url: "/gallery/featured",
           label: "Featured",
         },
         {
-          url: "gallery/popular",
+          url: "/gallery/popular",
           label: "Popular",
         },
       ],
@@ -36,15 +36,15 @@ export default function SideMenu({ onClose }: Props) {
       label: "Timeline",
       pages: [
         {
-          url: "notes/local",
+          url: "/notes/local",
           label: "Local Timeline",
         },
         {
-          url: "notes/hybrid",
+          url: "/notes/hybrid",
           label: "Hybrid Timeline",
         },
         {
-          url: "notes/global",
+          url: "/notes/global",
           label: "Global Timeline",
         },
       ],

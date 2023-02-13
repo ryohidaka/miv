@@ -1,10 +1,24 @@
-"use client";
-
-import { getFlatGalleryPosts } from "@/modules/client";
-import { galleryFetcher, swrInfiniteConfig } from "@/modules/swr";
+import { convertGalleryPost, getFlatGalleryPosts } from "@/modules/client";
+import { galleryFetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { GalleryPost } from "@/types/gallery";
 import { Post } from "@/types/post";
+import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
+
+/**
+ * 人気の投稿取得
+ * @returns
+ */
+export const useGallery = (url: string) => {
+  const { data, error, isLoading } = useSWR<GalleryPost[], Error>(
+    url,
+    galleryFetcher
+  );
+
+  const posts = getFlatGalleryPosts([data] as GalleryPost[][]);
+
+  return { data: posts, error, isLoading };
+};
 
 /**
  * ギャラリー一覧取得
@@ -31,4 +45,21 @@ export const useGalleryPosts = () => {
   const posts = getFlatGalleryPosts(data as GalleryPost[][]);
 
   return { data: posts, error, isLoading, size, setSize };
+};
+
+/**
+ * ギャラリー投稿取得
+ * @returns
+ */
+export const useGalleryPost = (postId: string) => {
+  const url = `/api/gallery/${postId}`;
+
+  const { data, error, isLoading } = useSWR<GalleryPost, Error>(
+    url,
+    postFetcher
+  );
+
+  const post = convertGalleryPost(data);
+
+  return { data: post, error, isLoading };
 };

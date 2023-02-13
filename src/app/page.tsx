@@ -2,7 +2,7 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useGalleryPosts } from "@/hooks/gallery/posts";
+import { useGalleryPosts } from "@/hooks/gallery";
 
 /**
  * ギャラリー画面

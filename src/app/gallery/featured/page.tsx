@@ -2,14 +2,15 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useGalleryFeatured } from "@/hooks/gallery/featured";
+import { useGallery } from "@/hooks/gallery";
 
 /**
  * ハイライトされた投稿一覧
  * @returns
  */
 export default function GalleryFeatured() {
-  const { data, error, isLoading } = useGalleryFeatured();
+  const url = "/api/gallery/featured";
+  const { data, error, isLoading } = useGallery(url);
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>

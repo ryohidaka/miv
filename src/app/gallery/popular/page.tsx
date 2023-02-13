@@ -2,14 +2,15 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useGalleryPopular } from "@/hooks/gallery/popular";
+import { useGallery } from "@/hooks/gallery";
 
 /**
  * 人気の投稿一覧
  * @returns
  */
 export default function GalleryPopular() {
-  const { data, error, isLoading } = useGalleryPopular();
+  const url = "/api/gallery/popular";
+  const { data, error, isLoading } = useGallery(url);
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>

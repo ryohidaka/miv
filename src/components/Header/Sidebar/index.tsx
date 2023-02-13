@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { newTabState } from "@/atoms/NewTab";
 import Drawer from "react-modern-drawer";
+import { deleteCookie } from "cookies-next";
 
 type Props = {
   isOpen: boolean;
@@ -21,6 +22,13 @@ type Props = {
 export default function Sidebar({ isOpen, onClose }: Props) {
   // 別タブ遷移設定を取得
   const [newTab, setNewTab] = useRecoilState(newTabState);
+
+  // ログアウト
+  const logout = () => {
+    deleteCookie("host");
+    deleteCookie("token");
+    location.reload();
+  };
 
   return (
     <Drawer
@@ -48,6 +56,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
         <div className="grid grid-cols-1 gap-3">
           {/* ページリンク */}
           <SideMenu onClose={onClose} />
+
           {/* 別タブ遷移設定 */}
           <div className="mb-4 flex items-center">
             <input
@@ -67,11 +76,18 @@ export default function Sidebar({ isOpen, onClose }: Props) {
           </div>
           {/* 表示モード切替 */}
           <View />
+
+          {/* ログアウト */}
+          <button className="btn-outline" onClick={logout}>
+            ログアウト
+          </button>
+
           {/* Copyrights */}
-          &copy;
-          <Link href="https://ryohidaka.jp" className="flex items-center">
-            ryohidaka <BiLinkExternal className="mx-2" />
-          </Link>
+          <div className="flex items-center gap-1">
+            &copy;
+            <Link href="https://ryohidaka.jp">ryohidaka</Link>
+            <BiLinkExternal />
+          </div>
         </div>
       </div>
     </Drawer>

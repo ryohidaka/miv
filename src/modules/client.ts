@@ -1,5 +1,8 @@
 import { GalleryPost } from "@/types/gallery";
+import { Image } from "@/types/image";
 import { Post, Posts } from "@/types/post";
+import { User } from "@/types/user";
+import { DriveFile, User as MisskeyUser } from "misskey-js/built/entities";
 
 /**
  * 投稿の配列を平坦化して返却する
@@ -42,14 +45,8 @@ export const convertGalleryPost = (post?: GalleryPost) => {
   if (post) {
     const convertedPost: Post = {
       id: post.id,
-      images: post.files.map((file) => {
-        return { id: file.id, url: file.url };
-      }),
-      user: {
-        id: post.user.id,
-        name: post.user.name,
-        image_url: post.user.avatarUrl,
-      },
+      images: convertImages(post.files),
+      user: convertUser(post.user),
       text: `${post.title} ${post.description}`,
       title: post.title,
       description: post.description,
@@ -69,4 +66,36 @@ export const convertGalleryPost = (post?: GalleryPost) => {
  */
 export const capitalize = (str: string) => {
   return `${str.charAt(0).toUpperCase()}${str.slice(1).toLowerCase()}`;
+};
+
+/**
+ * ユーザー情報を整形して返却する
+ * @param user
+ * @returns
+ */
+export const convertUser = (user: MisskeyUser): User => {
+  return {
+    id: user.id,
+    name: user.name,
+    image_url: user.avatarUrl,
+    blurhash: user.avatarBlurhash,
+  };
+};
+
+/**
+ * 画像一覧を整形して返却する
+ * @param user
+ * @returns
+ */
+export const convertImages = (files: DriveFile[]): Image[] => {
+  const images = files.map((file) => {
+    const image: Image = {
+      id: file.id,
+      url: file.url,
+      thumbnailUrl: file.thumbnailUrl,
+      blurhash: file.blurhash,
+    };
+    return image;
+  });
+  return images;
 };

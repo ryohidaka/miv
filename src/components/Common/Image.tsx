@@ -19,13 +19,14 @@ export const CommonImage = ({ image, className }: Props) => {
         className
       )}
       key={image.id}
-      src={image.url}
+      src={image.thumbnailUrl || image.url}
       alt={image.id}
       fill
       objectPosition="center"
       quality={100}
       unoptimized
-      placeholder="empty"
+      placeholder={image.blurhash ? "blur" : "empty"}
+      blurDataURL={image.blurhash}
     />
   );
 };

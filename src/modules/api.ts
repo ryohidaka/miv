@@ -34,7 +34,7 @@ export const apiRequest = async (
   const host = getCookie("host", { req, res });
   const token = getCookie("token", { req, res });
 
-  const url = `${host}${path}`;
+  const url = `https://${host}${path}`;
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");

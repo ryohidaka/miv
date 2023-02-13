@@ -23,7 +23,7 @@ const signin = async (req: NextApiRequest, res: NextApiResponse) => {
     const callbackUrl = `${appUrl}/api/auth/callback`;
     const permission = process.env.PKCE as string;
 
-    const signinUrl = `${host}/miauth/${uuid}?name=${APP_NAME}&callback=${callbackUrl}&permission=${permission}`;
+    const signinUrl = `https://${host}/miauth/${uuid}?name=${APP_NAME}&callback=${callbackUrl}&permission=${permission}`;
 
     res.redirect(307, signinUrl);
   } catch (error) {

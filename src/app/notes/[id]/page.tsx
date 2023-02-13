@@ -6,13 +6,17 @@ import { Author } from "@/components/Posts/Author";
 import { Content } from "@/components/Posts/Content";
 import { useNote } from "@/hooks/notes";
 import { usePostId } from "@/hooks/post";
-import { PostProps } from "@/types/post";
+import { PostParams } from "@/types/post";
+
+type Props = {
+  params: PostParams;
+};
 
 /**
  * ノート個別表示
  * @returns
  */
-export default function ShowNoteImage({ params }: PostProps) {
+export default function ShowNoteImage({ params }: Props) {
   // 投稿IDを取得
   const postId = usePostId(params);
 

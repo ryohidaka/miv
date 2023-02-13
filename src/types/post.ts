@@ -14,10 +14,6 @@ export type Post = {
 
 export type Posts = Post[];
 
-export type PostProps = {
-  params: PostParams;
-};
-
 export type PostParams = {
   id: string;
 };

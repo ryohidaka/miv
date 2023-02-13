@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 import MenuLink from "./MenuLink";
 
 type Props = {
@@ -18,7 +19,7 @@ export default function SideMenu({ onClose }: Props) {
       label: "Gallery",
       pages: [
         {
-          url: "/",
+          url: "gallery/posts",
           label: "Posts",
         },
         {
@@ -56,7 +57,7 @@ export default function SideMenu({ onClose }: Props) {
   return (
     <nav className="mb-5 grid grid-cols-1 items-stretch justify-center gap-3">
       {links.map((link) => (
-        <>
+        <Fragment key={link.label}>
           <h3 className="text-base font-semibold">{link.label}</h3>
 
           {link.pages.map((page) => (
@@ -68,7 +69,7 @@ export default function SideMenu({ onClose }: Props) {
               onClick={onClose}
             />
           ))}
-        </>
+        </Fragment>
       ))}
     </nav>
   );

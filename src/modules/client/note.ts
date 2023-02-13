@@ -1,4 +1,5 @@
 import { NotePost } from "@/types/note";
+import { convertImages, convertUser } from "../client";
 
 export const NOTE_LIMIT = 40;
 
@@ -30,14 +31,8 @@ export const convertNotePost = (post?: NotePost) => {
   if (post) {
     return {
       id: post.id,
-      images: post.files.map((file) => {
-        return { id: file.id, url: file.url };
-      }),
-      user: {
-        id: post.user.id,
-        name: post.user.name,
-        image_url: post.user.avatarUrl,
-      },
+      images: convertImages(post.files),
+      user: convertUser(post.user),
       text: post.text || "",
       description: post.text || "",
     };

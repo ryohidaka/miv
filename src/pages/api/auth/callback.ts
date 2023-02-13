@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { returnErrorResponse } from "@/modules/api";
-import { baseUrl } from "./signin";
-import { setCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 
 type Result = {
   ok: boolean;
@@ -14,7 +13,8 @@ type Result = {
 const callback = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const session = req.query["session"] as string;
-    const url = `${baseUrl}/api/miauth/${session}/check`;
+    const host = getCookie("host", { req, res });
+    const url = `${host}/api/miauth/${session}/check`;
 
     const response = await fetch(url, {
       method: "POST",

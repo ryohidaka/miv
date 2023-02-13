@@ -1,6 +1,7 @@
 "use client";
 
-import { fetcher, getFlatPosts, swrInfiniteConfig } from "@/modules/client";
+import { getFlatPosts } from "@/modules/client";
+import { fetcher, swrInfiniteConfig } from "@/modules/swr";
 import { Posts } from "@/types/post";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

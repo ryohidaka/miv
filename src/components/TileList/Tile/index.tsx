@@ -25,9 +25,6 @@ export const Tile = ({ post }: Props) => {
   const id = post.id;
   const url = `/posts/${id}`;
 
-  // 枚数表示バッジフラグ
-  const hasBadge = length > 1;
-
   const [_scrollPosition, setScrollPosition] = useRecoilState(scrollState);
 
   const handleClick = () => {
@@ -46,7 +43,7 @@ export const Tile = ({ post }: Props) => {
     >
       <div className="relative aspect-square w-full">
         {/* 画像数表示バッジ */}
-        {hasBadge && <NumberBadge count={length} />}
+        <NumberBadge count={length} />
 
         <Link
           href={url}

@@ -8,7 +8,7 @@ import { Timeline } from "../Timeline";
 import { Posts } from "@/types/post";
 
 type Props = {
-  posts: Posts;
+  posts?: Posts;
   hasMore: boolean;
   next: () => void;
 };
@@ -20,11 +20,13 @@ type Props = {
 export const Viewer = ({ posts, hasMore, next }: Props) => {
   const [mode] = useRecoilState(viewModeState);
 
-  useScroll(posts.length > 0);
+  const length = posts ? posts.length : 0;
+
+  useScroll(length > 0);
 
   return (
     <InfiniteScroll
-      dataLength={posts.length}
+      dataLength={length}
       next={next}
       loader={<></>}
       hasMore={hasMore}

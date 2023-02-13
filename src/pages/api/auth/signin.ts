@@ -2,8 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { returnErrorResponse } from "@/modules/api";
 import { v4 as uuidv4 } from "uuid";
 import { APP_NAME } from "@/modules/const";
-
-export const baseUrl = "https://misskey.io";
+import { setCookie } from "cookies-next";
 
 /**
  * サインイン
@@ -11,6 +10,7 @@ export const baseUrl = "https://misskey.io";
 const signin = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const host = req.query["host"] as string;
+    setCookie("host", host, { req, res, maxAge: 60 * 60 * 24 });
     const uuid = uuidv4();
     const appUrl = process.env.NEXT_PUBLIC_APP_URL as string;
 

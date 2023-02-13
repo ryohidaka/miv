@@ -2,16 +2,16 @@
 
 import useSWR from "swr";
 
-import { postFetcher } from "@/modules/swr";
-import { GalleryPost } from "@/types/gallery";
 import { convertGalleryPost } from "@/modules/client";
+import { GalleryPost } from "@/types/gallery";
+import { postFetcher } from "@/modules/swr";
 
 /**
- * 投稿取得
+ * ギャラリー投稿取得
  * @returns
  */
-export const usePost = (postId: string) => {
-  const url = `/api/posts/${postId}`;
+export const useGalleryPost = (postId: string) => {
+  const url = `/api/gallery/${postId}`;
 
   const { data, error, isLoading } = useSWR<GalleryPost, Error>(
     url,

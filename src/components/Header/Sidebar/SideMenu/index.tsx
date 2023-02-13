@@ -35,8 +35,8 @@ export default function SideMenu({ onClose }: Props) {
       label: "Timeline",
       pages: [
         {
-          url: "/home",
-          label: "Home",
+          url: "/local",
+          label: "Local Timeline",
         },
         {
           url: "/user",

@@ -1,4 +1,5 @@
 import { GalleryPost } from "@/types/gallery";
+import { NotePost } from "@/types/note";
 import { Posts } from "@/types/post";
 import { SWRInfiniteConfiguration } from "swr/infinite";
 
@@ -31,6 +32,21 @@ export const fetcher = (url: string): Promise<Posts> => {
  * @returns
  */
 export const galleryFetcher = (url: string): Promise<GalleryPost[]> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+/**
+ * ノート一覧取得処理
+ * @param url
+ * @returns
+ */
+export const noteFetcher = (url: string): Promise<NotePost[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

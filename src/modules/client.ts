@@ -1,5 +1,8 @@
 import { GalleryPost } from "@/types/gallery";
+import { Image } from "@/types/image";
 import { Posts } from "@/types/post";
+import { User } from "@/types/user";
+import { DriveFile, User as MisskeyUser } from "misskey-js/built/entities";
 
 /**
  * 投稿の配列を平坦化して返却する
@@ -72,6 +75,7 @@ export const convertUser = (user: MisskeyUser): User => {
     id: user.id,
     name: user.name,
     image_url: user.avatarUrl,
+    blurhash: user.avatarBlurhash,
   };
 };
 
@@ -85,6 +89,8 @@ export const convertImages = (files: DriveFile[]): Image[] => {
     const image: Image = {
       id: file.id,
       url: file.url,
+      thumbnailUrl: file.thumbnailUrl,
+      blurhash: file.blurhash,
     };
     return image;
   });

@@ -35,17 +35,13 @@ export const Tile = ({ post }: Props) => {
   const [newTab] = useRecoilState(newTabState);
 
   return (
-    <article
-      className="grid gap-3 overflow-hidden"
-      key={post.id}
-      id={post.id}
-      onClick={handleClick}
-    >
-      <div className="relative aspect-square w-full">
+    <article className="block" id={post.id} onClick={handleClick}>
+      <div className="relative aspect-square w-full overflow-hidden">
         {/* 画像数表示バッジ */}
         <NumberBadge count={length} />
 
         <Link
+          className="block aspect-square"
           href={url}
           target={newTab ? "_blank" : ""}
           rel={newTab ? "noopener noreferrer" : ""}
@@ -61,7 +57,7 @@ export const Tile = ({ post }: Props) => {
       </div>
 
       {/* 詳細表示 */}
-      <div className="hidden md:grid">
+      <div className="hidden md:block">
         {/* 本文 */}
         <PostText text={post.text} />
 

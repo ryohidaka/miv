@@ -46,7 +46,7 @@ export const galleryFetcher = (url: string): Promise<GalleryPost[]> => {
  * @param url
  * @returns
  */
-export const noteFetcher = (url: string): Promise<NotePost[]> => {
+export const notesFetcher = (url: string): Promise<NotePost[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

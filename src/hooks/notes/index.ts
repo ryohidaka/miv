@@ -1,7 +1,7 @@
 "use client";
 
 import { getFlatNotePosts } from "@/modules/client/note";
-import { noteFetcher, swrInfiniteConfig } from "@/modules/swr";
+import { notesFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { NotePost } from "@/types/note";
 import { Post } from "@/types/post";
 import useSWRInfinite from "swr/infinite";
@@ -24,7 +24,7 @@ export const useNotes = (url: string) => {
   const { data, error, isLoading, size, setSize } = useSWRInfinite<
     NotePost[],
     Error
-  >(getKey, noteFetcher, swrInfiniteConfig);
+  >(getKey, notesFetcher, swrInfiniteConfig);
 
   const posts = getFlatNotePosts(data as NotePost[][]);
 

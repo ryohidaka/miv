@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { User } from "@/types/user";
 import { Author } from "@/components/Posts/Author";
-import { useGalleryPost } from "@/hooks/gallery/post";
 import { Content } from "@/components/Posts/Content";
+import { useGalleryPost } from "@/hooks/gallery";
 
 type Props = {
   params: {

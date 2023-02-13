@@ -55,7 +55,7 @@ export const Tile = ({ post, isGallery }: Props) => {
         </Link>
 
         {/* いいねボタン */}
-        <LikeButton postId={post.id} />
+        <LikeButton post={post} isGallery={isGallery} />
       </div>
 
       {/* 詳細表示 */}

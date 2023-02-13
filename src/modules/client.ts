@@ -1,6 +1,6 @@
 import { GalleryPost } from "@/types/gallery";
 import { Image } from "@/types/image";
-import { Posts } from "@/types/post";
+import { Post, Posts } from "@/types/post";
 import { User } from "@/types/user";
 import { DriveFile, User as MisskeyUser } from "misskey-js/built/entities";
 
@@ -43,14 +43,17 @@ export const getFlatGalleryPosts = (data: GalleryPost[][]) => {
  */
 export const convertGalleryPost = (post?: GalleryPost) => {
   if (post) {
-    return {
+    const convertedPost: Post = {
       id: post.id,
       images: convertImages(post.files),
       user: convertUser(post.user),
       text: `${post.title} ${post.description}`,
       title: post.title,
       description: post.description,
+      isLiked: post.isLiked,
+      likedCount: post.likedCount,
     };
+    return convertedPost;
   }
 
   return undefined;

@@ -14,7 +14,7 @@ export default function GalleryPopular() {
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
       {/* @ts-ignore */}
-      <Viewer posts={data} hasMore={true} />
+      <Viewer posts={data} hasMore={true} isGallery />
     </ViewerLayout>
   );
 }

@@ -11,13 +11,14 @@ type Props = {
   posts?: Posts;
   hasMore: boolean;
   next: () => void;
+  isGallery?: boolean;
 };
 
 /**
  * 画像一覧表示
  * @returns
  */
-export const Viewer = ({ posts, hasMore, next }: Props) => {
+export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
   const [mode] = useRecoilState(viewModeState);
 
   const length = posts ? posts.length : 0;
@@ -35,7 +36,7 @@ export const Viewer = ({ posts, hasMore, next }: Props) => {
       {mode === ViewMode.TIMELINE ? (
         <Timeline posts={posts} />
       ) : (
-        <TileList posts={posts} />
+        <TileList posts={posts} isGallery={isGallery} />
       )}
     </InfiniteScroll>
   );

@@ -35,15 +35,15 @@ export default function SideMenu({ onClose }: Props) {
       label: "Timeline",
       pages: [
         {
-          url: "/local",
+          url: "notes/local",
           label: "Local Timeline",
         },
         {
-          url: "/hybrid",
+          url: "notes/hybrid",
           label: "Hybrid Timeline",
         },
         {
-          url: "/global",
+          url: "notes/global",
           label: "Global Timeline",
         },
       ],

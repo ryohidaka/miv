@@ -76,7 +76,7 @@ export const capitalize = (str: string) => {
 export const convertUser = (user: MisskeyUser): User => {
   return {
     id: user.id,
-    name: user.name,
+    name: user.name || user.username,
     image_url: user.avatarUrl,
     blurhash: user.avatarBlurhash,
   };

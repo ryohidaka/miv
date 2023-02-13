@@ -6,13 +6,17 @@ import { Author } from "@/components/Posts/Author";
 import { Content } from "@/components/Posts/Content";
 import { useGalleryPost } from "@/hooks/gallery";
 import { usePostId } from "@/hooks/post";
-import { PostProps } from "@/types/post";
+import { PostParams } from "@/types/post";
+
+type Props = {
+  params: PostParams;
+};
 
 /**
  * ギャラリー個別表示
  * @returns
  */
-export default function ShowPostImages({ params }: PostProps) {
+export default function ShowPostImages({ params }: Props) {
   // 投稿IDを取得
   const postId = usePostId(params);
 

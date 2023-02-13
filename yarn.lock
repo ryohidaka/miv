@@ -2083,11 +2083,6 @@ react-modern-drawer@^1.2.0:
   resolved "https://registry.yarnpkg.com/react-modern-drawer/-/react-modern-drawer-1.2.0.tgz#1604acab03facac03945fc3cfc61e59d535ca6e8"
   integrity sha512-GBQaeDNpnt6GFm3U9y/wzkZerP6R92CrgC9ge3/PHCm0F0LdUzt7rjFSwdd47Pdy6+FhXKR2rn7VxW3pl/+m9w==
 
-react-social-login-buttons@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/react-social-login-buttons/-/react-social-login-buttons-3.6.1.tgz#77e5c33ac6610a29071e2ad688ef585871120763"
-  integrity sha512-DIz30W+C147s7wxwt8zgwjx5pE+gTJwtUzTNKpKZO3bEY06eLjcY1zvZ8h35hQd1Yjd7b4rLkeuZBwlLURYIfg==
-
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
@@ -2495,11 +2490,6 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
-
-use-long-press@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/use-long-press/-/use-long-press-2.0.3.tgz#9e26da35f05819fe8056787c78a101e91e3e464b"
-  integrity sha512-n3cfv90Y1ldNt+hhXzxnxuLZmgLOOC/+qfLGoeEBgOxmnokPPt39MPF3KmvKriq5VMoJ7uQdVjHejCdHBt9anw==
 
 use-sync-external-store@^1.2.0:
   version "1.2.0"

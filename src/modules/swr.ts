@@ -1,6 +1,7 @@
 import { GalleryPost } from "@/types/gallery";
 import { NotePost } from "@/types/note";
 import { Posts } from "@/types/post";
+import { Hashtag } from "@/types/tag";
 import { SWRInfiniteConfiguration } from "swr/infinite";
 
 export const swrInfiniteConfig: SWRInfiniteConfiguration = {
@@ -73,6 +74,17 @@ export const noteFetcher = (url: string): Promise<NotePost> => {
 
 // 投稿取得処理
 export const postFetcher = (url: string): Promise<GalleryPost> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+// ハッシュタグ取得処理
+export const tagFetcher = (url: string): Promise<Hashtag[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

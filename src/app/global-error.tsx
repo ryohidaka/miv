@@ -1,6 +1,5 @@
 "use client";
 
-import { ChakraProvider } from "@chakra-ui/react";
 import { ErrorAlert } from "@/components/Viewer/Layout/ErrorAlert";
 
 export default function GlobalError({
@@ -14,11 +13,9 @@ export default function GlobalError({
     <html>
       <head></head>
       <body>
-        <ChakraProvider>
-          <div className="container">
-            <ErrorAlert />
-          </div>
-        </ChakraProvider>
+        <div className="container">
+          <ErrorAlert />
+        </div>
       </body>
     </html>
   );

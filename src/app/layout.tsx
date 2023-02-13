@@ -1,6 +1,5 @@
 "use client";
 
-import { ChakraProvider } from "@chakra-ui/react";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { RecoilRoot } from "recoil";
 import Header from "@/components/Header";
@@ -21,14 +20,12 @@ export default function RootLayout({
       <head />
       <body>
         <RecoilRoot>
-          <ChakraProvider>
-            {/* 共通ヘッダー */}
-            <Header />
-            {children}
+          {/* 共通ヘッダー */}
+          <Header />
+          {children}
 
-            {/* ログインモーダル */}
-            <LoginModal />
-          </ChakraProvider>
+          {/* ログインモーダル */}
+          <LoginModal />
           <GoogleAnalytics strategy="lazyOnload" />
         </RecoilRoot>
       </body>

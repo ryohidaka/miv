@@ -11,10 +11,6 @@
     "format": "prettier --write src/**/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.17",
-    "@chakra-ui/react": "^2.4.6",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@faker-js/faker": "^7.6.0",
     "@next/font": "13.1.6",
     "@splidejs/react-splide": "^0.7.12",
@@ -27,7 +23,6 @@
     "cookies-next": "^2.1.1",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
-    "framer-motion": "^8",
     "misskey-js": "^0.0.15",
     "next": "13.1.6",
     "nextjs-google-analytics": "^2.2.2",

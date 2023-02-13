@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 import MenuLink from "./MenuLink";
 
 type Props = {
@@ -13,30 +14,40 @@ type Props = {
  */
 export default function SideMenu({ onClose }: Props) {
   // ページ一覧
-  const pages = [
+  const links = [
     {
-      url: "/",
       label: "Gallery",
+      pages: [
+        {
+          url: "gallery/posts",
+          label: "Posts",
+        },
+        {
+          url: "gallery/featured",
+          label: "Featured",
+        },
+        {
+          url: "gallery/popular",
+          label: "Popular",
+        },
+      ],
     },
     {
-      url: "/featured",
-      label: "Gallery (Featured)",
-    },
-    {
-      url: "/popular",
-      label: "Gallery (Popular)",
-    },
-    {
-      url: "/home",
-      label: "Home Timeline",
-    },
-    {
-      url: "/user",
-      label: "User Timeline",
-    },
-    {
-      url: "/search",
-      label: "Search Timeline",
+      label: "Timeline",
+      pages: [
+        {
+          url: "notes/local",
+          label: "Local Timeline",
+        },
+        {
+          url: "notes/hybrid",
+          label: "Hybrid Timeline",
+        },
+        {
+          url: "notes/global",
+          label: "Global Timeline",
+        },
+      ],
     },
   ];
 
@@ -45,16 +56,20 @@ export default function SideMenu({ onClose }: Props) {
 
   return (
     <nav className="mb-5 grid grid-cols-1 items-stretch justify-center gap-3">
-      <h3 className="text-base font-semibold">Links</h3>
+      {links.map((link) => (
+        <Fragment key={link.label}>
+          <h3 className="text-base font-semibold">{link.label}</h3>
 
-      {pages.map((page) => (
-        <MenuLink
-          key={page.label}
-          url={page.url}
-          label={page.label}
-          isActive={path === page.url}
-          onClick={onClose}
-        />
+          {link.pages.map((page) => (
+            <MenuLink
+              key={page.label}
+              url={page.url}
+              label={page.label}
+              isActive={path === page.url}
+              onClick={onClose}
+            />
+          ))}
+        </Fragment>
       ))}
     </nav>
   );

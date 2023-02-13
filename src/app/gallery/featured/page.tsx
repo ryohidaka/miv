@@ -5,7 +5,7 @@ import { ViewerLayout } from "@/components/Viewer/Layout";
 import { useGalleryFeatured } from "@/hooks/gallery/featured";
 
 /**
- * 人気の投稿一覧
+ * ハイライトされた投稿一覧
  * @returns
  */
 export default function GalleryFeatured() {
@@ -14,7 +14,7 @@ export default function GalleryFeatured() {
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
       {/* @ts-ignore */}
-      <Viewer posts={data} hasMore={true} />
+      <Viewer posts={data} hasMore={true} isGallery />
     </ViewerLayout>
   );
 }

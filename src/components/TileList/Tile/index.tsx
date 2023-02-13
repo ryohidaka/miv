@@ -8,22 +8,24 @@ import { LikeButton } from "./LikeButton";
 import { NumberBadge } from "./NumberBadge";
 import { PostText } from "./PostText";
 import { Post } from "@/types/post";
+import { usePathname } from "next/navigation";
 
 type Props = {
   post: Post;
+  isGallery?: boolean;
 };
 
 /**
  * タイル表示
  * @returns
  */
-export const Tile = ({ post }: Props) => {
+export const Tile = ({ post, isGallery }: Props) => {
   const image = post.images[0];
   const length = post.images.length;
 
   // 投稿表示画面へのリンクを作成
   const id = post.id;
-  const url = `/posts/${id}`;
+  const url = `/${isGallery ? "gallery" : "notes"}/${id}`;
 
   const [_scrollPosition, setScrollPosition] = useRecoilState(scrollState);
 
@@ -35,17 +37,13 @@ export const Tile = ({ post }: Props) => {
   const [newTab] = useRecoilState(newTabState);
 
   return (
-    <article
-      className="grid gap-3 overflow-hidden"
-      key={post.id}
-      id={post.id}
-      onClick={handleClick}
-    >
-      <div className="relative aspect-square w-full">
+    <article className="block" id={post.id} onClick={handleClick}>
+      <div className="relative aspect-square w-full overflow-hidden">
         {/* 画像数表示バッジ */}
         <NumberBadge count={length} />
 
         <Link
+          className="block aspect-square"
           href={url}
           target={newTab ? "_blank" : ""}
           rel={newTab ? "noopener noreferrer" : ""}
@@ -61,7 +59,7 @@ export const Tile = ({ post }: Props) => {
       </div>
 
       {/* 詳細表示 */}
-      <div className="hidden md:grid">
+      <div className="hidden md:block">
         {/* 本文 */}
         <PostText text={post.text} />
 

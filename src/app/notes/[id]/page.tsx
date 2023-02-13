@@ -1,29 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { User } from "@/types/user";
 import { Author } from "@/components/Posts/Author";
 import { Content } from "@/components/Posts/Content";
 import { useNote } from "@/hooks/notes";
-
-type Props = {
-  params: {
-    id: string;
-  };
-};
+import { usePostId } from "@/hooks/post";
+import { PostProps } from "@/types/post";
 
 /**
  * ノート個別表示
  * @returns
  */
-export default function ShowNoteImage({ params }: Props) {
-  const [postId, setPostId] = useState<string>("");
-
-  useEffect(() => {
-    const postId = params.id;
-    setPostId(postId);
-  }, [params]);
+export default function ShowNoteImage({ params }: PostProps) {
+  // 投稿IDを取得
+  const postId = usePostId(params);
 
   // 投稿を取得
   const { data, error, isLoading } = useNote(postId);

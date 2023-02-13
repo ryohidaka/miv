@@ -11,8 +11,6 @@ const getNotePost = async (req: NextApiRequest, res: NextApiResponse) => {
       noteId: id,
     };
 
-    console.log(params);
-
     const post = await apiRequest(url, req, res, params);
 
     res.status(200).json(post);

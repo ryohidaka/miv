@@ -38,8 +38,8 @@ export const convertNotePost = (post?: NotePost) => {
         name: post.user.name,
         image_url: post.user.avatarUrl,
       },
-      text: post.text,
-      description: post.text,
+      text: post.text || "",
+      description: post.text || "",
     };
   }
 

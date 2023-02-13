@@ -1,10 +1,11 @@
 "use client";
 
-import { getFlatNotePosts } from "@/modules/client/note";
-import { notesFetcher, swrInfiniteConfig } from "@/modules/swr";
+import { convertNotePost, getFlatNotePosts } from "@/modules/client/note";
+import { noteFetcher, notesFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { NotePost } from "@/types/note";
 import { Post } from "@/types/post";
 import useSWRInfinite from "swr/infinite";
+import useSWR from "swr";
 
 /**
  * ノート一覧取得
@@ -29,4 +30,18 @@ export const useNotes = (url: string) => {
   const posts = getFlatNotePosts(data as NotePost[][]);
 
   return { data: posts, error, isLoading, size, setSize };
+};
+
+/**
+ * ノート取得
+ * @returns
+ */
+export const useNote = (postId: string) => {
+  const url = `/api/notes/${postId}`;
+
+  const { data, error, isLoading } = useSWR<NotePost, Error>(url, noteFetcher);
+
+  const post = convertNotePost(data);
+
+  return { data: post, error, isLoading };
 };

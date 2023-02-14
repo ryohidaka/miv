@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { GalleryParams, GalleryPost } from "@/types/gallery";
-import { convertGalleryPost } from "@/modules/api/gallery";
+import { GalleryParams } from "@/types/gallery";
+import { convertGalleryPosts } from "@/modules/api/gallery";
 import { Post } from "@/types/post";
 
 const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -21,10 +21,7 @@ const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const datas = await apiRequest(url, req, res, params);
-
-    const posts: Post[] = datas.map((data: GalleryPost) => {
-      return convertGalleryPost(data);
-    });
+    const posts: Post[] = convertGalleryPosts(datas);
 
     res.status(200).json(posts);
   } catch (error) {

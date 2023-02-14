@@ -1,6 +1,6 @@
 import { Post } from "@/types/post";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CommonImage } from "../Common/Image";
 import { NumberBadge } from "../TileList/Tile/NumberBadge";
 
@@ -19,6 +19,14 @@ export const Content = ({ post }: Props) => {
 
   const topImage = images[0];
 
+  const hasMultiple = images.length > 1;
+
+  useEffect(() => {
+    if (!hasMultiple) {
+      setOpen(true);
+    }
+  }, [hasMultiple]);
+
   return (
     <>
       <div className="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-800">
@@ -32,12 +40,14 @@ export const Content = ({ post }: Props) => {
             />
             <NumberBadge count={images.length} />
 
-            <button
-              className="light-btn absolute bottom-3 z-40 mx-auto !rounded-full"
-              onClick={() => setOpen(true)}
-            >
-              すべて見る
-            </button>
+            {hasMultiple && (
+              <button
+                className="light-btn absolute bottom-3 z-40 mx-auto !rounded-full"
+                onClick={() => setOpen(true)}
+              >
+                すべて見る
+              </button>
+            )}
           </div>
         ) : (
           <div className="relative grid grid-cols-1 gap-1 md:gap-10">

@@ -1,14 +1,9 @@
-import Link from "next/link";
 import { useRecoilState } from "recoil";
-import { newTabState } from "@/atoms/NewTab";
 import { scrollState } from "@/atoms/Scroll";
-import { CommonImage } from "@/components/Common/Image";
 import { Author } from "./Author";
-import { LikeButton } from "./LikeButton";
-import { NumberBadge } from "./NumberBadge";
 import { PostText } from "./PostText";
 import { Post } from "@/types/post";
-import { usePathname } from "next/navigation";
+import { SquareThumbnail } from "../../Common/SquareThumbnail";
 
 type Props = {
   post: Post;
@@ -33,31 +28,16 @@ export const Tile = ({ post, isGallery }: Props) => {
     setScrollPosition(window.pageYOffset);
   };
 
-  // 別タブ遷移設定を取得
-  const [newTab] = useRecoilState(newTabState);
-
   return (
-    <article className="block" id={post.id} onClick={handleClick}>
-      <div className="relative aspect-square w-full overflow-hidden">
-        {/* 画像数表示バッジ */}
-        <NumberBadge count={length} />
-
-        <Link
-          className="block aspect-square"
-          href={url}
-          target={newTab ? "_blank" : ""}
-          rel={newTab ? "noopener noreferrer" : ""}
-        >
-          <CommonImage
-            image={image}
-            className="rounded-none object-cover md:rounded-xl"
-            thumbnail
-          />
-        </Link>
-
-        {/* いいねボタン */}
-        <LikeButton post={post} isGallery={isGallery} />
-      </div>
+    <article id={post.id} onClick={handleClick}>
+      <SquareThumbnail
+        url={url}
+        image={image}
+        postId={post.id}
+        isLiked={post.isLiked as boolean}
+        isGallery={isGallery as boolean}
+        length={length}
+      />
 
       {/* 詳細表示 */}
       <div className="hidden md:block">

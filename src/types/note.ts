@@ -7,6 +7,7 @@ export type NotePost = {
   files: DriveFile[];
   likedCount: number;
   isLiked?: boolean;
+  tags?: string[];
 };
 
 export type NoteParams = {

@@ -1,4 +1,5 @@
 import { NotePost } from "@/types/note";
+import { Post } from "@/types/post";
 import { convertImages, convertUser } from "../client";
 
 export const NOTE_LIMIT = 40;
@@ -27,7 +28,7 @@ export const getFlatNotePosts = (data: NotePost[][]) => {
  * @param post
  * @returns
  */
-export const convertNotePost = (post?: NotePost) => {
+export const convertNotePost = (post?: NotePost): Post | undefined => {
   if (post) {
     return {
       id: post.id,
@@ -35,6 +36,7 @@ export const convertNotePost = (post?: NotePost) => {
       user: convertUser(post.user),
       text: post.text || "",
       description: post.text || "",
+      tags: post.tags || [],
     };
   }
 

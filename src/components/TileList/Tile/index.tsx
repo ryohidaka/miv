@@ -51,6 +51,7 @@ export const Tile = ({ post, isGallery }: Props) => {
           <CommonImage
             image={image}
             className="rounded-none object-cover md:rounded-xl"
+            thumbnail
           />
         </Link>
 

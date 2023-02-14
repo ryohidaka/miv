@@ -1,6 +1,6 @@
 "use client";
 
-import { fetcher, noteFetcher, swrInfiniteConfig } from "@/modules/swr";
+import { fetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { Post } from "@/types/post";
 import useSWRInfinite from "swr/infinite";
 import useSWR from "swr";
@@ -37,7 +37,7 @@ export const useNotes = (url: string, mutate?: boolean) => {
 export const useNote = (postId: string) => {
   const url = `/api/notes/${postId}`;
 
-  const { data, error, isLoading } = useSWR<Post, Error>(url, noteFetcher);
+  const { data, error, isLoading } = useSWR<Post, Error>(url, postFetcher);
 
   return { data, error, isLoading };
 };

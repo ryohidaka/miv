@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NOTE_LIMIT } from "@/modules/client/note";
 import { NoteParams } from "@/types/note";
+import { NOTE_LIMIT } from "@/modules/api/note";
 
 /**
  * ハッシュタグで検索する

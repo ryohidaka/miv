@@ -1,4 +1,4 @@
-import { convertGalleryPost, getFlatGalleryPosts } from "@/modules/client";
+import { convertGalleryPost } from "@/modules/api/gallery";
 import { galleryFetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { GalleryPost } from "@/types/gallery";
 import { Post } from "@/types/post";
@@ -15,7 +15,7 @@ export const useGallery = (url: string) => {
     galleryFetcher
   );
 
-  const posts = getFlatGalleryPosts([data] as GalleryPost[][]);
+  const posts = data?.flat();
 
   return { data: posts, error, isLoading };
 };
@@ -42,7 +42,7 @@ export const useGalleryPosts = () => {
     Error
   >(getKey, galleryFetcher, swrInfiniteConfig);
 
-  const posts = getFlatGalleryPosts(data as GalleryPost[][]);
+  const posts = data?.flat();
 
   return { data: posts, error, isLoading, size, setSize };
 };
@@ -54,12 +54,7 @@ export const useGalleryPosts = () => {
 export const useGalleryPost = (postId: string) => {
   const url = `/api/gallery/${postId}`;
 
-  const { data, error, isLoading } = useSWR<GalleryPost, Error>(
-    url,
-    postFetcher
-  );
+  const { data, error, isLoading } = useSWR<Post, Error>(url, postFetcher);
 
-  const post = convertGalleryPost(data);
-
-  return { data: post, error, isLoading };
+  return { data, error, isLoading };
 };

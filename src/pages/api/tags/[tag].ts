@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NOTE_LIMIT } from "@/modules/client/note";
 import { NoteParams } from "@/types/note";
+import { convertNotePosts, NOTE_LIMIT } from "@/modules/api/note";
+import { Post } from "@/types/post";
 
 /**
  * ハッシュタグで検索する
@@ -12,7 +13,7 @@ const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { tag } = req.query;
 
-    const url = "/api/notes/search-by-tag";
+    const url = "/notes/search-by-tag";
 
     let params: NoteParams = {
       tag: tag as string,
@@ -32,9 +33,10 @@ const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     }
 
-    const post = await apiRequest(url, req, res, params);
+    const datas = await apiRequest(url, req, res, params);
+    const posts: Post[] = convertNotePosts(datas);
 
-    res.status(200).json(post);
+    res.status(200).json(posts);
   } catch (error) {
     returnErrorResponse(res, error);
   }

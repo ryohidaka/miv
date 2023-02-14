@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { SearchNoteParams } from "@/types/note";
+import { convertNotePosts } from "@/modules/api/note";
+import { Post } from "@/types/post";
 
 /**
  * ノートを検索する
@@ -13,7 +15,7 @@ const searchNotes = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const query = req.query["q"] as string;
 
-    const url = "/api/notes/search";
+    const url = "/notes/search";
     let params: SearchNoteParams = {
       query: query,
       limit: 100,
@@ -29,7 +31,8 @@ const searchNotes = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     }
 
-    const posts = await apiRequest(url, req, res, params);
+    const datas = await apiRequest(url, req, res, params);
+    const posts: Post[] = convertNotePosts(datas);
 
     res.status(200).json(posts);
   } catch (error) {

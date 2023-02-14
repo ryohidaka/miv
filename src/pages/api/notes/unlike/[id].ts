@@ -7,7 +7,7 @@ import { apiRequest, returnErrorResponse } from "@/modules/api";
 const unlike = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;
-    const url = "/api/notes/favorites/delete";
+    const url = "/notes/favorites/delete";
 
     const params = {
       noteId: id,

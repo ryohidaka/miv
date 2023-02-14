@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NoteParams, NotePost } from "@/types/note";
-import { convertNotePost, NOTE_LIMIT } from "@/modules/api/note";
+import { NoteParams } from "@/types/note";
+import { convertNotePosts, NOTE_LIMIT } from "@/modules/api/note";
 import { Post } from "@/types/post";
 
 /**
@@ -30,10 +30,7 @@ const getLocalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const datas = await apiRequest(url, req, res, params);
-
-    const posts: Post[] = datas.map((data: NotePost) => {
-      return convertNotePost(data);
-    });
+    const posts: Post[] = convertNotePosts(datas);
 
     res.status(200).json(posts);
   } catch (error) {

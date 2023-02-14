@@ -5,8 +5,23 @@ import { convertUser } from "./user";
 
 export const NOTE_LIMIT = 40;
 
+
 /**
- * ギャラリーの投稿データをPost形式に変換し返却する
+ * ノートの配列をPost配列に変換し返却する
+ * @param post
+ * @returns
+ */
+export const convertNotePosts = (datas: NotePost[]): Post[] => {
+  return datas
+    .filter((data: NotePost) => data.files.length > 0)
+    .map((data: NotePost) => {
+      return convertNotePost(data);
+    });
+};
+
+
+/**
+ * ノートの投稿データをPost形式に変換し返却する
  * @param post
  * @returns
  */

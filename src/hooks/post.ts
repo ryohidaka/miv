@@ -1,7 +1,10 @@
 "use client";
 
-import { PostParams } from "@/types/post";
+import { fetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
+import { Post, PostParams } from "@/types/post";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
+import useSWRInfinite from "swr/infinite";
 
 /**
  * 投稿IDを取得
@@ -15,4 +18,50 @@ export const usePostId = (params: PostParams) => {
   }, [params]);
 
   return postId;
+};
+
+/**
+ * 投稿一覧取得
+ * @returns
+ */
+export const usePosts = (url: string) => {
+  const { data, error, isLoading } = useSWR<Post[], Error>(url, fetcher);
+  const posts = data?.flat();
+
+  return { data: posts, error, isLoading };
+};
+
+/**
+ * 投稿一覧取得 (ページネーションあり)
+ * @returns
+ */
+export const usePostsWithPagination = (url: string) => {
+  const getKey = (pageIndex: number, previousPageData: Post[]) => {
+    if (pageIndex === 0) {
+      return url;
+    } else {
+      // ページネーションを指定
+      const untilId = previousPageData[previousPageData.length - 1].id;
+      return `${url}?until_id=${untilId}`;
+    }
+  };
+
+  const { data, error, isLoading, size, setSize } = useSWRInfinite<
+    Post[],
+    Error
+  >(getKey, fetcher, swrInfiniteConfig);
+
+  const posts = data?.flat();
+
+  return { data: posts, error, isLoading, size, setSize };
+};
+
+/**
+ * 投稿取得
+ * @returns
+ */
+export const usePost = (url: string) => {
+  const { data, error, isLoading } = useSWR<Post, Error>(url, postFetcher);
+
+  return { data, error, isLoading };
 };

@@ -2,14 +2,15 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useGalleryPosts } from "@/hooks/gallery";
+import { usePostsWithPagination } from "@/hooks/post";
 
 /**
  * ギャラリー画面
  * @returns
  */
 export default function GalleryPosts() {
-  const { data, error, isLoading, size, setSize } = useGalleryPosts();
+  const url = "/api/gallery/posts";
+  const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
   const next = () => {
     setSize(size + 1);

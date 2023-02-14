@@ -1,6 +1,6 @@
 import { GalleryPost } from "@/types/gallery";
 import { Post } from "@/types/post";
-import { convertImages } from "../client";
+import { convertImages } from "./image";
 import { convertUser } from "./user";
 
 /**

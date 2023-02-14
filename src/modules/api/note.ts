@@ -1,6 +1,7 @@
 import { NotePost } from "@/types/note";
 import { Post } from "@/types/post";
-import { convertImages, convertUser } from "../client";
+import { convertImages } from "../client";
+import { convertUser } from "./user";
 
 export const NOTE_LIMIT = 40;
 

@@ -13,8 +13,6 @@ export type Post = {
   tags?: string[];
 };
 
-export type Posts = Post[];
-
 export type PostParams = {
   id: string;
 };

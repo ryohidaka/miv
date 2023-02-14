@@ -21,7 +21,7 @@ export default function GalleryPosts() {
     <ViewerLayout isLoading={isLoading} error={error}>
       {/* トレンドにあるハッシュタグ一覧 */}
       <TrendTags />
-      {/* @ts-ignore */}
+
       <Viewer posts={data} hasMore={true} next={next} isGallery />
     </ViewerLayout>
   );

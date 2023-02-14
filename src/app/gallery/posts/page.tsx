@@ -18,7 +18,6 @@ export default function GalleryPosts() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} next={next} isGallery />
     </ViewerLayout>
   );

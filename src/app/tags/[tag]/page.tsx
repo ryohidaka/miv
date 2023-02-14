@@ -36,8 +36,6 @@ export default function Tag({ params }: Props) {
           {title}
         </h1>
       </StickyTop>
-
-      {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

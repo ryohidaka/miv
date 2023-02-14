@@ -18,7 +18,6 @@ export default function HybridTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

@@ -19,7 +19,7 @@ export const Author = ({ user }: Props) => {
           height={40}
           alt={user?.name}
           src={user?.image_url}
-          placeholder="blur"
+          placeholder={user.blurhash ? "blur" : "empty"}
           blurDataURL={user.blurhash}
           unoptimized
           className="aspect-square rounded-full"

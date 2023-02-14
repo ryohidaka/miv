@@ -16,6 +16,15 @@ export default function SideMenu({ onClose }: Props) {
   // ページ一覧
   const links = [
     {
+      label: "",
+      pages: [
+        {
+          url: "/",
+          label: "Home",
+        },
+      ],
+    },
+    {
       label: "Gallery",
       pages: [
         {

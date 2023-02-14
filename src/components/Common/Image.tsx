@@ -5,13 +5,15 @@ import Image from "next/image";
 type Props = {
   image: ImageType;
   className?: string;
+  thumbnail?: boolean;
 };
 
 /**
  * 画像表示領域
  * @returns
  */
-export const CommonImage = ({ image, className }: Props) => {
+export const CommonImage = ({ image, className, thumbnail }: Props) => {
+  const src = thumbnail ? image.thumbnailUrl || image.url : image.url;
   return (
     <Image
       className={classNames(
@@ -19,7 +21,7 @@ export const CommonImage = ({ image, className }: Props) => {
         className
       )}
       key={image.id}
-      src={image.thumbnailUrl || image.url}
+      src={src}
       alt={image.id}
       fill
       objectPosition="center"

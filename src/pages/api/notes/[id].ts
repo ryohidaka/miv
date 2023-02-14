@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
+import { convertNotePost } from "@/modules/api/note";
+import { Post } from "@/types/post";
 
 const getNotePost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -11,7 +13,9 @@ const getNotePost = async (req: NextApiRequest, res: NextApiResponse) => {
       noteId: id,
     };
 
-    const post = await apiRequest(url, req, res, params);
+    const data = await apiRequest(url, req, res, params);
+
+    const post: Post = convertNotePost(data);
 
     res.status(200).json(post);
   } catch (error) {

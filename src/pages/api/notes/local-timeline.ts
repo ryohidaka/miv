@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NoteParams } from "@/types/note";
-import { NOTE_LIMIT } from "@/modules/client/note";
+import { NoteParams, NotePost } from "@/types/note";
+import { convertNotePost, NOTE_LIMIT } from "@/modules/api/note";
+import { Post } from "@/types/post";
 
 /**
  * ローカルタイムライン取得
@@ -28,7 +29,11 @@ const getLocalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     }
 
-    const posts = await apiRequest(url, req, res, params);
+    const datas = await apiRequest(url, req, res, params);
+
+    const posts: Post[] = datas.map((data: NotePost) => {
+      return convertNotePost(data);
+    });
 
     res.status(200).json(posts);
   } catch (error) {

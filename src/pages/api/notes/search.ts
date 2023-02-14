@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { SearchNoteParams } from "@/types/note";
+import { NotePost, SearchNoteParams } from "@/types/note";
+import { convertNotePost } from "@/modules/api/note";
 
 /**
  * ノートを検索する
@@ -29,7 +30,11 @@ const searchNotes = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     }
 
-    const posts = await apiRequest(url, req, res, params);
+    const datas = await apiRequest(url, req, res, params);
+
+    const posts = datas.map((data: NotePost) => {
+      return convertNotePost(data);
+    });
 
     res.status(200).json(posts);
   } catch (error) {

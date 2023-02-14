@@ -6,7 +6,7 @@ import { Post } from "@/types/post";
 
 const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/gallery/posts";
+    const url = "/gallery/posts";
     let params: GalleryParams = {
       limit: 40,
     };

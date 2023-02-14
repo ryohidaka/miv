@@ -13,7 +13,7 @@ import { Post } from "@/types/post";
  */
 const getSocialTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/notes/hybrid-timeline";
+    const url = "/notes/hybrid-timeline";
     let params: NoteParams = {
       withFiles: true,
       limit: NOTE_LIMIT,

@@ -13,7 +13,7 @@ import { Post } from "@/types/post";
  */
 const getGlobalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/notes/global-timeline";
+    const url = "/notes/global-timeline";
     let params: NoteParams = {
       withFiles: true,
       limit: NOTE_LIMIT,

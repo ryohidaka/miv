@@ -15,7 +15,7 @@ const searchNotes = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const query = req.query["q"] as string;
 
-    const url = "/api/notes/search";
+    const url = "/notes/search";
     let params: SearchNoteParams = {
       query: query,
       limit: 100,

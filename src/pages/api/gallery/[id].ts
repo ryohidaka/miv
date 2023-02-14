@@ -7,7 +7,7 @@ const getGalleryPost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;
 
-    const url = "/api/gallery/posts/show";
+    const url = "/gallery/posts/show";
 
     const params = {
       postId: id,

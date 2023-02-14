@@ -13,7 +13,7 @@ import { Post } from "@/types/post";
  */
 const getLocalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/notes/local-timeline";
+    const url = "/notes/local-timeline";
     let params: NoteParams = {
       withFiles: true,
       limit: NOTE_LIMIT,

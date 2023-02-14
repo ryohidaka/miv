@@ -9,7 +9,7 @@ const getGalleryFeatured = async (
   res: NextApiResponse
 ) => {
   try {
-    const url = "/api/gallery/featured";
+    const url = "/gallery/featured";
     const datas = await apiRequest(url, req, res);
 
     const posts: Post[] = datas.map((data: GalleryPost) => {

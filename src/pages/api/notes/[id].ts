@@ -7,7 +7,7 @@ const getNotePost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;
 
-    const url = "/api/notes/show";
+    const url = "/notes/show";
 
     const params = {
       noteId: id,

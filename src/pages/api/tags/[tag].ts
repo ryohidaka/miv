@@ -12,7 +12,7 @@ const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { tag } = req.query;
 
-    const url = "/api/notes/search-by-tag";
+    const url = "/notes/search-by-tag";
 
     let params: NoteParams = {
       tag: tag as string,

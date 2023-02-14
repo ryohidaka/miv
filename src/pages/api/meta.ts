@@ -8,7 +8,7 @@ import { apiRequest, returnErrorResponse } from "@/modules/api";
  */
 const getMeta = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/meta";
+    const url = "/meta";
     const meta = await apiRequest(url, req, res);
 
     res.status(200).json(meta);

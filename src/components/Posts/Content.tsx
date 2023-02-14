@@ -40,13 +40,7 @@ export const Content = ({ post }: Props) => {
         ) : (
           <div className="relative grid grid-cols-1 gap-1 md:gap-10">
             {images.map((image) => {
-              return (
-                <CommonImage
-                  key={image.id}
-                  image={image}
-                  className="!h-auto !w-auto"
-                />
-              );
+              return <CommonImage key={image.id} image={image} />;
             })}
           </div>
         )}

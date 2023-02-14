@@ -28,7 +28,7 @@ export const fetcher = (url: string): Promise<Posts> => {
 };
 
 // 投稿取得処理
-export const noteFetcher = (url: string): Promise<Post> => {
+export const postFetcher = (url: string): Promise<Post> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {
@@ -44,17 +44,6 @@ export const noteFetcher = (url: string): Promise<Post> => {
  * @returns
  */
 export const galleryFetcher = (url: string): Promise<GalleryPost[]> => {
-  return fetch(url).then((res) => {
-    // エラー発生時
-    if (!res.ok) {
-      throw new Error(fetchError);
-    }
-    return res.json();
-  });
-};
-
-// 投稿取得処理
-export const postFetcher = (url: string): Promise<GalleryPost> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

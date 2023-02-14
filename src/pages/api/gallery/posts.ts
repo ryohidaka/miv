@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { GalleryParams } from "@/types/gallery";
+import { GalleryParams, GalleryPost } from "@/types/gallery";
+import { convertGalleryPost } from "@/modules/api/gallery";
+import { Post } from "@/types/post";
 
 const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -18,7 +20,11 @@ const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
       };
     }
 
-    const posts = await apiRequest(url, req, res, params);
+    const datas = await apiRequest(url, req, res, params);
+
+    const posts: Post[] = datas.map((data: GalleryPost) => {
+      return convertGalleryPost(data);
+    });
 
     res.status(200).json(posts);
   } catch (error) {

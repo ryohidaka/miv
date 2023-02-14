@@ -11,7 +11,7 @@ import useSWR from "swr";
  * ノート一覧取得
  * @returns
  */
-export const useNotes = (url: string) => {
+export const useNotes = (url: string, mutate?: boolean) => {
   const getKey = (pageIndex: number, previousPageData: Post[]) => {
     if (pageIndex === 0) {
       return url;
@@ -25,7 +25,7 @@ export const useNotes = (url: string) => {
   const { data, error, isLoading, size, setSize } = useSWRInfinite<
     NotePost[],
     Error
-  >(getKey, notesFetcher, swrInfiniteConfig);
+  >(getKey, !mutate ? notesFetcher : null, swrInfiniteConfig);
 
   const posts = getFlatNotePosts(data as NotePost[][]);
 

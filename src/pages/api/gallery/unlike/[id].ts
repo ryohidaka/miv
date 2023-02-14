@@ -7,7 +7,7 @@ import { apiRequest, returnErrorResponse } from "@/modules/api";
 const unlike = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { id } = req.query;
-    const url = "/api/gallery/posts/unlike";
+    const url = "/gallery/posts/unlike";
 
     const params = {
       postId: id,

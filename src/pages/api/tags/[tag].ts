@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NOTE_LIMIT } from "@/modules/client/note";
 import { NoteParams } from "@/types/note";
+import { NOTE_LIMIT } from "@/modules/api/note";
 
 /**
  * ハッシュタグで検索する
@@ -12,7 +12,7 @@ const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { tag } = req.query;
 
-    const url = "/api/notes/search-by-tag";
+    const url = "/notes/search-by-tag";
 
     let params: NoteParams = {
       tag: tag as string,

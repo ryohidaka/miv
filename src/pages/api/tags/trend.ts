@@ -8,7 +8,7 @@ import { apiRequest, returnErrorResponse } from "@/modules/api";
  */
 const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const url = "/api/hashtags/trend";
+    const url = "/hashtags/trend";
 
     const tags = await apiRequest(url, req, res);
 

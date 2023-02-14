@@ -1,5 +1,6 @@
 import { User } from "@/types/user";
 import Image from "next/image";
+import { StickyTop } from "../Common/StickyTop";
 
 type Props = {
   user: User;
@@ -11,8 +12,8 @@ type Props = {
  */
 export const Author = ({ user }: Props) => {
   return (
-    <div className="sticky top-12 z-50 p-5">
-      <div className="flex items-center gap-3">
+    <StickyTop>
+      <div className="flex items-center gap-3 p-5">
         <Image
           width={40}
           height={40}
@@ -27,6 +28,6 @@ export const Author = ({ user }: Props) => {
           {user?.name}
         </p>
       </div>
-    </div>
+    </StickyTop>
   );
 };

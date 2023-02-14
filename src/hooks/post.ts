@@ -35,7 +35,7 @@ export const usePosts = (url: string) => {
  * 投稿一覧取得 (ページネーションあり)
  * @returns
  */
-export const usePostsWithPagination = (url: string) => {
+export const usePostsWithPagination = (url: string, mutate?: boolean) => {
   const getKey = (pageIndex: number, previousPageData: Post[]) => {
     if (pageIndex === 0) {
       return url;
@@ -49,7 +49,7 @@ export const usePostsWithPagination = (url: string) => {
   const { data, error, isLoading, size, setSize } = useSWRInfinite<
     Post[],
     Error
-  >(getKey, fetcher, swrInfiniteConfig);
+  >(getKey, !mutate ? fetcher : null, swrInfiniteConfig);
 
   const posts = data?.flat();
 

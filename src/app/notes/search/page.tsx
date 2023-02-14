@@ -2,7 +2,7 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useNotes } from "@/hooks/notes";
+import { usePostsWithPagination } from "@/hooks/post";
 import { useQuery } from "@/hooks/search";
 
 /**
@@ -16,7 +16,10 @@ export default function SearchNotes() {
 
   const mutate = query.length == 0;
 
-  const { data, error, isLoading, size, setSize } = useNotes(url, mutate);
+  const { data, error, isLoading, size, setSize } = usePostsWithPagination(
+    url,
+    mutate
+  );
 
   const next = () => {
     setSize(size + 1);

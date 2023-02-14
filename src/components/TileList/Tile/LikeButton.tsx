@@ -1,47 +1,47 @@
 import { like, unlike } from "@/modules/like";
-import { Post } from "@/types/post";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 type Props = {
-  post: Post;
+  postId: string;
   isGallery?: boolean;
+  isLiked: boolean;
 };
 
 /**
  * いいねボタン
  * @returns
  */
-export const LikeButton = ({ post, isGallery }: Props) => {
-  const [isLiked, setLiked] = useState<boolean>(false);
+export const LikeButton = ({ postId, isGallery, isLiked }: Props) => {
+  const [isActive, setActive] = useState<boolean>(false);
 
   const toggleLike = () => {
     try {
-      if (!isLiked) {
-        like(post.id, isGallery);
+      if (!isActive) {
+        like(postId, isGallery);
       } else {
-        unlike(post.id, isGallery);
+        unlike(postId, isGallery);
       }
     } finally {
-      setLiked(!isLiked);
+      setActive(!isActive);
     }
   };
 
   useEffect(() => {
-    setLiked(post.isLiked as boolean);
-  }, [post]);
+    setActive(isLiked);
+  }, [isLiked]);
 
   return (
     <span
       className={classNames(
         "absolute right-0 bottom-0 z-40 cursor-pointer p-1 text-3xl text-white",
-        isLiked && "red.400"
+        isActive && "red.400"
       )}
       onClick={toggleLike}
     >
-      {isLiked ? (
+      {isActive ? (
         <AiFillHeart className="fill-rose-500" />
       ) : (
         <>

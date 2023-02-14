@@ -1,5 +1,6 @@
 "use client";
 
+import { StickyTop } from "@/components/Common/StickyTop";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { useNotes } from "@/hooks/notes";
@@ -26,8 +27,16 @@ export default function Tag({ params }: Props) {
     setSize(size + 1);
   };
 
+  const title = `# ${tag}`;
+
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
+      <StickyTop>
+        <h1 className="mb-4 px-3 text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white ">
+          {title}
+        </h1>
+      </StickyTop>
+
       {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>

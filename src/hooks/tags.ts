@@ -10,7 +10,8 @@ export const useTag = (params: TagParams) => {
   const [tag, setTag] = useState<string>("");
 
   useEffect(() => {
-    const tag = params.tag;
+    const rawTag = params.tag;
+    const tag = decodeURI(rawTag);
     setTag(tag);
   }, [params]);
 

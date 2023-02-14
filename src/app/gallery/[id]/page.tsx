@@ -28,7 +28,7 @@ export default function ShowPostImages({ params }: Props) {
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
       <div className="flex flex-wrap">
-        <article className="grid w-full grid-cols-1 py-6 md:w-3/4">
+        <article className="grid w-full grid-cols-1 md:w-3/4 md:py-6">
           {data && <Content post={data} />}
         </article>
         <aside className="w-full p-5 md:w-1/4">

@@ -4,8 +4,7 @@ import { ViewerLayout } from "@/components/Viewer/Layout";
 import { User } from "@/types/user";
 
 import { Content } from "@/components/Posts/Content";
-import { useGalleryPost } from "@/hooks/gallery";
-import { usePostId } from "@/hooks/post";
+import { usePost, usePostId } from "@/hooks/post";
 import { PostParams } from "@/types/post";
 import { StickyTop } from "@/components/Common/StickyTop";
 import { Author } from "@/components/Common/Author";
@@ -23,7 +22,8 @@ export default function ShowPostImages({ params }: Props) {
   const postId = usePostId(params);
 
   // 投稿を取得
-  const { data, error, isLoading } = useGalleryPost(postId);
+  const url = `/api/gallery/${postId}`;
+  const { data, error, isLoading } = usePost(url);
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>

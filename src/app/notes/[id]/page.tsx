@@ -3,8 +3,7 @@
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { User } from "@/types/user";
 import { Content } from "@/components/Posts/Content";
-import { useNote } from "@/hooks/notes";
-import { usePostId } from "@/hooks/post";
+import { usePost, usePostId } from "@/hooks/post";
 import { PostParams } from "@/types/post";
 import { Author } from "@/components/Common/Author";
 import { StickyTop } from "@/components/Common/StickyTop";
@@ -22,7 +21,8 @@ export default function ShowNoteImage({ params }: Props) {
   const postId = usePostId(params);
 
   // 投稿を取得
-  const { data, error, isLoading } = useNote(postId);
+  const url = `/api/notes/${postId}`;
+  const { data, error, isLoading } = usePost(url);
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>

@@ -2,7 +2,7 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useGallery } from "@/hooks/gallery";
+import { usePosts } from "@/hooks/post";
 
 /**
  * 人気の投稿一覧
@@ -10,7 +10,7 @@ import { useGallery } from "@/hooks/gallery";
  */
 export default function GalleryPopular() {
   const url = "/api/gallery/popular";
-  const { data, error, isLoading } = useGallery(url);
+  const { data, error, isLoading } = usePosts(url);
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>

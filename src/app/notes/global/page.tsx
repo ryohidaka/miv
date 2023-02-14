@@ -2,7 +2,7 @@
 
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useNotes } from "@/hooks/notes";
+import { usePostsWithPagination } from "@/hooks/post";
 
 /**
  * グローバルタイムライン画面
@@ -10,7 +10,7 @@ import { useNotes } from "@/hooks/notes";
  */
 export default function GlobalTimeline() {
   const url = "/api/notes/global-timeline";
-  const { data, error, isLoading, size, setSize } = useNotes(url);
+  const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
   const next = () => {
     setSize(size + 1);

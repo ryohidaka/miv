@@ -3,7 +3,7 @@
 import { StickyTop } from "@/components/Common/StickyTop";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useNotes } from "@/hooks/notes";
+import { usePostsWithPagination } from "@/hooks/post";
 import { useTag } from "@/hooks/tags";
 import { TagParams } from "@/types/tag";
 
@@ -21,7 +21,7 @@ export default function Tag({ params }: Props) {
 
   const url = `/api/tags/${tag}`;
 
-  const { data, error, isLoading, size, setSize } = useNotes(url);
+  const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
   const next = () => {
     setSize(size + 1);

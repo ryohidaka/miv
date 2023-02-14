@@ -11,7 +11,7 @@ export const TrendTags = () => {
   const { data } = useTrendTags();
 
   return (
-    <ul className="flex gap-3 overflow-x-scroll py-10">
+    <ul className="hidden gap-3 overflow-x-scroll py-10 md:flex">
       {data?.map((tag) => (
         <li key={tag}>
           <Link href={`/tags/${tag}`} passHref>

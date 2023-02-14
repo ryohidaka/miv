@@ -36,7 +36,7 @@ export const LikeButton = ({ post, isGallery }: Props) => {
   return (
     <span
       className={classNames(
-        "absolute right-0 bottom-0 z-40 cursor-pointer p-1 text-2xl text-white",
+        "absolute right-0 bottom-0 z-40 cursor-pointer p-1 text-3xl text-white",
         isLiked && "red.400"
       )}
       onClick={toggleLike}

@@ -31,7 +31,7 @@ export default function ShowPostImages({ params }: Props) {
         <article className="grid w-full grid-cols-1 py-6 md:w-3/4">
           {data && <Content post={data} />}
         </article>
-        <aside className="w-full md:w-1/4">
+        <aside className="w-full p-5 md:w-1/4">
           <StickyTop>
             <Author user={data?.user as User} imageSize={45} />
           </StickyTop>

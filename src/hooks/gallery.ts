@@ -1,6 +1,4 @@
-import { convertGalleryPost } from "@/modules/api/gallery";
-import { galleryFetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
-import { GalleryPost } from "@/types/gallery";
+import { fetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { Post } from "@/types/post";
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
@@ -10,10 +8,7 @@ import useSWRInfinite from "swr/infinite";
  * @returns
  */
 export const useGallery = (url: string) => {
-  const { data, error, isLoading } = useSWR<GalleryPost[], Error>(
-    url,
-    galleryFetcher
-  );
+  const { data, error, isLoading } = useSWR<Post[], Error>(url, fetcher);
 
   const posts = data?.flat();
 
@@ -38,9 +33,9 @@ export const useGalleryPosts = () => {
   };
 
   const { data, error, isLoading, size, setSize } = useSWRInfinite<
-    GalleryPost[],
+    Post[],
     Error
-  >(getKey, galleryFetcher, swrInfiniteConfig);
+  >(getKey, fetcher, swrInfiniteConfig);
 
   const posts = data?.flat();
 

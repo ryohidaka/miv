@@ -1,8 +1,8 @@
-import { Posts } from "@/types/post";
+import { Post } from "@/types/post";
 import { Tile } from "./Tile";
 
 type Props = {
-  posts?: Posts;
+  posts?: Post[];
   isGallery?: boolean;
 };
 

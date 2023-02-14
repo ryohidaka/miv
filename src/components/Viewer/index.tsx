@@ -5,10 +5,10 @@ import { useScroll } from "@/hooks/scroll";
 import { ViewMode } from "@/modules/const";
 import { TileList } from "../TileList";
 import { Timeline } from "../Timeline";
-import { Posts } from "@/types/post";
+import { Post } from "@/types/post";
 
 type Props = {
-  posts?: Posts;
+  posts?: Post[];
   hasMore: boolean;
   next: () => void;
   isGallery?: boolean;

@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { APP_NAME } from "@/modules/const";
+import Instance from "./Instance";
 
 /**
  * 共通ヘッダー
@@ -24,7 +25,12 @@ export default function Header() {
         />
 
         {/* アプリ名 */}
-        <h1 className="mx-auto text-xl">{APP_NAME}</h1>
+        <h1 className="mx-auto flex items-center gap-1 text-xl">
+          {APP_NAME}
+
+          {/* インスタンス名 */}
+          <Instance />
+        </h1>
       </header>
 
       {/* サイドバー */}

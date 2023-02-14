@@ -16,4 +16,5 @@ export type NoteParams = {
   poll?: boolean;
   untilId?: string;
   limit: number;
+  tag?: string;
 };

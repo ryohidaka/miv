@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { NOTE_LIMIT } from "@/modules/client/note";
+import { NoteParams } from "@/types/note";
 
 /**
  * ハッシュタグで検索する
@@ -13,14 +14,23 @@ const getNotesByTag = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const url = "/api/notes/search-by-tag";
 
-    const params = {
-      tag: tag,
+    let params: NoteParams = {
+      tag: tag as string,
       reply: false,
       renote: false,
       withFiles: true,
       poll: false,
       limit: NOTE_LIMIT,
     };
+
+    const untilId = req.query["until_id"] as string;
+
+    if (untilId) {
+      params = {
+        ...params,
+        untilId: untilId,
+      };
+    }
 
     const post = await apiRequest(url, req, res, params);
 

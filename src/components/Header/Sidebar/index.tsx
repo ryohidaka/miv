@@ -35,7 +35,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
       customIdSuffix="drawer"
       open={isOpen}
       onClose={onClose}
-      direction="right"
+      direction="left"
       className="h-screen w-80 overflow-y-scroll bg-white p-4 dark:!bg-gray-800"
       lockBackgroundScroll={true}
     >

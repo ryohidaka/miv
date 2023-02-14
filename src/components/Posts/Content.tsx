@@ -1,4 +1,5 @@
 import { Post } from "@/types/post";
+import Link from "next/link";
 import { useState } from "react";
 import { CommonImage } from "../Common/Image";
 import { NumberBadge } from "../TileList/Tile/NumberBadge";
@@ -52,6 +53,20 @@ export const Content = ({ post }: Props) => {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {post?.description}
           </p>
+
+          {/* ハッシュタグ */}
+          <ul className="flex flex-wrap gap-3">
+            {post?.tags?.map((tag) => (
+              <li key={tag}>
+                <Link
+                  href={`/tags/${tag}`}
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+                >
+                  {tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>

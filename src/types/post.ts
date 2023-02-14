@@ -10,6 +10,7 @@ export type Post = {
   description?: string | null;
   isLiked?: boolean;
   likedCount?: number;
+  tags?: string[];
 };
 
 export type Posts = Post[];

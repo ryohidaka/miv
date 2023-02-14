@@ -14,7 +14,7 @@ type Props = {
  */
 export const ViewerLayout = ({ children, isLoading, error }: Props) => {
   return (
-    <div className="container mx-auto max-w-screen-xl py-6 sm:px-6 lg:px-12 xl:px-24">
+    <main className="container mx-auto max-w-screen-xl sm:px-6 lg:px-12 xl:px-24">
       {/* エラー */}
       {error && (
         <div className="container">
@@ -29,6 +29,6 @@ export const ViewerLayout = ({ children, isLoading, error }: Props) => {
 
       {/* ローディング */}
       {isLoading && <Loading />}
-    </div>
+    </main>
   );
 };

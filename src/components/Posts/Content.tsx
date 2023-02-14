@@ -29,7 +29,7 @@ export const Content = ({ post }: Props) => {
 
   return (
     <>
-      <div className="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-800">
+      <div className="overflow-hidden bg-white shadow dark:bg-gray-800 md:rounded-lg">
         {!isOpen ? (
           <div className="relative grid place-items-center">
             <CommonImage

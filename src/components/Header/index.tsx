@@ -26,7 +26,7 @@ export default function Header() {
         />
 
         {/* アプリ名 */}
-        <h1 className="mx-auto flex w-1/4 items-center gap-1 text-xl md:mx-10">
+        <h1 className="mx-auto flex items-center gap-1 text-xl md:mx-10 md:w-1/4">
           {APP_NAME}
 
           {/* インスタンス名 */}

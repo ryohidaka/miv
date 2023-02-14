@@ -1,9 +1,8 @@
 import { useRecoilState } from "recoil";
 import { scrollState } from "@/atoms/Scroll";
-import { Author } from "./Author";
-import { PostText } from "./PostText";
 import { Post } from "@/types/post";
-import { SquareThumbnail } from "../../Common/SquareThumbnail";
+import { SquareThumbnail } from "../Common/SquareThumbnail";
+import { Author } from "@/components/Common/Author";
 
 type Props = {
   post: Post;
@@ -42,10 +41,12 @@ export const Tile = ({ post, isGallery }: Props) => {
       {/* 詳細表示 */}
       <div className="hidden md:block">
         {/* 本文 */}
-        <PostText text={post.text} />
+        <p className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
+          {post.text}
+        </p>
 
         {/* 投稿者情報 */}
-        <Author user={post.user} />
+        <Author user={post.user} imageSize={25} />
       </div>
     </article>
   );

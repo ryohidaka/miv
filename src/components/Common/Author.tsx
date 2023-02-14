@@ -3,25 +3,28 @@ import Image from "next/image";
 
 type Props = {
   user: User;
+  imageSize: number;
 };
 
 /**
  * 投稿者情報表示
  * @returns
  */
-export const Author = ({ user }: Props) => {
+export const Author = ({ user, imageSize }: Props) => {
   return (
-    <div id={user.id} className="flex w-full items-center gap-2">
+    <div className="flex items-center gap-3 p-5">
       <Image
-        width={25}
-        height={25}
-        alt={user.name}
-        src={user.image_url}
+        width={imageSize}
+        height={imageSize}
+        alt={user?.name}
+        src={user?.image_url}
+        placeholder={user.blurhash ? "blur" : "empty"}
+        blurDataURL={user.blurhash}
         unoptimized
         className="aspect-square rounded-full"
       />
       <p className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-        {user.name}
+        {user?.name}
       </p>
     </div>
   );

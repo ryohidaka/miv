@@ -2,11 +2,12 @@
 
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { User } from "@/types/user";
-import { Author } from "@/components/Posts/Author";
 import { Content } from "@/components/Posts/Content";
 import { useNote } from "@/hooks/notes";
 import { usePostId } from "@/hooks/post";
 import { PostParams } from "@/types/post";
+import { Author } from "@/components/Common/Author";
+import { StickyTop } from "@/components/Common/StickyTop";
 
 type Props = {
   params: PostParams;
@@ -30,7 +31,9 @@ export default function ShowNoteImage({ params }: Props) {
           {data && <Content post={data} />}
         </article>
         <aside className="w-full md:w-1/4">
-          <Author user={data?.user as User} />
+          <StickyTop>
+            <Author user={data?.user as User} imageSize={45} />
+          </StickyTop>
         </aside>
       </div>
     </ViewerLayout>

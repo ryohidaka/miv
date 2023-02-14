@@ -13,9 +13,13 @@ export type NotePost = {
 export type NoteParams = {
   reply?: boolean;
   renote?: boolean;
-  withFiles: boolean;
+  withFiles?: boolean;
   poll?: boolean;
   untilId?: string;
   limit: number;
   tag?: string;
+};
+
+export type SearchNoteParams = NoteParams & {
+  query: string;
 };

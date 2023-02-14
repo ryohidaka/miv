@@ -11,8 +11,9 @@ type Props = {
 };
 
 /**
- * いいねボタン
- * @returns
+ * 正方形のサムネイル表示
+ * @param param0 
+ * @returns 
  */
 export const LikeButton = ({ postId, isGallery, isLiked }: Props) => {
   const [isActive, setActive] = useState<boolean>(false);

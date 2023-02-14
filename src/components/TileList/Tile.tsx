@@ -46,7 +46,7 @@ export const Tile = ({ post, isGallery }: Props) => {
         </p>
 
         {/* 投稿者情報 */}
-        <Author user={post.user} imageSize={25} />
+        <Author user={post.user} imageSize={24} />
       </div>
     </article>
   );

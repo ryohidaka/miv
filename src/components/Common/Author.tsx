@@ -12,7 +12,7 @@ type Props = {
  */
 export const Author = ({ user, imageSize }: Props) => {
   return (
-    <div className="flex items-center gap-3 p-5">
+    <div className="flex items-center gap-1">
       <Image
         width={imageSize}
         height={imageSize}
@@ -23,7 +23,7 @@ export const Author = ({ user, imageSize }: Props) => {
         unoptimized
         className="aspect-square rounded-full"
       />
-      <p className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
+      <p className="block max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
         {user?.name}
       </p>
     </div>

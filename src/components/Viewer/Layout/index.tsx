@@ -14,7 +14,7 @@ type Props = {
  */
 export const ViewerLayout = ({ children, isLoading, error }: Props) => {
   return (
-    <main className="container mx-auto max-w-screen-xl sm:px-6 lg:px-12 xl:px-24">
+    <main className="container mx-auto max-w-screen-xl md:px-6 lg:px-12 xl:px-24">
       {/* エラー */}
       {error && (
         <div className="container">

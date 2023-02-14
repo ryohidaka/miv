@@ -31,7 +31,7 @@ export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
       next={next}
       loader={<></>}
       hasMore={hasMore}
-      className="overflow-y-hidden py-6"
+      className="overflow-y-hidden md:py-6"
     >
       {mode === ViewMode.TIMELINE ? (
         <Timeline posts={posts} />

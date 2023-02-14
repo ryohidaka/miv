@@ -14,9 +14,11 @@ import { Post } from "@/types/post";
 const getLocalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const url = "/notes/local-timeline";
+    const limit = req.query["limit"] as string;
+
     let params: NoteParams = {
       withFiles: true,
-      limit: NOTE_LIMIT,
+      limit: limit ? parseInt(limit, 10) : NOTE_LIMIT,
       poll: false,
     };
 

@@ -1,14 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { GalleryParams } from "@/types/gallery";
-import { convertGalleryPosts } from "@/modules/api/gallery";
 import { Post } from "@/types/post";
+import { convertGalleryPosts } from "@/modules/api/gallery";
+import { NOTE_LIMIT } from "@/modules/api/note";
 
 const getGalleryPosts = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const url = "/gallery/posts";
+
+    const limit = req.query["limit"] as string;
+
     let params: GalleryParams = {
-      limit: 40,
+      limit: limit ? parseInt(limit, 10) : NOTE_LIMIT,
     };
 
     const untilId = req.query["until_id"] as string;

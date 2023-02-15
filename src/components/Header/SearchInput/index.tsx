@@ -1,6 +1,9 @@
 import { useQuery } from "@/hooks/search";
+import { useTags } from "@/hooks/tags";
 import { APP_URL } from "@/modules/const";
+import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import HashTag from "./HashTag";
 
 /**
  * 検索フォーム
@@ -9,6 +12,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 export default function SearchInput() {
   const url = `${APP_URL}/notes/search`;
   const query = useQuery();
+
+  const [value, setValue] = useState<string>("");
+
 
   return (
     <>
@@ -24,8 +30,13 @@ export default function SearchInput() {
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             placeholder="Search"
             defaultValue={query}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
           />
         </div>
+
+        {/* ハッシュタグ候補 */}
+        <HashTag value={value} setValue={setValue} />
       </form>
     </>
   );

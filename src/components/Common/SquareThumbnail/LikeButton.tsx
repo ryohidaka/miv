@@ -9,6 +9,7 @@ type Props = {
   isGallery?: boolean;
   isLiked: boolean;
   className?: string;
+  isOutline?: boolean;
 };
 
 /**
@@ -20,6 +21,7 @@ export const LikeButton = ({
   isGallery,
   isLiked,
   className,
+  isOutline,
 }: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
 
@@ -52,8 +54,14 @@ export const LikeButton = ({
         <AiFillHeart className="fill-rose-500" />
       ) : (
         <>
-          <AiOutlineHeart className="absolute fill-black" />
-          <AiFillHeart />
+          {isOutline ? (
+            <AiOutlineHeart className="fill-black dark:fill-white" />
+          ) : (
+            <>
+              <AiOutlineHeart className="absolute fill-black" />
+              <AiFillHeart />
+            </>
+          )}
         </>
       )}
     </span>

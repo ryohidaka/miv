@@ -22,7 +22,7 @@ export const PostLayout = ({ post }: Props) => {
       {/* サイドカラム */}
       <aside className="w-full p-5 md:w-1/4">
         <StickyTop>
-          <Author user={post.user} imageSize={45} />
+          <Author user={post.user} className="!w-11" />
         </StickyTop>
       </aside>
     </div>

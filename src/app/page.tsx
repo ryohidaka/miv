@@ -74,13 +74,15 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-10">
         {items.map((item) => (
           <section key={item.section} className="grid grid-cols-1 gap-6">
-            <h2 className="text-3xl tracking-tighter">{item.section}</h2>
+            <h2 className="px-3 text-3xl tracking-tighter md:p-0">
+              {item.section}
+            </h2>
             {item.contents.map((content) => (
               <section
                 key={content.subSection}
                 className="grid grid-cols-1 gap-3"
               >
-                <header className="flex items-center justify-between">
+                <header className="flex items-center justify-between px-3 md:px-0">
                   <h3 className="text-2xl tracking-tighter">
                     {content.subSection}
                   </h3>

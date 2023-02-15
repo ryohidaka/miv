@@ -59,6 +59,8 @@ export const Content = ({ post }: Props) => {
 
         {/* 詳細表示 */}
         <ContentDetail
+          postId={post?.id}
+          isLiked={post.isLiked as boolean}
           title={post?.title}
           description={post?.description as string}
           tags={post?.tags}

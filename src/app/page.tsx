@@ -76,7 +76,10 @@ export default function Home() {
           <section key={item.section} className="grid grid-cols-1 gap-6">
             <h2 className="text-3xl tracking-tighter">{item.section}</h2>
             {item.contents.map((content) => (
-              <section className="grid grid-cols-1 gap-3">
+              <section
+                key={content.subSection}
+                className="grid grid-cols-1 gap-3"
+              >
                 <header className="flex items-center justify-between">
                   <h3 className="text-2xl tracking-tighter">
                     {content.subSection}

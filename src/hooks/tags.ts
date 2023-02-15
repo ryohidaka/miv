@@ -1,5 +1,5 @@
 import { tagFetcher } from "@/modules/swr";
-import { Hashtag, TagParams } from "@/types/tag";
+import { TagParams } from "@/types/tag";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
@@ -19,15 +19,11 @@ export const useTag = (params: TagParams) => {
 };
 
 /**
- * トレンドにあるハッシュタグを取得
+ * ハッシュタグ一覧を取得
  * @returns
  */
-export const useTrendTags = () => {
-  const url = "/api/tags/trend";
+export const useTags = (url: string) => {
+  const { data } = useSWR<string[], Error>(url, tagFetcher);
 
-  const { data, error, isLoading } = useSWR<Hashtag[], Error>(url, tagFetcher);
-
-  const tags = data?.map((trend: Hashtag) => trend.tag);
-
-  return { data: tags, error, isLoading };
+  return data;
 };

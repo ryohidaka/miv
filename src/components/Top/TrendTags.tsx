@@ -1,6 +1,6 @@
 "use client";
 
-import { useTrendTags } from "@/hooks/tags";
+import { useTags } from "@/hooks/tags";
 import Link from "next/link";
 
 /**
@@ -8,11 +8,12 @@ import Link from "next/link";
  * @returns
  */
 export const TrendTags = () => {
-  const { data } = useTrendTags();
+  const url = "/api/tags/trend";
+  const tags = useTags(url);
 
   return (
     <ul className="hidden gap-3 overflow-x-scroll py-10 md:flex">
-      {data?.map((tag) => (
+      {tags?.map((tag) => (
         <li key={tag}>
           <Link href={`/tags/${tag}`} passHref>
             <button

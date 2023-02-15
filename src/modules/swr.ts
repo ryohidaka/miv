@@ -39,7 +39,7 @@ export const postFetcher = (url: string): Promise<Post> => {
 };
 
 // ハッシュタグ取得処理
-export const tagFetcher = (url: string): Promise<Hashtag[]> => {
+export const tagFetcher = (url: string): Promise<string[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

@@ -21,19 +21,6 @@ a {
   }
 }
 
-/* スライダー */
-@import "@splidejs/react-splide/css";
-
-/* スライダーの矢印を調整 */
-/* 2枚以上の場合のみ表示 */
-.splide__arrows {
-  display: none;
-}
-
-.is-overflow > .splide__arrows {
-  display: block;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

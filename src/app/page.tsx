@@ -67,7 +67,7 @@ export default function Home() {
   ];
 
   return (
-    <ViewerLayout>
+    <>
       {/* トレンドにあるハッシュタグ一覧 */}
       <TrendTags />
 
@@ -99,6 +99,6 @@ export default function Home() {
           </section>
         ))}
       </div>
-    </ViewerLayout>
+    </>
   );
 }

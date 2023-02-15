@@ -4,6 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { APP_NAME } from "@/modules/const";
 import Instance from "./Instance";
 import SearchInput from "./SearchInput";
+import Link from "next/link";
 
 /**
  * 共通ヘッダー
@@ -26,12 +27,14 @@ export default function Header() {
         />
 
         {/* アプリ名 */}
-        <h1 className="mx-auto flex items-center gap-1 text-xl md:mx-10 md:w-1/4">
-          {APP_NAME}
+        <Link href="/">
+          <h1 className="mx-auto flex items-center gap-1 text-xl md:mx-10 md:w-1/4">
+            {APP_NAME}
 
-          {/* インスタンス名 */}
-          <Instance />
-        </h1>
+            {/* インスタンス名 */}
+            <Instance />
+          </h1>
+        </Link>
 
         {/* 検索フォーム */}
         <SearchInput />

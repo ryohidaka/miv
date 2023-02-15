@@ -1,6 +1,5 @@
 "use client";
 
-import View from "./View";
 import SideMenu from "./SideMenu";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
@@ -74,8 +73,6 @@ export default function Sidebar({ isOpen, onClose }: Props) {
               Open in new tab
             </label>
           </div>
-          {/* 表示モード切替 */}
-          <View />
 
           {/* ログアウト */}
           <button className="btn-outline" onClick={logout}>

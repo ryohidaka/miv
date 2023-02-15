@@ -1,10 +1,6 @@
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useRecoilState } from "recoil";
-import { viewModeState } from "@/atoms/ViewMode";
 import { useScroll } from "@/hooks/scroll";
-import { ViewMode } from "@/modules/const";
 import { TileList } from "../TileList";
-import { Timeline } from "../Timeline";
 import { Post } from "@/types/post";
 
 type Props = {
@@ -19,8 +15,6 @@ type Props = {
  * @returns
  */
 export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
-  const [mode] = useRecoilState(viewModeState);
-
   const length = posts ? posts.length : 0;
 
   useScroll(length > 0);
@@ -33,11 +27,7 @@ export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
       hasMore={hasMore}
       className="overflow-y-hidden md:py-6"
     >
-      {mode === ViewMode.TIMELINE ? (
-        <Timeline posts={posts} />
-      ) : (
-        <TileList posts={posts} isGallery={isGallery} />
-      )}
+      <TileList posts={posts} isGallery={isGallery} />
     </InfiniteScroll>
   );
 };

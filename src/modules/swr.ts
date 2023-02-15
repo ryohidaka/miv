@@ -1,6 +1,7 @@
 import { Meta } from "@/types/meta";
 import { Post } from "@/types/post";
 import { Hashtag } from "@/types/tag";
+import { User } from "@/types/user";
 import { SWRInfiniteConfiguration } from "swr/infinite";
 
 export const swrInfiniteConfig: SWRInfiniteConfiguration = {
@@ -54,6 +55,21 @@ export const tagFetcher = (url: string): Promise<Hashtag[]> => {
  * @returns
  */
 export const metaFetcher = (url: string): Promise<Meta> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+/**
+ * ユーザ情報取得処理
+ * @param url
+ * @returns
+ */
+export const userFetcher = (url: string): Promise<User> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

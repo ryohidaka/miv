@@ -81,7 +81,9 @@ export default function Home() {
                   <h3 className="text-2xl tracking-tighter">
                     {content.subSection}
                   </h3>
-                  <Link href={content.url}>more...</Link>
+                  <Link href={content.url} className="hyperlink">
+                    more...
+                  </Link>
                 </header>
                 <TopPosts
                   url={content.endpoint}

@@ -1,7 +1,7 @@
 import { Post } from "@/types/post";
-import { Author } from "../Common/Author";
-import { StickyTop } from "../Common/StickyTop";
-import { Content } from "../Posts/Content";
+import { Author } from "../../Common/Author";
+import { StickyTop } from "../../Common/StickyTop";
+import { Content } from "./Content";
 
 type Props = {
   post: Post;

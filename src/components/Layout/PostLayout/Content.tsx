@@ -1,8 +1,8 @@
 import { Post } from "@/types/post";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CommonImage } from "../Common/Image";
-import { NumberBadge } from "../Common/SquareThumbnail/NumberBadge";
+import { CommonImage } from "../../Common/Image";
+import { NumberBadge } from "../../Common/SquareThumbnail/NumberBadge";
 
 type Props = {
   post: Post;

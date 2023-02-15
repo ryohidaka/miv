@@ -20,7 +20,7 @@ export const PostDetail = ({ text, user, hideUser }: Props) => {
       </p>
 
       {/* 投稿者情報 */}
-      {!hideUser && <Author user={user} imageSize={24} />}
+      {!hideUser && <Author user={user} className="!w-6" />}
     </div>
   );
 };

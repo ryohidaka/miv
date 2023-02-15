@@ -1,10 +1,13 @@
 import Sidebar from "./Sidebar";
 import { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { APP_NAME } from "@/modules/const";
 import Instance from "./Instance";
 import SearchInput from "./SearchInput";
 import Link from "next/link";
+import SearchDrawer from "./SearchDrawer";
+import { useRecoilState } from "recoil";
+import { searchDrawerState } from "@/atoms/SearchDrawer";
 
 /**
  * 共通ヘッダー
@@ -12,9 +15,10 @@ import Link from "next/link";
  */
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
-
+  const [isSearchOpen, setSearchOpen] = useRecoilState(searchDrawerState);
   const onClose = () => {
     setOpen(false);
+    setSearchOpen(false);
   };
 
   return (
@@ -38,10 +42,18 @@ export default function Header() {
 
         {/* 検索フォーム */}
         <SearchInput />
+
+        <AiOutlineSearch
+          className="fill-white text-2xl mix-blend-difference"
+          onClick={() => setSearchOpen(true)}
+        />
       </header>
 
       {/* サイドバー */}
       <Sidebar isOpen={isOpen} onClose={onClose} />
+
+      {/* 検索ドロワー */}
+      <SearchDrawer isOpen={isSearchOpen} onClose={onClose} />
     </>
   );
 }

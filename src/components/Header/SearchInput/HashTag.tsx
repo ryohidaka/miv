@@ -1,6 +1,8 @@
+import { searchDrawerState } from "@/atoms/SearchDrawer";
 import { useTags } from "@/hooks/tags";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 
 type Props = {
   value: string;
@@ -15,8 +17,8 @@ export default function HashTag({ value, setValue }: Props) {
   const url = `/api/tags/search?q=${value}`;
   const tags = useTags(url)?.filter((tag) => tag !== value);
 
-
   const [isOpen, setOpen] = useState<boolean>(false);
+  const [_isSearchOpen, setSearchOpen] = useRecoilState(searchDrawerState);
 
   useEffect(() => {
     if (value) {
@@ -27,6 +29,7 @@ export default function HashTag({ value, setValue }: Props) {
   const handleClick = (tag: string) => {
     setValue(tag);
     setOpen(false);
+    setSearchOpen(false);
   };
 
   return (

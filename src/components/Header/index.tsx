@@ -6,6 +6,8 @@ import Instance from "./Instance";
 import SearchInput from "./SearchInput";
 import Link from "next/link";
 import SearchDrawer from "./SearchDrawer";
+import { useRecoilState } from "recoil";
+import { searchDrawerState } from "@/atoms/SearchDrawer";
 
 /**
  * 共通ヘッダー
@@ -13,8 +15,7 @@ import SearchDrawer from "./SearchDrawer";
  */
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
-  const [isSearchOpen, setSearchOpen] = useState(false);
-
+  const [isSearchOpen, setSearchOpen] = useRecoilState(searchDrawerState);
   const onClose = () => {
     setOpen(false);
     setSearchOpen(false);

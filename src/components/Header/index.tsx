@@ -27,8 +27,8 @@ export default function Header() {
         />
 
         {/* アプリ名 */}
-        <Link href="/">
-          <h1 className="mx-auto flex items-center gap-1 text-xl md:mx-10 md:w-1/4">
+        <Link href="/" className="mx-auto md:mx-10 md:w-1/4">
+          <h1 className="flex items-center gap-1 text-xl">
             {APP_NAME}
 
             {/* インスタンス名 */}

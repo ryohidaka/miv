@@ -1,6 +1,9 @@
+import { LikeButton } from "@/components/Common/SquareThumbnail/LikeButton";
 import Link from "next/link";
 
 type Props = {
+  postId: string;
+  isLiked: boolean;
   title?: string;
   description?: string;
   tags?: string[];
@@ -10,9 +13,23 @@ type Props = {
  * コンテンツ詳細表示
  * @returns
  */
-export const ContentDetail = ({ title, description, tags }: Props) => {
+export const ContentDetail = ({
+  postId,
+  isLiked,
+  title,
+  description,
+  tags,
+}: Props) => {
   return (
     <div className="grid grid-cols-1 gap-5 p-5">
+      {/* メニュー */}
+      <div className="flex justify-end gap-5">
+        <div className="flex items-center gap-1">
+          <span>いいね！</span>
+          <LikeButton postId={postId} isLiked={isLiked} />
+        </div>
+      </div>
+
       {/* タイトル */}
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {title}

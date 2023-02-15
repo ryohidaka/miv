@@ -1,8 +1,6 @@
 "use client";
 
 import SideMenu from "./SideMenu";
-import { BiLinkExternal } from "react-icons/bi";
-import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { newTabState } from "@/atoms/NewTab";
 import { deleteCookie } from "cookies-next";
@@ -61,13 +59,6 @@ export default function Sidebar({ isOpen, onClose }: Props) {
       <button className="btn-outline w-full" onClick={logout}>
         ログアウト
       </button>
-
-      {/* Copyrights */}
-      <div className="flex items-center gap-1">
-        &copy;
-        <Link href="https://ryohidaka.jp">ryohidaka</Link>
-        <BiLinkExternal />
-      </div>
     </CommonDrawer>
   );
 }

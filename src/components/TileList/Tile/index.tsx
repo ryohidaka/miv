@@ -7,13 +7,14 @@ import { PostDetail } from "./PostDetail";
 type Props = {
   post: Post;
   isGallery?: boolean;
+  hideUser?: boolean;
 };
 
 /**
  * タイル表示
  * @returns
  */
-export const Tile = ({ post, isGallery }: Props) => {
+export const Tile = ({ post, isGallery, hideUser }: Props) => {
   const image = post.images[0];
   const length = post.images.length;
 
@@ -39,7 +40,7 @@ export const Tile = ({ post, isGallery }: Props) => {
       />
 
       {/* 詳細表示 */}
-      <PostDetail text={post.text} user={post.user} />
+      <PostDetail text={post.text} user={post.user} hideUser={hideUser} />
     </article>
   );
 };

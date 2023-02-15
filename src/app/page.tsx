@@ -77,7 +77,7 @@ export default function Home() {
             <h2 className="text-3xl tracking-tighter">{item.section}</h2>
             {item.contents.map((content) => (
               <section className="grid grid-cols-1 gap-3">
-                <header className="flex justify-between">
+                <header className="flex items-center justify-between">
                   <h3 className="text-2xl tracking-tighter">
                     {content.subSection}
                   </h3>

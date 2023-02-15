@@ -69,10 +69,7 @@ export const Content = ({ post }: Props) => {
           <ul className="flex flex-wrap gap-3">
             {post?.tags?.map((tag) => (
               <li key={tag}>
-                <Link
-                  href={`/tags/${tag}`}
-                  className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >
+                <Link href={`/tags/${tag}`} className="hyperlink">
                   {tag}
                 </Link>
               </li>

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { User, UserParams } from "@/types/user";
-import { convertUser } from "@/modules/api/user";
+import { convertUserDetailed } from "@/modules/api/user";
 
 /**
  * ユーザ情報を取得
@@ -22,7 +22,7 @@ const getUser = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = await apiRequest(url, req, res, params);
 
-    const user: User = convertUser(data);
+    const user: User = convertUserDetailed(data);
 
     res.status(200).json(user);
   } catch (error) {

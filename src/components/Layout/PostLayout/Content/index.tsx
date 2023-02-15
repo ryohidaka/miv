@@ -1,8 +1,8 @@
 import { Post } from "@/types/post";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CommonImage } from "../../Common/Image";
-import { NumberBadge } from "../../Common/SquareThumbnail/NumberBadge";
+import { CommonImage } from "../../../Common/Image";
+import { NumberBadge } from "../../../Common/SquareThumbnail/NumberBadge";
+import { ContentDetail } from "./ContentDetail";
 
 type Props = {
   post: Post;
@@ -56,26 +56,13 @@ export const Content = ({ post }: Props) => {
             })}
           </div>
         )}
-        <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {post?.title}
-          </h5>
 
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {post?.description}
-          </p>
-
-          {/* ハッシュタグ */}
-          <ul className="flex flex-wrap gap-3">
-            {post?.tags?.map((tag) => (
-              <li key={tag}>
-                <Link href={`/tags/${tag}`} className="hyperlink">
-                  {tag}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* 詳細表示 */}
+        <ContentDetail
+          title={post?.title}
+          description={post?.description as string}
+          tags={post?.tags}
+        />
       </div>
     </>
   );

@@ -3,12 +3,14 @@
 import { TrendTags } from "@/components/Top/TrendTags";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { TopPosts } from "@/components/Top/TopPosts";
+import Link from "next/link";
 
 type Item = {
   section: string;
   contents: {
     subSection: string;
     url: string;
+    endpoint: string;
     isGallery?: boolean;
   }[];
 };
@@ -24,17 +26,20 @@ export default function Home() {
       contents: [
         {
           subSection: "Posts",
-          url: "/api/gallery/posts?limit=12",
+          url: "/gallery/posts",
+          endpoint: "/api/gallery/posts?limit=12",
           isGallery: true,
         },
         {
           subSection: "Featured Gallery",
-          url: "/api/gallery/featured",
+          url: "/gallery/featured",
+          endpoint: "/api/gallery/featured",
           isGallery: true,
         },
         {
           subSection: "Popular Gallery",
-          url: "/api/gallery/popular",
+          url: "/gallery/popular",
+          endpoint: "/api/gallery/popular",
           isGallery: true,
         },
       ],
@@ -44,15 +49,18 @@ export default function Home() {
       contents: [
         {
           subSection: "Local Timeline",
-          url: "/api/notes/local-timeline?limit=12",
+          url: "/notes/local",
+          endpoint: "/api/notes/local-timeline?limit=12",
         },
         {
           subSection: "Hybrid Timeline",
-          url: "/api/notes/hybrid-timeline?limit=12",
+          url: "/notes/hybrid",
+          endpoint: "/api/notes/hybrid-timeline?limit=12",
         },
         {
           subSection: "Global Timeline",
-          url: "/api/notes/global-timeline?limit=12",
+          url: "/notes/global",
+          endpoint: "/api/notes/global-timeline?limit=12",
         },
       ],
     },
@@ -68,12 +76,18 @@ export default function Home() {
           <section key={item.section} className="grid grid-cols-1 gap-6">
             <h2 className="text-3xl tracking-tighter">{item.section}</h2>
             {item.contents.map((content) => (
-              <>
-                <h3 className="text-2xl tracking-tighter">
-                  {content.subSection}
-                </h3>
-                <TopPosts url={content.url} isGallery={content.isGallery} />
-              </>
+              <section className="grid grid-cols-1 gap-3">
+                <header className="flex justify-between">
+                  <h3 className="text-2xl tracking-tighter">
+                    {content.subSection}
+                  </h3>
+                  <Link href={content.url}>more...</Link>
+                </header>
+                <TopPosts
+                  url={content.endpoint}
+                  isGallery={content.isGallery}
+                />
+              </section>
             ))}
           </section>
         ))}

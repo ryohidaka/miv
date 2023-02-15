@@ -1,13 +1,9 @@
 "use client";
 
+import { PostLayout } from "@/components/Layout/PostLayout";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { User } from "@/types/user";
-
-import { Content } from "@/components/Posts/Content";
 import { usePost, usePostId } from "@/hooks/post";
-import { PostParams } from "@/types/post";
-import { StickyTop } from "@/components/Common/StickyTop";
-import { Author } from "@/components/Common/Author";
+import { Post, PostParams } from "@/types/post";
 
 type Props = {
   params: PostParams;
@@ -27,16 +23,7 @@ export default function ShowPostImages({ params }: Props) {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <div className="flex flex-wrap">
-        <article className="grid w-full grid-cols-1 md:w-3/4 md:py-6">
-          {data && <Content post={data} />}
-        </article>
-        <aside className="w-full p-5 md:w-1/4">
-          <StickyTop>
-            <Author user={data?.user as User} imageSize={45} />
-          </StickyTop>
-        </aside>
-      </div>
+      <PostLayout post={data as Post} />
     </ViewerLayout>
   );
 }

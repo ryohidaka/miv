@@ -1,11 +1,12 @@
 "use client";
 
-import { StickyTop } from "@/components/Common/StickyTop";
 import { TopPosts } from "@/components/Top/TopPosts";
+import UserHeader from "@/components/User/UserHeader";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostId } from "@/hooks/post";
 import { useUser } from "@/hooks/user";
 import { PostParams } from "@/types/post";
+import { User } from "@/types/user";
 
 type Props = {
   params: PostParams;
@@ -15,14 +16,11 @@ type Props = {
  * ユーザ情報表示
  * @returns
  */
-export default function User({ params }: Props) {
+export default function ShowUser({ params }: Props) {
   // ユーザIDを取得
   const userId = usePostId(params);
 
-  const { data } = useUser(userId);
-
-  // ユーザ名を取得
-  const userName = data?.name;
+  const { data, isLoading, error } = useUser(userId);
 
   const userItems = [
     {
@@ -40,13 +38,9 @@ export default function User({ params }: Props) {
   ];
 
   return (
-    <ViewerLayout>
+    <ViewerLayout isLoading={isLoading} error={error}>
       <>
-        <StickyTop>
-          <h1 className="mb-4 px-3 text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white ">
-            {userName}
-          </h1>
-        </StickyTop>
+        <UserHeader user={data as User} />
 
         {userItems.map((item) => (
           <section

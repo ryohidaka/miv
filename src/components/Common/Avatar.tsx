@@ -14,9 +14,9 @@ type Props = {
  */
 export const Avatar = ({ user, className }: Props) => {
   const avatarImage: ImageType = {
-    id: user.id,
-    url: user.image_url,
-    blurhash: user.blurhash,
+    id: user?.id,
+    url: user?.image_url,
+    blurhash: user?.blurhash,
   };
   return (
     <CommonImage

@@ -43,8 +43,9 @@ export default function Header() {
         {/* 検索フォーム */}
         <SearchInput />
 
+        {/* 検索モーダル表示ボタン (モバイルのみ) */}
         <AiOutlineSearch
-          className="fill-white text-2xl mix-blend-difference"
+          className="fill-white text-2xl mix-blend-difference md:hidden"
           onClick={() => setSearchOpen(true)}
         />
       </header>

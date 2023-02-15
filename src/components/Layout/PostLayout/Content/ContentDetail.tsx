@@ -23,25 +23,31 @@ export const ContentDetail = ({
   return (
     <div className="grid grid-cols-1 gap-5 p-5">
       {/* メニュー */}
-      <div className="flex justify-end gap-5">
-        <div className="flex items-center gap-1">
+      <div id="menu" className="flex justify-end gap-5">
+        <div id="like" className="flex items-center gap-1">
           <span>いいね！</span>
           <LikeButton postId={postId} isLiked={isLiked} isOutline />
         </div>
       </div>
 
       {/* タイトル */}
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5
+        id="title"
+        className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
         {title}
       </h5>
 
       {/* 説明文 */}
-      <p className="font-normal text-gray-700 dark:text-gray-400">
+      <p
+        id="desription"
+        className="font-normal text-gray-700 dark:text-gray-400"
+      >
         {description}
       </p>
 
       {/* ハッシュタグ */}
-      <ul className="flex flex-wrap gap-3">
+      <ul id="hashtags" className="flex flex-wrap gap-3">
         {tags?.map((tag) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`} className="hyperlink">

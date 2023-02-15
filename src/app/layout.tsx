@@ -5,6 +5,7 @@ import { RecoilRoot } from "recoil";
 import Header from "@/components/Header";
 import "./globals.css";
 import { LoginModal } from "@/components/Auth/LoginModal";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -12,17 +13,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body className="flex h-full max-w-full flex-col overscroll-y-none">
         <RecoilRoot>
           {/* 共通ヘッダー */}
           <Header />
-          {children}
+
+          {/* メインコンテンツ */}
+          <main className="h-fit flex-grow">{children}</main>
+
+          {/* 共通フッター */}
+          <Footer />
 
           {/* ログインモーダル */}
           <LoginModal />

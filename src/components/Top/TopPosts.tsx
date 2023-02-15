@@ -2,6 +2,7 @@
 
 import { usePosts } from "@/hooks/post";
 import { TileList } from "../TileList";
+import { ViewerLayout } from "../Viewer/Layout";
 
 type Props = {
   url: string;
@@ -14,7 +15,11 @@ type Props = {
  * @returns
  */
 export const TopPosts = ({ url, isGallery, hideUser }: Props) => {
-  const { data } = usePosts(url);
+  const { data, isLoading, error } = usePosts(url);
 
-  return <TileList posts={data} isGallery={isGallery} hideUser={hideUser} />;
+  return (
+    <ViewerLayout isLoading={isLoading} error={error}>
+      <TileList posts={data} isGallery={isGallery} hideUser={hideUser} />
+    </ViewerLayout>
+  );
 };

@@ -4,3 +4,7 @@ export type User = {
   image_url: string;
   blurhash?: string;
 };
+
+export type UserParams = {
+  userId: string;
+};

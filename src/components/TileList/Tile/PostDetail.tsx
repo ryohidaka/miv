@@ -4,13 +4,14 @@ import { User } from "@/types/user";
 type Props = {
   text: string;
   user: User;
+  hideUser?: boolean;
 };
 
 /**
  * 投稿詳細表示
  * @returns
  */
-export const PostDetail = ({ text, user }: Props) => {
+export const PostDetail = ({ text, user, hideUser }: Props) => {
   return (
     <div className="hidden py-1 md:block">
       {/* 本文 */}
@@ -19,7 +20,7 @@ export const PostDetail = ({ text, user }: Props) => {
       </p>
 
       {/* 投稿者情報 */}
-      <Author user={user} imageSize={24} />
+      {!hideUser && <Author user={user} imageSize={24} />}
     </div>
   );
 };

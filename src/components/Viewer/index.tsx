@@ -8,13 +8,20 @@ type Props = {
   hasMore: boolean;
   next: () => void;
   isGallery?: boolean;
+  hideUser?: boolean;
 };
 
 /**
  * 画像一覧表示
  * @returns
  */
-export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
+export const Viewer = ({
+  posts,
+  hasMore,
+  next,
+  isGallery,
+  hideUser,
+}: Props) => {
   const length = posts ? posts.length : 0;
 
   useScroll(length > 0);
@@ -27,7 +34,7 @@ export const Viewer = ({ posts, hasMore, next, isGallery }: Props) => {
       hasMore={hasMore}
       className="overflow-y-hidden md:py-6"
     >
-      <TileList posts={posts} isGallery={isGallery} />
+      <TileList posts={posts} isGallery={isGallery} hideUser={hideUser} />
     </InfiniteScroll>
   );
 };

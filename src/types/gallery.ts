@@ -14,3 +14,7 @@ export type GalleryParams = {
   limit: number;
   untilId?: string;
 };
+
+export type UserGalleryParams = GalleryParams & {
+  userId: string;
+};

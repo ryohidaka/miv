@@ -1,5 +1,6 @@
 import { User } from "@/types/user";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   user: User;
@@ -11,8 +12,9 @@ type Props = {
  * @returns
  */
 export const Author = ({ user, imageSize }: Props) => {
+  const userPageUrl = `/users/${user.id}`;
   return (
-    <div className="flex items-center gap-1">
+    <Link href={userPageUrl} className="flex items-center gap-1">
       <Image
         width={imageSize}
         height={imageSize}
@@ -26,6 +28,6 @@ export const Author = ({ user, imageSize }: Props) => {
       <p className="block max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
         {user?.name}
       </p>
-    </div>
+    </Link>
   );
 };

@@ -23,3 +23,10 @@ export type NoteParams = {
 export type SearchNoteParams = NoteParams & {
   query: string;
 };
+
+export type UserNoteParams = NoteParams & {
+  userId: string;
+  includeReplies: boolean;
+  includeMyRenotes: boolean;
+  excludeNsfw: boolean;
+};

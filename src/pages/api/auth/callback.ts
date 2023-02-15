@@ -27,7 +27,7 @@ const callback = async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error("false");
     }
 
-    setCookie("token", data.token, { req, res, maxAge: 60 * 60 * 24 });
+    setCookie("token", data.token, { req, res });
 
     res.redirect("/");
   } catch (error) {

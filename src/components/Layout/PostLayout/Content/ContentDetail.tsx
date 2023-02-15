@@ -26,7 +26,7 @@ export const ContentDetail = ({
       <div className="flex justify-end gap-5">
         <div className="flex items-center gap-1">
           <span>いいね！</span>
-          <LikeButton postId={postId} isLiked={isLiked} />
+          <LikeButton postId={postId} isLiked={isLiked} isOutline />
         </div>
       </div>
 

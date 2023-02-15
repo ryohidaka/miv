@@ -12,8 +12,8 @@ type Props = {
  * トップ画面に表示する投稿リスト
  * @returns
  */
-export const TopPosts = ({ url }: Props) => {
+export const TopPosts = ({ url, isGallery }: Props) => {
   const { data } = usePosts(url);
 
-  return <TileList posts={data} isGallery />;
+  return <TileList posts={data} isGallery={isGallery} />;
 };

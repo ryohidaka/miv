@@ -1,24 +1,30 @@
 import { useQuery } from "@/hooks/search";
-import { useTags } from "@/hooks/tags";
 import { APP_URL } from "@/modules/const";
+import classNames from "classnames";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import HashTag from "./HashTag";
+
+type Props = {
+  className?: string;
+};
 
 /**
  * 検索フォーム
  * @returns
  */
-export default function SearchInput() {
+export default function SearchInput({ className }: Props) {
   const url = `${APP_URL}/notes/search`;
   const query = useQuery();
 
   const [value, setValue] = useState<string>("");
 
-
   return (
     <>
-      <form className="hidden w-2/5 md:block" action={url}>
+      <form
+        className={classNames("hidden w-2/5 md:block", className)}
+        action={url}
+      >
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <AiOutlineSearch />

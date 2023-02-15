@@ -8,14 +8,19 @@ type Props = {
   postId: string;
   isGallery?: boolean;
   isLiked: boolean;
+  className?: string;
 };
 
 /**
- * 正方形のサムネイル表示
- * @param param0 
- * @returns 
+ * いいねボタン
+ * @returns
  */
-export const LikeButton = ({ postId, isGallery, isLiked }: Props) => {
+export const LikeButton = ({
+  postId,
+  isGallery,
+  isLiked,
+  className,
+}: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
 
   const toggleLike = () => {
@@ -37,8 +42,9 @@ export const LikeButton = ({ postId, isGallery, isLiked }: Props) => {
   return (
     <span
       className={classNames(
-        "absolute right-0 bottom-0 z-40 cursor-pointer p-1 text-3xl text-white",
-        isActive && "red.400"
+        "right-0 bottom-0 z-40 cursor-pointer p-1 text-3xl text-white",
+        isActive && "red.400",
+        className
       )}
       onClick={toggleLike}
     >

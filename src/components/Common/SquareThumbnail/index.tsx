@@ -49,7 +49,12 @@ export const SquareThumbnail = ({
       </Link>
 
       {/* いいねボタン */}
-      <LikeButton postId={postId} isLiked={isLiked} isGallery={isGallery} />
+      <LikeButton
+        postId={postId}
+        isLiked={isLiked}
+        isGallery={isGallery}
+        className="absolute"
+      />
     </div>
   );
 };

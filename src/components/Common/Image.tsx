@@ -24,7 +24,6 @@ export const CommonImage = ({ image, className, thumbnail }: Props) => {
       src={src}
       alt={image.id}
       fill
-      objectPosition="center"
       quality={100}
       unoptimized
       placeholder={image.blurhash ? "blur" : "empty"}

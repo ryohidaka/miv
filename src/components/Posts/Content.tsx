@@ -35,7 +35,7 @@ export const Content = ({ post }: Props) => {
             <CommonImage
               key={topImage.id}
               image={topImage}
-              className="aspect-video object-cover"
+              className="aspect-video object-cover object-top"
               thumbnail
             />
             <NumberBadge count={images.length} />

@@ -39,9 +39,9 @@ export const Tile = ({ post, isGallery }: Props) => {
       />
 
       {/* 詳細表示 */}
-      <div className="hidden md:block">
+      <div className="hidden py-1 md:block">
         {/* 本文 */}
-        <p className="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
+        <p className="mb-1 h-5 max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
           {post.text}
         </p>
 

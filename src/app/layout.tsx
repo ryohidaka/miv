@@ -19,7 +19,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="flex max-w-full flex-col overscroll-y-none">
+      <body className="flex min-h-full max-w-full flex-col overscroll-y-none">
         <RecoilRoot>
           {/* 共通ヘッダー */}
           <Header />

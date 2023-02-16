@@ -25,7 +25,9 @@ export default function RootLayout({
           <Header />
 
           {/* メインコンテンツ */}
-          <main className="h-fit flex-grow">{children}</main>
+          <main className="container mx-auto max-w-screen-xl flex-grow md:px-6 lg:px-12 xl:px-24">
+            {children}
+          </main>
 
           {/* 共通フッター */}
           <Footer />

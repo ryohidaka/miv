@@ -32,7 +32,7 @@ const getLocalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const datas = await apiRequest(url, req, res, params);
-    const posts: Post[] = convertNotePosts(datas);
+    const posts: Post[] = await convertNotePosts(datas, req, res);
 
     res.status(200).json(posts);
   } catch (error) {

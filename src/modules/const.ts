@@ -6,4 +6,5 @@ export const DESCRIPTION_SHORT = "Image Viewer for Misskey";
 export const DESCRIPTION = "Image Viewer for Misskey";
 
 // アプリURL
-export const APP_URL = process.env.APP_URL || "http://localhost:3000";
+export const APP_URL =
+  process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";

@@ -1,5 +1,5 @@
 import { LikeButton } from "@/components/Common/SquareThumbnail/LikeButton";
-import Link from "next/link";
+import { Mfm } from "@/components/Common/Mfm";
 
 type Props = {
   postId: string;
@@ -43,19 +43,8 @@ export const ContentDetail = ({
         id="desription"
         className="font-normal text-gray-700 dark:text-gray-400"
       >
-        {description}
+        <Mfm text={description as string} />
       </p>
-
-      {/* ハッシュタグ */}
-      <ul id="hashtags" className="flex flex-wrap gap-3">
-        {tags?.map((tag) => (
-          <li key={tag}>
-            <Link href={`/tags/${tag}`} className="hyperlink">
-              {tag}
-            </Link>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

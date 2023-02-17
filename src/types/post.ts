@@ -17,6 +17,6 @@ export type PostParams = {
   id: string;
 };
 
-export type PostStatus = {
+export type PostState = {
   isFavorited: boolean;
 };

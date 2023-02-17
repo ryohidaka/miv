@@ -1,11 +1,12 @@
 "use client";
 
-import { GoogleAnalytics } from "nextjs-google-analytics";
-import { RecoilRoot } from "recoil";
-import Header from "@/components/Header";
-import "./globals.css";
 import { LoginModal } from "@/components/Auth/LoginModal";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { EmojiProvider } from "@/components/Provider/EmojiProvider";
+import { GoogleAnalytics } from "nextjs-google-analytics";
+import { RecoilRoot } from "recoil";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -23,11 +24,12 @@ export default function RootLayout({
         <RecoilRoot>
           {/* 共通ヘッダー */}
           <Header />
-
-          {/* メインコンテンツ */}
-          <main className="container mx-auto max-w-screen-xl flex-grow md:px-6 lg:px-12 xl:px-24">
-            {children}
-          </main>
+          <EmojiProvider>
+            {/* メインコンテンツ */}
+            <main className="container mx-auto max-w-screen-xl flex-grow md:px-6 lg:px-12 xl:px-24">
+              {children}
+            </main>
+          </EmojiProvider>
 
           {/* 共通フッター */}
           <Footer />

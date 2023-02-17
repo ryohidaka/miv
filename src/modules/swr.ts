@@ -1,6 +1,6 @@
+import { Emoji } from "@/types/emoji";
 import { Meta } from "@/types/meta";
-import { Post } from "@/types/post";
-import { Hashtag } from "@/types/tag";
+import { Post, PostState } from "@/types/post";
 import { User } from "@/types/user";
 import { SWRInfiniteConfiguration } from "swr/infinite";
 
@@ -29,6 +29,17 @@ export const fetcher = (url: string): Promise<Post[]> => {
 
 // 投稿取得処理
 export const postFetcher = (url: string): Promise<Post> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+// 投稿詳細取得処理
+export const postStateFetcher = (url: string): Promise<PostState> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {
@@ -70,6 +81,17 @@ export const metaFetcher = (url: string): Promise<Meta> => {
  * @returns
  */
 export const userFetcher = (url: string): Promise<User> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+// カスタム絵文字取得処理
+export const emojiFetcher = (url: string): Promise<Emoji[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

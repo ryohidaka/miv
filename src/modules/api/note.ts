@@ -1,5 +1,5 @@
 import { NotePost } from "@/types/note";
-import { Post, PostStatus } from "@/types/post";
+import { Post, PostState } from "@/types/post";
 import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest } from ".";
 import { convertImages } from "./image";
@@ -18,7 +18,7 @@ export const convertNotePosts = async (
   const posts = await Promise.all(
     datas
       .filter((data: NotePost) => data.files.length > 0)
-      .map(async (data: NotePost) => convertNotePost(data, req, res))
+      .map(async (data: NotePost) => convertNotePost(data))
   );
 
   return posts;
@@ -29,18 +29,7 @@ export const convertNotePosts = async (
  * @param post
  * @returns
  */
-export const convertNotePost = async (
-  post: NotePost,
-  req: NextApiRequest,
-  res: NextApiResponse
-): Promise<Post> => {
-  const params = {
-    noteId: post.id,
-  };
-
-  const statusUrl = "/notes/state";
-  const status: PostStatus = await apiRequest(statusUrl, req, res, params);
-
+export const convertNotePost = async (post: NotePost): Promise<Post> => {
   return {
     id: post.id,
     images: convertImages(post.files),
@@ -48,6 +37,5 @@ export const convertNotePost = async (
     text: post.text || "",
     description: post.text || "",
     tags: post.tags || [],
-    isLiked: status.isFavorited,
   };
 };

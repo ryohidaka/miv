@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { Post } from "@/types/post";
 import { convertGalleryPosts } from "@/modules/api/gallery";
+import { Post } from "@/types/post";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const getGalleryFeatured = async (
   req: NextApiRequest,

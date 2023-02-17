@@ -237,6 +237,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-scroll@^1.8.6":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@types/react-scroll/-/react-scroll-1.8.6.tgz#a2b1ea795279548172cd9a2c99fa4e5568297ffb"
+  integrity sha512-aMTiNgcmA7dwn1yjoHsiL78RfRnKCXzFyMbv63VrZTXloSfNePBdKtVObC3/My6irwDf0Oz0U4VjEC/vrv6/9w==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@18.0.28":
   version "18.0.28"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.28.tgz#accaeb8b86f4908057ad629a26635fe641480065"
@@ -1667,6 +1674,11 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -2036,7 +2048,7 @@ prettier@^2.8.4:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.4.tgz#34dd2595629bfbb79d344ac4a91ff948694463c3"
   integrity sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2089,6 +2101,14 @@ react-modern-drawer@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-modern-drawer/-/react-modern-drawer-1.2.0.tgz#1604acab03facac03945fc3cfc61e59d535ca6e8"
   integrity sha512-GBQaeDNpnt6GFm3U9y/wzkZerP6R92CrgC9ge3/PHCm0F0LdUzt7rjFSwdd47Pdy6+FhXKR2rn7VxW3pl/+m9w==
+
+react-scroll@^1.8.9:
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.9.tgz#96f8a82f882b187970c2338759225c7e619d915b"
+  integrity sha512-9m7ztraiX/l6L7erzYAD3fhnveNckei6/NkWfqwN2e0FRdoE2W6Pk4oi2Nah7mWpPCPAeIgegfaqZACTimPOwg==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
 
 react@18.2.0:
   version "18.2.0"

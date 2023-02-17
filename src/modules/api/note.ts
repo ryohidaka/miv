@@ -5,8 +5,6 @@ import { apiRequest } from ".";
 import { convertImages } from "./image";
 import { convertUser } from "./user";
 
-export const NOTE_LIMIT = 40;
-
 /**
  * ノートの配列をPost配列に変換し返却する
  * @param post

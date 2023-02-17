@@ -1,6 +1,8 @@
 import { getCookie } from "cookies-next";
 import { NextApiRequest, NextApiResponse } from "next";
 
+export const NOTE_LIMIT = 40;
+
 /**
  * 共通のエラーを返却する
  * @param res

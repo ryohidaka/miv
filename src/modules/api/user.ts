@@ -29,5 +29,6 @@ export const convertUserDetailed = (user: UserLite & UserDetailed): User => {
     bannerUrl: user.bannerUrl as string,
     bannerBlurhash: user.bannerBlurhash as string,
     description: user.description as string,
+    isFollowing: user.isFollowing,
   };
 };

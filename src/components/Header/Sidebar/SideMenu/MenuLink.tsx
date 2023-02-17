@@ -1,10 +1,12 @@
+"use client";
+
 import classNames from "classnames";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   url: string;
   label: string;
-  isActive: boolean;
   onClick: () => void;
 };
 
@@ -12,7 +14,10 @@ type Props = {
  * メニューリンク
  * @returns
  */
-export default function MenuLink({ url, label, isActive, onClick }: Props) {
+export default function MenuLink({ url, label, onClick }: Props) {
+  // ページのパスを取得
+  const path = usePathname();
+  const isActive = path === url;
   return (
     <Link
       href={url}

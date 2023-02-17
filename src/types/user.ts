@@ -7,6 +7,7 @@ export type User = {
   bannerBlurhash?: string;
   description?: string;
   username?: string;
+  isFollowing?: boolean;
 };
 
 export type UserParams = {

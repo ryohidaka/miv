@@ -2,7 +2,7 @@
 
 import { PostLayout } from "@/components/Layout/PostLayout";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { usePost, usePostId } from "@/hooks/post";
+import { usePost } from "@/hooks/post";
 import { Post, PostParams } from "@/types/post";
 
 type Props = {
@@ -14,11 +14,8 @@ type Props = {
  * @returns
  */
 export default function ShowNoteImage({ params }: Props) {
-  // 投稿IDを取得
-  const postId = usePostId(params);
-
   // 投稿を取得
-  const url = `/api/notes/${postId}`;
+  const url = `/api/notes/${params.id}`;
   const { data, error, isLoading } = usePost(url);
 
   return (

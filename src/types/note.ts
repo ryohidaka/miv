@@ -30,3 +30,5 @@ export type UserNoteParams = NoteParams & {
   includeMyRenotes: boolean;
   excludeNsfw: boolean;
 };
+
+export type NoteFavorite = { note: NotePost };

@@ -18,3 +18,5 @@ export type GalleryParams = {
 export type UserGalleryParams = GalleryParams & {
   userId: string;
 };
+
+export type GalleryFavorite = { post: GalleryPost };

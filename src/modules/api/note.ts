@@ -1,7 +1,7 @@
 import { NotePost } from "@/types/note";
 import { Post, PostStatus } from "@/types/post";
 import { NextApiRequest, NextApiResponse } from "next";
-import { apiRequest } from "../api";
+import { apiRequest } from ".";
 import { convertImages } from "./image";
 import { convertUser } from "./user";
 

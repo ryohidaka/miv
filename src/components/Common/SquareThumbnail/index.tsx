@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { useRecoilState } from "recoil";
 import { newTabState } from "@/atoms/NewTab";
 import { CommonImage } from "@/components/Common/Image";
+import { Image } from "@/types/image";
+import Link from "next/link";
+import { useRecoilState } from "recoil";
 import { LikeButton } from "./LikeButton";
 import { NumberBadge } from "./NumberBadge";
-import { Image } from "@/types/image";
 
 type Props = {
   url: string;

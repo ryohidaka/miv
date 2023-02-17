@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { returnErrorResponse } from "@/modules/api";
 import { POST } from "@/modules/dummy/post";
+import { NextApiRequest, NextApiResponse } from "next";
 
 /**
  * タイムライン取得

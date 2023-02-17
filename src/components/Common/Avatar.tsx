@@ -1,7 +1,7 @@
-import { User } from "@/types/user";
 import { Image as ImageType } from "@/types/image";
-import { CommonImage } from "./Image";
+import { User } from "@/types/user";
 import classNames from "classnames";
+import { CommonImage } from "./Image";
 
 type Props = {
   user: User;

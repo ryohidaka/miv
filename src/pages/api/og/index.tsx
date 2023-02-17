@@ -1,6 +1,6 @@
-import React from "react";
-import { ImageResponse } from "@vercel/og";
 import { APP_NAME, DESCRIPTION } from "@/modules/const";
+import { ImageResponse } from "@vercel/og";
+import React from "react";
 
 export const config = {
   runtime: "experimental-edge",

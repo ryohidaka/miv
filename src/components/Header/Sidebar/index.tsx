@@ -1,10 +1,10 @@
 "use client";
 
-import SideMenu from "./SideMenu";
-import { useRecoilState } from "recoil";
 import { newTabState } from "@/atoms/NewTab";
-import { deleteCookie } from "cookies-next";
 import CommonDrawer from "@/components/Common/Drawer";
+import { deleteCookie } from "cookies-next";
+import { useRecoilState } from "recoil";
+import SideMenu from "./SideMenu";
 
 type Props = {
   isOpen: boolean;

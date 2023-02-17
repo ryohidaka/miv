@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { Post } from "@/types/post";
 import { convertGalleryPost } from "@/modules/api/gallery";
+import { Post } from "@/types/post";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const getGalleryPost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

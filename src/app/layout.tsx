@@ -1,11 +1,11 @@
 "use client";
 
-import { GoogleAnalytics } from "nextjs-google-analytics";
-import { RecoilRoot } from "recoil";
-import Header from "@/components/Header";
-import "./globals.css";
 import { LoginModal } from "@/components/Auth/LoginModal";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { GoogleAnalytics } from "nextjs-google-analytics";
+import { RecoilRoot } from "recoil";
+import "./globals.css";
 
 export default function RootLayout({
   children,

@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { Hashtag } from "@/types/tag";
+import { NextApiRequest, NextApiResponse } from "next";
 
 /**
  * トレンドにあるハッシュタグを取得

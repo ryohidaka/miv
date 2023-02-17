@@ -3,8 +3,8 @@ import { apiRequest, returnErrorResponse } from "@/modules/api";
 
 /**
  * meta情報取得処理
- * @param req 
- * @param res 
+ * @param req
+ * @param res
  */
 const getMeta = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

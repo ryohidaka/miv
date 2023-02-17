@@ -1,7 +1,7 @@
+import { CommonImage } from "@/components/Common/Image";
+import { NumberBadge } from "@/components/Common/SquareThumbnail/NumberBadge";
 import { Post } from "@/types/post";
 import { useEffect, useState } from "react";
-import { CommonImage } from "../../../Common/Image";
-import { NumberBadge } from "../../../Common/SquareThumbnail/NumberBadge";
 import { ContentDetail } from "./ContentDetail";
 
 type Props = {

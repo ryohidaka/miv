@@ -1,7 +1,7 @@
-import { useRecoilState } from "recoil";
 import { scrollState } from "@/atoms/Scroll";
+import { SquareThumbnail } from "@/components/Common/SquareThumbnail";
 import { Post } from "@/types/post";
-import { SquareThumbnail } from "../../Common/SquareThumbnail";
+import { useRecoilState } from "recoil";
 import { PostDetail } from "./PostDetail";
 
 type Props = {

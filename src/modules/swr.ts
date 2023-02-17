@@ -1,7 +1,6 @@
 import { Emoji } from "@/types/emoji";
 import { Meta } from "@/types/meta";
 import { Post } from "@/types/post";
-import { Hashtag } from "@/types/tag";
 import { User } from "@/types/user";
 import { SWRInfiniteConfiguration } from "swr/infinite";
 

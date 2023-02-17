@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
 import { convertNotePost } from "@/modules/api/note";
 import { Post } from "@/types/post";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const getNotePost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {

@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, NOTE_LIMIT, returnErrorResponse } from "@/modules/api";
+import { convertNotePosts } from "@/modules/api/note";
 import { NoteParams } from "@/types/note";
 import { Post } from "@/types/post";
-import { convertNotePosts } from "@/modules/api/note";
+import { NextApiRequest, NextApiResponse } from "next";
 
 /**
  * ソーシャルタイムライン取得

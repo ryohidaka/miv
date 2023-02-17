@@ -1,6 +1,7 @@
 import { User } from "@/types/user";
 import Link from "next/link";
 import { Avatar } from "./Avatar";
+import { Mfm } from "./Mfm";
 
 type Props = {
   user: User;
@@ -20,7 +21,7 @@ export const Author = ({ user, className }: Props) => {
 
       {/* ユーザ名 */}
       <p className="block max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-        {user?.name}
+        <Mfm text={user?.name as string} />
       </p>
     </Link>
   );

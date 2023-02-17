@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { NOTE_LIMIT } from "@/modules/api/note";
+import { apiRequest, NOTE_LIMIT, returnErrorResponse } from "@/modules/api";
 import { Post } from "@/types/post";
 import { UserGalleryParams } from "@/types/gallery";
 import { convertGalleryPosts } from "@/modules/api/gallery";

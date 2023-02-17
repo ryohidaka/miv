@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { apiRequest, returnErrorResponse } from "@/modules/api";
+import { apiRequest, NOTE_LIMIT, returnErrorResponse } from "@/modules/api";
 import { NoteParams } from "@/types/note";
-import { convertNotePosts, NOTE_LIMIT } from "@/modules/api/note";
 import { Post } from "@/types/post";
+import { convertNotePosts } from "@/modules/api/note";
 
 /**
  * ローカルタイムライン取得

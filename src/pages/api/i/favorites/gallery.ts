@@ -1,6 +1,5 @@
-import { apiRequest, returnErrorResponse } from "@/modules/api";
+import { apiRequest, NOTE_LIMIT, returnErrorResponse } from "@/modules/api";
 import { convertGalleryPosts } from "@/modules/api/gallery";
-import { NOTE_LIMIT } from "@/modules/api/note";
 import { GalleryFavorite } from "@/types/gallery";
 import { NoteParams } from "@/types/note";
 import { Post } from "@/types/post";

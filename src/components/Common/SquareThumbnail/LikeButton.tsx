@@ -1,3 +1,5 @@
+"use client";
+
 import { like, unlike } from "@/modules/like";
 import classNames from "classnames";
 import { useEffect, useState } from "react";

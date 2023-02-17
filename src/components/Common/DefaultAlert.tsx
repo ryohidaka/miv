@@ -25,7 +25,7 @@ export const DefaultAlert = ({ status, title, children }: Props) => {
     const color =
       statusColors.find((item) => item.status === status)?.color || "red";
     setColor(color);
-  }, [status, statusColors]);
+  }, [status]);
 
   return (
     <div

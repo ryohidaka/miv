@@ -6,5 +6,7 @@ export function createRandomUser(): User {
     id: faker.datatype.uuid(),
     name: faker.internet.userName(),
     image_url: faker.image.cats(undefined, undefined, true),
+    bannerUrl: faker.image.cats(undefined, undefined, true),
+    description: faker.lorem.paragraph(undefined),
   };
 }

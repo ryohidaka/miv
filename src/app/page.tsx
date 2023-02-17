@@ -1,6 +1,7 @@
 import { LPHeader } from "@/components/LP/Header";
 import { LPContent } from "@/components/LP/Content";
 import { LPFeatures } from "@/components/LP/Features";
+import Footer from "@/components/Footer";
 
 /**
  * ホーム画面
@@ -8,7 +9,7 @@ import { LPFeatures } from "@/components/LP/Features";
  */
 export default function Home() {
   return (
-    <div className="h-full flex-grow pb-6 sm:pb-8 lg:pb-12">
+    <div className="h-full flex-grow">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         {/* ヘッダー */}
         <LPHeader />
@@ -18,6 +19,9 @@ export default function Home() {
 
         {/* 機能説明 */}
         <LPFeatures />
+
+        {/* フッター */}
+        <Footer />
       </div>
     </div>
   );

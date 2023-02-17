@@ -21,6 +21,6 @@ export const EmojiProvider = ({ children }: Props) => {
     if (emojis) {
       setEmojis(emojis);
     }
-  }, [emojis]);
+  }, [emojis, setEmojis]);
   return <>{children}</>;
 };

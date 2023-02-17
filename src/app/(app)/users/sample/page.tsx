@@ -1,3 +1,5 @@
+"use client";
+
 import { TileList } from "@/components/TileList";
 import UserHeader from "@/components/User/UserHeader";
 import { USER_PAGE_POSTS } from "@/modules/dummy/post";

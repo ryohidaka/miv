@@ -16,9 +16,10 @@ type Props = {
  * @returns
  */
 export const Mfm = ({ text }: Props) => {
+  const [emojis] = useRecoilState(emojisState);
+
   if (!text) return <></>;
   const mfmTree = mfm.parse(text);
-  const [emojis] = useRecoilState(emojisState);
 
   return (
     <Suspense fallback={<></>}>

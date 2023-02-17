@@ -16,6 +16,7 @@ type Props = {
  * @returns
  */
 export const Mfm = ({ text }: Props) => {
+  if (!text) return <></>;
   const mfmTree = mfm.parse(text);
   const [emojis] = useRecoilState(emojisState);
 

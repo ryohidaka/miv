@@ -1,7 +1,7 @@
-import InfiniteScroll from "react-infinite-scroll-component";
 import { useScroll } from "@/hooks/scroll";
-import { TileList } from "../TileList";
 import { Post } from "@/types/post";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { TileList } from "../TileList";
 
 type Props = {
   posts?: Post[];

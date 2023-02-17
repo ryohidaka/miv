@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { apiRequest, returnErrorResponse } from "@/modules/api";
-import { User, UserParams } from "@/types/user";
 import { convertUserDetailed } from "@/modules/api/user";
+import { User, UserParams } from "@/types/user";
+import { NextApiRequest, NextApiResponse } from "next";
 
 /**
  * ユーザ情報を取得

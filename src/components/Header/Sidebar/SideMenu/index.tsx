@@ -22,6 +22,10 @@ export default function SideMenu({ onClose }: Props) {
           url: "/",
           label: "Home",
         },
+        {
+          url: "/favorites",
+          label: "Favorites",
+        },
       ],
     },
     {

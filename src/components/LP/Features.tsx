@@ -28,7 +28,7 @@ export const LPFeatures = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
           {lists.map((list) => (
             <div key={list.title}>
               <h3 className="mb-4 text-center text-xl font-bold text-gray-800 dark:text-white md:mb-6 lg:text-2xl">

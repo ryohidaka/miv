@@ -1,4 +1,5 @@
 import { Author } from "@/components/Common/Author";
+import { Mfm } from "@/components/Common/Mfm";
 import { User } from "@/types/user";
 
 type Props = {
@@ -16,7 +17,7 @@ export const PostDetail = ({ text, user, hideUser }: Props) => {
     <div className="hidden py-1 md:block">
       {/* 本文 */}
       <p className="mb-1 h-5 max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-        {text}
+        <Mfm text={text} />
       </p>
 
       {/* 投稿者情報 */}

@@ -1,3 +1,4 @@
+import { Emoji } from "@/types/emoji";
 import { Meta } from "@/types/meta";
 import { Post } from "@/types/post";
 import { Hashtag } from "@/types/tag";
@@ -70,6 +71,17 @@ export const metaFetcher = (url: string): Promise<Meta> => {
  * @returns
  */
 export const userFetcher = (url: string): Promise<User> => {
+  return fetch(url).then((res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.json();
+  });
+};
+
+// カスタム絵文字取得処理
+export const emojiFetcher = (url: string): Promise<Emoji[]> => {
   return fetch(url).then((res) => {
     // エラー発生時
     if (!res.ok) {

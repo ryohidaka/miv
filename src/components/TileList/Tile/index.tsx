@@ -1,5 +1,6 @@
 import { scrollState } from "@/atoms/Scroll";
 import { SquareThumbnail } from "@/components/Common/SquareThumbnail";
+import { useNoteFavorited } from "@/hooks/post";
 import { Post } from "@/types/post";
 import { useRecoilState } from "recoil";
 import { PostDetail } from "./PostDetail";
@@ -22,11 +23,17 @@ export const Tile = ({ post, isGallery, hideUser }: Props) => {
   const id = post.id;
   const url = `/${isGallery ? "gallery" : "notes"}/${id}`;
 
-  const [_scrollPosition, setScrollPosition] = useRecoilState(scrollState);
+  const [_, setScrollPosition] = useRecoilState(scrollState);
 
   const handleClick = () => {
     setScrollPosition(window.pageYOffset);
   };
+
+  // お気に入りフラグ
+  const isFavorited = useNoteFavorited(id);
+
+  // いいねフラグを取得
+  const isLiked = (post.isLiked as boolean) || (isFavorited as boolean);
 
   return (
     <article id={post.id} onClick={handleClick}>
@@ -34,7 +41,7 @@ export const Tile = ({ post, isGallery, hideUser }: Props) => {
         url={url}
         image={image}
         postId={post.id}
-        isLiked={post.isLiked as boolean}
+        isLiked={isLiked}
         isGallery={isGallery as boolean}
         length={length}
       />

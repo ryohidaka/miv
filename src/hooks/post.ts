@@ -5,7 +5,6 @@ import { Post } from "@/types/post";
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
 
-
 /**
  * 投稿一覧取得
  * @returns

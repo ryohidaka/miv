@@ -1,5 +1,6 @@
 import { LikeButton } from "@/components/Common/SquareThumbnail/LikeButton";
 import Link from "next/link";
+import { Mfm } from "@/components/Common/Mfm";
 
 type Props = {
   postId: string;
@@ -43,7 +44,7 @@ export const ContentDetail = ({
         id="desription"
         className="font-normal text-gray-700 dark:text-gray-400"
       >
-        {description}
+        <Mfm text={description as string} />
       </p>
 
       {/* ハッシュタグ */}

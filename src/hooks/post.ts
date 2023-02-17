@@ -1,24 +1,10 @@
 "use client";
 
 import { fetcher, postFetcher, swrInfiniteConfig } from "@/modules/swr";
-import { Post, PostParams } from "@/types/post";
-import { useEffect, useState } from "react";
+import { Post } from "@/types/post";
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
 
-/**
- * 投稿IDを取得
- */
-export const usePostId = (params: PostParams) => {
-  const [postId, setPostId] = useState<string>("");
-
-  useEffect(() => {
-    const postId = params.id;
-    setPostId(postId);
-  }, [params]);
-
-  return postId;
-};
 
 /**
  * 投稿一覧取得

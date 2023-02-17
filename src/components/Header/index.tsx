@@ -1,3 +1,5 @@
+"use client";
+
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";

@@ -4,7 +4,6 @@ import { StickyTop } from "@/components/Common/StickyTop";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
-import { useTag } from "@/hooks/tags";
 import { TagParams } from "@/types/tag";
 
 type Props = {
@@ -17,7 +16,7 @@ type Props = {
  */
 export default function Tag({ params }: Props) {
   // タグを取得
-  const tag = useTag(params);
+  const tag = params.tag;
 
   const url = `/api/tags/${tag}`;
 

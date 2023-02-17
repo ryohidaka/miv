@@ -1,7 +1,6 @@
 "use client";
 
 import { DefaultMeta } from "@/components/Common/DefaultMeta";
-import { usePostId } from "@/hooks/post";
 import { useUser } from "@/hooks/user";
 import { APP_NAME } from "@/modules/const";
 import { PostParams } from "@/types/post";
@@ -11,9 +10,8 @@ type Props = {
 };
 
 export default function Head({ params }: Props) {
-  // ユーザIDを取得
-  const userId = usePostId(params);
-  const { data } = useUser(userId);
+  // ユーザ情報を取得
+  const { data } = useUser(params.id);
 
   // ユーザ名を取得
   const userName = data?.name;

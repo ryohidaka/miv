@@ -1,7 +1,4 @@
-"use client";
-
 import { TrendTags } from "@/components/Top/TrendTags";
-import { ViewerLayout } from "@/components/Viewer/Layout";
 import { TopPosts } from "@/components/Top/TopPosts";
 import Link from "next/link";
 

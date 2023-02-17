@@ -1,7 +1,4 @@
-"use client";
-
 import { DefaultMeta } from "@/components/Common/DefaultMeta";
-import { useTag } from "@/hooks/tags";
 import { APP_NAME } from "@/modules/const";
 import { TagParams } from "@/types/tag";
 
@@ -11,7 +8,7 @@ type Props = {
 
 export default function Head({ params }: Props) {
   // タグを取得
-  const tag = useTag(params);
+  const tag = params.tag;
 
   const title = `#${tag} | ${APP_NAME}`;
   return (

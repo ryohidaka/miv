@@ -3,7 +3,6 @@
 import { TopPosts } from "@/components/Top/TopPosts";
 import UserHeader from "@/components/User/UserHeader";
 import { ViewerLayout } from "@/components/Viewer/Layout";
-import { usePostId } from "@/hooks/post";
 import { useUser } from "@/hooks/user";
 import { PostParams } from "@/types/post";
 import { User } from "@/types/user";
@@ -18,7 +17,7 @@ type Props = {
  */
 export default function ShowUser({ params }: Props) {
   // ユーザIDを取得
-  const userId = usePostId(params);
+  const userId = params.id;
 
   const { data, isLoading, error } = useUser(userId);
 

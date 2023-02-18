@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex items-center bg-white px-3 py-2 dark:bg-neutral-900">
+      <header className="sticky top-0 z-50 flex h-12 items-center bg-white px-3 py-2 dark:bg-neutral-900">
         {/* ハンバーガーボタン */}
         <AiOutlineMenu
           className="absolute fill-white text-2xl mix-blend-difference"

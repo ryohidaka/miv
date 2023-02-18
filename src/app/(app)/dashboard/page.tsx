@@ -1,5 +1,6 @@
-import { TrendTags } from "@/components/Top/TrendTags";
+import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
+import { TrendTags } from "@/components/Top/TrendTags";
 import Link from "next/link";
 
 type Item = {
@@ -65,6 +66,8 @@ export default function Home() {
 
   return (
     <>
+      <Heading text="Dashboard" />
+
       {/* トレンドにあるハッシュタグ一覧 */}
       <TrendTags />
 

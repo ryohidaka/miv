@@ -1,6 +1,6 @@
 "use client";
 
-import { StickyTop } from "@/components/Common/StickyTop";
+import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
@@ -30,11 +30,7 @@ export default function Tag({ params }: Props) {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <StickyTop>
-        <h1 className="mb-4 px-3 text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white ">
-          {title}
-        </h1>
-      </StickyTop>
+      <Heading text={title} />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

@@ -27,6 +27,7 @@
     "mfm-js": "^0.23.3",
     "misskey-js": "^0.0.15",
     "next": "13.1.6",
+    "next-seo": "^5.15.0",
     "nextjs-google-analytics": "^2.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

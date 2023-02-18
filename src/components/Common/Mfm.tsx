@@ -50,6 +50,8 @@ export const Mfm = ({ text }: Props) => {
           case "emojiCode":
             const name = node.props.name;
             const emoji = emojis?.find((emoji: Emoji) => emoji.name === name);
+            if (!emoji) return <span key={index}>:{name}:</span>;
+            
             const emojiImage: ImageType = {
               id: emoji?.name as string,
               url: emoji?.url as string,

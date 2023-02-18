@@ -24,12 +24,14 @@ export const ExternalLink = ({
     <Link
       href={href}
       className={classNames("inline-flex items-center", className)}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       {children}
 
       {/* 外部アイコン */}
       {showIcon && (
-        <span>
+        <span className="pl-1 text-sm">
           <BiLinkExternal />
         </span>
       )}

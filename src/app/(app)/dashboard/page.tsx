@@ -1,6 +1,9 @@
+"use client";
+
 import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
 import { TrendTags } from "@/components/Top/TrendTags";
+import { useLocale } from "@/hooks/locale";
 import Link from "next/link";
 
 type Item = {
@@ -18,24 +21,26 @@ type Item = {
  * @returns
  */
 export default function Home() {
+  const { t } = useLocale();
+
   const items: Item[] = [
     {
-      section: "Gallery",
+      section: t.GALLERY,
       contents: [
         {
-          subSection: "Posts",
+          subSection: t.RECENT_POSTS,
           url: "/gallery/posts",
           endpoint: "/api/gallery/posts?limit=12",
           isGallery: true,
         },
         {
-          subSection: "Featured Gallery",
+          subSection: t.FEATURED_POSTS,
           url: "/gallery/featured",
           endpoint: "/api/gallery/featured",
           isGallery: true,
         },
         {
-          subSection: "Popular Gallery",
+          subSection: t.POPULAR_POSTS,
           url: "/gallery/popular",
           endpoint: "/api/gallery/popular",
           isGallery: true,
@@ -43,20 +48,20 @@ export default function Home() {
       ],
     },
     {
-      section: "Timeline",
+      section: t.TIMELINE,
       contents: [
         {
-          subSection: "Local Timeline",
+          subSection: t.LOCAL_TIMELINE,
           url: "/notes/local",
           endpoint: "/api/notes/local-timeline?limit=12",
         },
         {
-          subSection: "Hybrid Timeline",
+          subSection: t.SOCIAL_TIMELINE,
           url: "/notes/hybrid",
           endpoint: "/api/notes/hybrid-timeline?limit=12",
         },
         {
-          subSection: "Global Timeline",
+          subSection: t.GLOBAL_TIMELINE,
           url: "/notes/global",
           endpoint: "/api/notes/global-timeline?limit=12",
         },
@@ -66,7 +71,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading text="Dashboard" />
+      <Heading text={t.DASHBOARD} />
 
       {/* トレンドにあるハッシュタグ一覧 */}
       <TrendTags />
@@ -87,7 +92,7 @@ export default function Home() {
                     {content.subSection}
                   </h3>
                   <Link href={content.url} className="hyperlink">
-                    more...
+                    {t.MORE}...
                   </Link>
                 </header>
                 <TopPosts

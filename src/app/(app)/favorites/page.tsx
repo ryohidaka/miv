@@ -1,21 +1,25 @@
+"use client";
+
 import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
+import { useLocale } from "@/hooks/locale";
 
 /**
  * お気に入り
  * @returns
  */
 export default function Favorites() {
+  const { t } = useLocale();
   const userItems = [
     {
       id: "my-notes",
-      section: "Notes",
+      section: t.NOTES,
       url: `/api/i/favorites/notes?limit=12`,
       isGallery: false,
     },
     {
       id: "my-gallery",
-      section: "Gallery",
+      section: t.GALLERY,
       url: `/api/i/favorites/gallery?limit=12`,
       isGallery: true,
     },
@@ -23,7 +27,7 @@ export default function Favorites() {
 
   return (
     <>
-      <Heading text="Favorites" />
+      <Heading text={t.FAVORITES} />
 
       {userItems.map((item) => (
         <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">

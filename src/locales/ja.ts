@@ -17,4 +17,6 @@ export default {
   SOCIAL_TIMELINE: "ソーシャルタイムライン",
   GLOBAL_TIMELINE: "グローバルタイムライン",
   MORE: "もっと見る",
+  NOTES: "ノート",
+  FAVORITES: "お気に入り・いいねした投稿",
 };

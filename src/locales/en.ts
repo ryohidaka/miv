@@ -17,4 +17,6 @@ export default {
   SOCIAL_TIMELINE: "Social Timeline",
   GLOBAL_TIMELINE: "Global Timeline",
   MORE: "more",
+  NOTES: "Notes",
+  FAVORITES: "Favorites",
 };

@@ -31,7 +31,7 @@ const getFavoriteNotes = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const datas = await apiRequest(url, req, res, params);
     const favoritePosts = datas.map((data: NoteFavorite) => data.note);
-    const posts: Post[] = await convertNotePosts(favoritePosts, req, res);
+    const posts: Post[] = await convertNotePosts(favoritePosts);
 
     res.status(200).json(posts);
   } catch (error) {

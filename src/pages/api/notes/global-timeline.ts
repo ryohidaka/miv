@@ -32,7 +32,7 @@ const getGlobalTimeline = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const datas = await apiRequest(url, req, res, params);
-    const posts: Post[] = await convertNotePosts(datas, req, res);
+    const posts: Post[] = await convertNotePosts(datas);
 
     res.status(200).json(posts);
   } catch (error) {

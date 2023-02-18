@@ -19,4 +19,5 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
     ],
     site_name: APP_NAME,
   },
+  twitter: { cardType: "summary_large_image" },
 };

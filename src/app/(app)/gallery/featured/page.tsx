@@ -15,7 +15,7 @@ export default function GalleryFeatured() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Featured Gallery" />
+      <Heading text="Featured Posts" />
 
       {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} isGallery />

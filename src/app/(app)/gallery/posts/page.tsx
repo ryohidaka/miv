@@ -19,7 +19,7 @@ export default function GalleryPosts() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Gallery Posts" />
+      <Heading text="Recent Posts" />
       <Viewer posts={data} hasMore={true} next={next} isGallery />
     </ViewerLayout>
   );

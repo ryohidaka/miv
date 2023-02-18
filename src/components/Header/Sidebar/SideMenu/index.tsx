@@ -16,8 +16,8 @@ export default function SideMenu({ onClose }: Props) {
       label: "",
       pages: [
         {
-          url: "/",
-          label: "Home",
+          url: "/dashboard",
+          label: "Dashboard",
         },
         {
           url: "/favorites",
@@ -30,15 +30,15 @@ export default function SideMenu({ onClose }: Props) {
       pages: [
         {
           url: "/gallery/posts",
-          label: "Posts",
+          label: "Recent Posts",
         },
         {
           url: "/gallery/featured",
-          label: "Featured",
+          label: "Featured Posts",
         },
         {
           url: "/gallery/popular",
-          label: "Popular",
+          label: "Popular Posts",
         },
       ],
     },
@@ -51,7 +51,7 @@ export default function SideMenu({ onClose }: Props) {
         },
         {
           url: "/notes/hybrid",
-          label: "Hybrid Timeline",
+          label: "Social Timeline",
         },
         {
           url: "/notes/global",

@@ -1,5 +1,6 @@
 import { LikeButton } from "@/components/Common/SquareThumbnail/LikeButton";
 import { Mfm } from "@/components/Common/Mfm";
+import { useLocale } from "@/hooks/locale";
 
 type Props = {
   postId: string;
@@ -13,19 +14,14 @@ type Props = {
  * コンテンツ詳細表示
  * @returns
  */
-export const ContentDetail = ({
-  postId,
-  isLiked,
-  title,
-  description,
-  tags,
-}: Props) => {
+export const ContentDetail = ({ postId, isLiked, title, description }: Props) => {
+  const { t } = useLocale();
   return (
     <div className="grid grid-cols-1 gap-5 p-5">
       {/* メニュー */}
       <div id="menu" className="flex justify-end gap-5">
         <div id="like" className="flex items-center gap-1">
-          <span>いいね！</span>
+          <span>{t.LIKE}</span>
           <LikeButton postId={postId} isLiked={isLiked} isOutline />
         </div>
       </div>

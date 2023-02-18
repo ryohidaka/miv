@@ -19,4 +19,5 @@ export default {
   MORE: "もっと見る",
   NOTES: "ノート",
   FAVORITES: "お気に入り・いいねした投稿",
+  LIKE: "いいね！",
 };

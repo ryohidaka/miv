@@ -41,7 +41,7 @@ export default function UserHeader({ user }: Props) {
         <p>
           <Mfm text={user?.description as string} />
         </p>
-        <FollowButton userId={user.id} defaultState={user.isFollowing} />
+        <FollowButton userId={user.id} />
       </div>
 
       {/* PC用 */}
@@ -54,7 +54,7 @@ export default function UserHeader({ user }: Props) {
           <p>
             <Mfm text={user?.description as string} />
           </p>
-          <FollowButton userId={user.id} defaultState={user.isFollowing} />
+          <FollowButton userId={user.id} />
         </div>
       </div>
     </header>

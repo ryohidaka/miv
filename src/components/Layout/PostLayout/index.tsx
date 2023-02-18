@@ -1,4 +1,5 @@
 import { Author } from "@/components/Common/Author";
+import { FollowButton } from "@/components/Common/FollowButton";
 import { StickyTop } from "@/components/Common/StickyTop";
 import { Post } from "@/types/post";
 import { Content } from "./Content";
@@ -22,7 +23,13 @@ export const PostLayout = ({ post }: Props) => {
       {/* サイドカラム */}
       <aside className="w-full p-5 md:w-1/4">
         <StickyTop>
-          <Author user={post.user} className="!w-11" />
+          <div className="grid grid-cols-1 gap-3">
+            {/* ユーザ情報 */}
+            <Author user={post.user} className="!w-11" />
+
+            {/* フォローボタン */}
+            <FollowButton userId={post.user.id} />
+          </div>
         </StickyTop>
       </aside>
     </div>

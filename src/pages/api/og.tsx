@@ -42,6 +42,8 @@ export default function handler() {
               <img
                 src={`${APP_URL}/images/notes_full.png`}
                 tw="w-full h-full"
+                width="600"
+                height="600"
                 style={{
                   objectFit: "cover",
                 }}

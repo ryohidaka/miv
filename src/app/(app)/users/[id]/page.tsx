@@ -3,6 +3,7 @@
 import { TopPosts } from "@/components/Top/TopPosts";
 import UserHeader from "@/components/User/UserHeader";
 import { ViewerLayout } from "@/components/Viewer/Layout";
+import { useLocale } from "@/hooks/locale";
 import { useUser } from "@/hooks/user";
 import { PostParams } from "@/types/post";
 import { User } from "@/types/user";
@@ -16,6 +17,8 @@ type Props = {
  * @returns
  */
 export default function ShowUser({ params }: Props) {
+  const { t } = useLocale();
+
   // ユーザIDを取得
   const userId = params.id;
 
@@ -24,13 +27,13 @@ export default function ShowUser({ params }: Props) {
   const userItems = [
     {
       id: "user-notes",
-      section: "Notes",
+      section: t.NOTES,
       url: `/api/users/${userId}/notes?limit=12`,
       isGallery: false,
     },
     {
       id: "user-gallery",
-      section: "Gallery",
+      section: t.GALLERY,
       url: `/api/users/${userId}/gallery?limit=12`,
       isGallery: true,
     },

@@ -4,8 +4,9 @@ const nextConfig = {
     appDir: true,
     scrollRestoration: true,
   },
-  images: {
-    domains: ["pbs.twimg.com"],
+  i18n: {
+    locales: ["en", "ja"],
+    defaultLocale: "ja",
   },
 };
 

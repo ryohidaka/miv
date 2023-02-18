@@ -1,9 +1,10 @@
 "use client";
 
-import { DefaultMeta } from "@/components/Common/DefaultMeta";
 import { useUser } from "@/hooks/user";
-import { APP_NAME } from "@/modules/const";
+import DefaultTags from "@/lib/defaultTags";
+import { NEXT_SEO_DEFAULT } from "@/lib/next-seo.config";
 import { PostParams } from "@/types/post";
+import type { NextSeoProps } from "next-seo";
 
 type Props = {
   params: PostParams;
@@ -16,11 +17,10 @@ export default function Head({ params }: Props) {
   // ユーザ名を取得
   const userName = data?.name;
 
-  const title = `${userName} | ${APP_NAME}`;
-  return (
-    <>
-      <title>{title}</title>
-      <DefaultMeta />
-    </>
-  );
+  const updateMeta: NextSeoProps = {
+    ...NEXT_SEO_DEFAULT,
+    title: userName,
+  };
+
+  return <DefaultTags updateMeta={updateMeta} />;
 }

@@ -18,7 +18,7 @@ export const FollowButton = ({ userId }: Props) => {
   const { data: user } = useUser(userId);
 
   const [isActive, setActive] = useState<boolean>(false);
-  const label = isActive ? "フォロー中" : "フォローする";
+  const label = isActive ? "Following" : "Folow";
 
   const toggleFollowing = () => {
     try {

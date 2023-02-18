@@ -57,7 +57,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
 
       {/* ログアウト */}
       <button className="btn-outline w-full" onClick={logout}>
-        ログアウト
+        Logout
       </button>
     </CommonDrawer>
   );

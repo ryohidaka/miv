@@ -1,5 +1,6 @@
 "use client";
 
+import { useLocale } from "@/hooks/locale";
 import { useUser } from "@/hooks/user";
 import { follow, unfollow } from "@/modules/following";
 import classNames from "classnames";
@@ -14,11 +15,13 @@ type Props = {
  * @returns
  */
 export const FollowButton = ({ userId }: Props) => {
+  const { t } = useLocale();
+
   // ユーザ情報を取得
   const { data: user } = useUser(userId);
 
   const [isActive, setActive] = useState<boolean>(false);
-  const label = isActive ? "フォロー中" : "フォローする";
+  const label = isActive ? t.FOLLOWING : t.FOLLOW;
 
   const toggleFollowing = () => {
     try {

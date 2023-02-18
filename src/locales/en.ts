@@ -20,4 +20,6 @@ export default {
   NOTES: "Notes",
   FAVORITES: "Favorites",
   LIKE: "Like",
+  FOLLOW: "Follow",
+  FOLLOWING: "Following",
 };

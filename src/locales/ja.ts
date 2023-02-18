@@ -20,4 +20,6 @@ export default {
   NOTES: "ノート",
   FAVORITES: "お気に入り・いいねした投稿",
   LIKE: "いいね！",
+  FOLLOW: "フォローする",
+  FOLLOWING: "フォロー中",
 };

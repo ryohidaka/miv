@@ -39,7 +39,7 @@ export default function handler() {
               <p tw="text-[60px] font-bold">{DESCRIPTION}</p>
             </div>
             <div tw="flex flex-col w-1/2 h-full">
-              <img
+              {/* <img
                 src={`${APP_URL}/images/notes_full.png`}
                 tw="w-full h-full"
                 width="600"
@@ -47,7 +47,7 @@ export default function handler() {
                 style={{
                   objectFit: "cover",
                 }}
-              />
+              /> */}
             </div>
           </div>
         </div>

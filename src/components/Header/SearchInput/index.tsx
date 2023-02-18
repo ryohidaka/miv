@@ -1,7 +1,7 @@
 import { useQuery } from "@/hooks/search";
 import { APP_URL } from "@/modules/const";
 import classNames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import HashTag from "./HashTag";
 
@@ -19,6 +19,10 @@ export default function SearchInput({ className }: Props) {
 
   const [value, setValue] = useState<string>("");
 
+  useEffect(() => {
+    setValue(query || "");
+  }, [query]);
+
   return (
     <>
       <form
@@ -35,7 +39,6 @@ export default function SearchInput({ className }: Props) {
             name="q"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             placeholder="Search"
-            defaultValue={query}
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />

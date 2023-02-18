@@ -18,8 +18,10 @@ export default {
   GLOBAL_TIMELINE: "グローバルタイムライン",
   MORE: "もっと見る",
   NOTES: "ノート",
-  FAVORITES: "お気に入り・いいねした投稿",
+  FAVORITES: "お気に入り・いいね",
   LIKE: "いいね！",
   FOLLOW: "フォローする",
   FOLLOWING: "フォロー中",
+  LOGOUT: "ログアウト",
+  OPEN_IN_NEW_TAB: "リンクを別タブで開く",
 };

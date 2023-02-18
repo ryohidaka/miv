@@ -22,4 +22,6 @@ export default {
   LIKE: "Like",
   FOLLOW: "Follow",
   FOLLOWING: "Following",
+  LOGOUT: "Logout",
+  OPEN_IN_NEW_TAB: "Open in new tab",
 };

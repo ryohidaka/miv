@@ -2,6 +2,7 @@
 
 import { newTabState } from "@/atoms/NewTab";
 import CommonDrawer from "@/components/Common/Drawer";
+import { useLocale } from "@/hooks/locale";
 import { deleteCookie } from "cookies-next";
 import { useRecoilState } from "recoil";
 import SideMenu from "./SideMenu";
@@ -16,6 +17,8 @@ type Props = {
  * @returns
  */
 export default function Sidebar({ isOpen, onClose }: Props) {
+  const { t } = useLocale();
+
   // 別タブ遷移設定を取得
   const [newTab, setNewTab] = useRecoilState(newTabState);
 
@@ -51,13 +54,13 @@ export default function Sidebar({ isOpen, onClose }: Props) {
           htmlFor="default-checkbox"
           className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
         >
-          Open in new tab
+          {t.OPEN_IN_NEW_TAB}
         </label>
       </div>
 
       {/* ログアウト */}
       <button className="btn-outline w-full" onClick={logout}>
-        ログアウト
+        {t.LOGOUT}
       </button>
     </CommonDrawer>
   );

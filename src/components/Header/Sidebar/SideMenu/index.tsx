@@ -1,3 +1,4 @@
+import { useLocale } from "@/hooks/locale";
 import { Fragment } from "react";
 import MenuLink from "./MenuLink";
 
@@ -10,52 +11,54 @@ type Props = {
  * @returns
  */
 export default function SideMenu({ onClose }: Props) {
+  const { t } = useLocale();
+
   // ページ一覧
   const links = [
     {
       label: "",
       pages: [
         {
-          url: "/",
-          label: "Home",
+          url: "/dashboard",
+          label: t.DASHBOARD,
         },
         {
           url: "/favorites",
-          label: "Favorites",
+          label: t.FAVORITES,
         },
       ],
     },
     {
-      label: "Gallery",
+      label: t.GALLERY,
       pages: [
         {
           url: "/gallery/posts",
-          label: "Posts",
+          label: t.RECENT_POSTS,
         },
         {
           url: "/gallery/featured",
-          label: "Featured",
+          label: t.FEATURED_POSTS,
         },
         {
           url: "/gallery/popular",
-          label: "Popular",
+          label: t.POPULAR_POSTS,
         },
       ],
     },
     {
-      label: "Timeline",
+      label: t.TIMELINE,
       pages: [
         {
           url: "/notes/local",
-          label: "Local Timeline",
+          label: t.LOCAL_TIMELINE,
         },
         {
           url: "/notes/hybrid",
-          label: "Hybrid Timeline",
+          label: t.SOCIAL_TIMELINE,
         },
         {
           url: "/notes/global",
-          label: "Global Timeline",
+          label: t.GLOBAL_TIMELINE,
         },
       ],
     },

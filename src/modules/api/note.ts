@@ -1,7 +1,5 @@
 import { NotePost } from "@/types/note";
-import { Post, PostState } from "@/types/post";
-import { NextApiRequest, NextApiResponse } from "next";
-import { apiRequest } from ".";
+import { Post } from "@/types/post";
 import { convertImages } from "./image";
 import { convertUser } from "./user";
 
@@ -10,11 +8,7 @@ import { convertUser } from "./user";
  * @param post
  * @returns
  */
-export const convertNotePosts = async (
-  datas: NotePost[],
-  req: NextApiRequest,
-  res: NextApiResponse
-): Promise<Post[]> => {
+export const convertNotePosts = async (datas: NotePost[]): Promise<Post[]> => {
   const posts = await Promise.all(
     datas
       .filter((data: NotePost) => data.files.length > 0)

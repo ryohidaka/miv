@@ -9,6 +9,7 @@ export default function Head() {
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,
     title,
+    titleTemplate: "%s",
   };
 
   return <DefaultTags updateMeta={updateMeta} />;

@@ -1,5 +1,6 @@
 "use client";
 
+import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePosts } from "@/hooks/post";
@@ -14,6 +15,8 @@ export default function GalleryFeatured() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
+      <Heading text="Featured Gallery" />
+
       {/* @ts-ignore */}
       <Viewer posts={data} hasMore={true} isGallery />
     </ViewerLayout>

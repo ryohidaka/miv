@@ -1,5 +1,6 @@
 "use client";
 
+import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
@@ -18,6 +19,7 @@ export default function LocalTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
+      <Heading text="Local Timeline" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

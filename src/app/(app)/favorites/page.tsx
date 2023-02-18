@@ -1,4 +1,4 @@
-import { StickyTop } from "@/components/Common/StickyTop";
+import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
 
 /**
@@ -23,11 +23,7 @@ export default function Favorites() {
 
   return (
     <>
-      <StickyTop>
-        <h1 className="mb-4 px-3 text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white ">
-          Favorites
-        </h1>
-      </StickyTop>
+      <Heading text="Favorites" />
 
       {userItems.map((item) => (
         <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">

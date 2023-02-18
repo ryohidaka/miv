@@ -3,7 +3,7 @@ import { ImageResponse } from "@vercel/og";
 import React from "react";
 
 export const config = {
-  runtime: "edge",
+  runtime: "experimental-edge",
 };
 
 /**

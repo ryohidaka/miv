@@ -2,10 +2,13 @@
 
 import { emojisState } from "@/atoms/Emojis";
 import { Emoji } from "@/types/emoji";
+import { Image as ImageType } from "@/types/image";
 import * as mfm from "mfm-js";
+import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { useRecoilState } from "recoil";
+import { CommonImage } from "./Image";
 
 type Props = {
   text: string;
@@ -47,9 +50,13 @@ export const Mfm = ({ text }: Props) => {
           case "emojiCode":
             const name = node.props.name;
             const emoji = emojis?.find((emoji: Emoji) => emoji.name === name);
+            const emojiImage: ImageType = {
+              id: emoji?.name as string,
+              url: emoji?.url as string,
+            };
             return (
-              <span key={index}>
-                <img src={emoji?.url} alt={emoji?.name} className="h-4 w-4" />
+              <span key={index} className="relative h-4 w-4">
+                <CommonImage image={emojiImage} />
               </span>
             );
           default:

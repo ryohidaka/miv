@@ -21,9 +21,9 @@ export const PostLayout = ({ post }: Props) => {
       </article>
 
       {/* サイドカラム */}
-      <aside className="w-full p-5 md:w-1/4">
+      <aside className="w-full md:w-1/4">
         <StickyTop>
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-3 p-5">
             {/* ユーザ情報 */}
             <Author user={post.user} className="!w-11" />
 

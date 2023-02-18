@@ -16,7 +16,7 @@ type Props = {
  */
 export default function Tag({ params }: Props) {
   // タグを取得
-  const tag = params.tag;
+  const tag = decodeURI(params.tag);
 
   const url = `/api/tags/${tag}`;
 

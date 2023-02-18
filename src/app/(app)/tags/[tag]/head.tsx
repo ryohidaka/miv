@@ -8,7 +8,7 @@ type Props = {
 
 export default function Head({ params }: Props) {
   // タグを取得
-  const tag = params.tag;
+  const tag = decodeURI(params.tag);
 
   const title = `#${tag} | ${APP_NAME}`;
   return (

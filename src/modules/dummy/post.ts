@@ -30,4 +30,3 @@ export const POSTS = Array.from({ length: 40 }).map(() => {
 export const USER_PAGE_POSTS = Array.from({ length: 12 }).map(() => {
   return createRandomPost();
 });
-

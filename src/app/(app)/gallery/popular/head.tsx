@@ -1,12 +1,12 @@
-import { DefaultMeta } from "@/components/Common/DefaultMeta";
-import { APP_NAME } from "@/modules/const";
+import DefaultTags from "@/lib/defaultTags";
+import { NEXT_SEO_DEFAULT } from "@/lib/next-seo.config";
+import type { NextSeoProps } from "next-seo";
 
 export default function Head() {
-  const title = `Popular Posts | ${APP_NAME}`;
-  return (
-    <>
-      <title>{title}</title>
-      <DefaultMeta />
-    </>
-  );
+  const updateMeta: NextSeoProps = {
+    ...NEXT_SEO_DEFAULT,
+    title: "Popular Posts",
+  };
+
+  return <DefaultTags updateMeta={updateMeta} />;
 }

@@ -1,3 +1,6 @@
+"use client";
+
+import { useLocale } from "@/hooks/locale";
 import { DESCRIPTION } from "@/modules/const";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +11,7 @@ import { ExternalLink } from "../Common/ExternalLink";
  * @returns
  */
 export const LPContent = () => {
+  const { t } = useLocale();
   return (
     <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
       <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
@@ -26,7 +30,7 @@ export const LPContent = () => {
             href="/dashboard"
             className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           >
-            Start now
+            {t.LP.START_NOW}
           </Link>
 
           <ExternalLink

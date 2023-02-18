@@ -3,20 +3,23 @@
 import { APP_NAME } from "@/modules/const";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import { useLocale } from "@/hooks/locale";
 
 /**
  * LPのヘッダー
  * @returns
  */
 export const LPHeader = () => {
+  const { t } = useLocale();
+
   const links = [
     {
       id: "home",
-      label: "Home",
+      label: t.LP.HOME,
     },
     {
       id: "features",
-      label: "Features",
+      label: t.LP.FEATURE,
     },
   ];
   return (

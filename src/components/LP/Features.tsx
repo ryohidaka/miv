@@ -1,3 +1,6 @@
+"use client";
+
+import { useLocale } from "@/hooks/locale";
 import Image from "next/image";
 
 /**
@@ -5,17 +8,19 @@ import Image from "next/image";
  * @returns
  */
 export const LPFeatures = () => {
+  const { t } = useLocale();
+
   const lists = [
     {
-      title: "List",
+      title: t.LP.LIST,
       image: "notes_full.png",
     },
     {
-      title: "User",
+      title: t.LP.USER,
       image: "users.png",
     },
     {
-      title: "Image View",
+      title: t.LP.IMAGE_VIEW,
       image: "post.png",
     },
   ];
@@ -24,7 +29,7 @@ export const LPFeatures = () => {
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="my-10 md:my-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:mb-6 lg:text-3xl">
-            Features
+            {t.LP.FEATURE}
           </h2>
         </div>
 

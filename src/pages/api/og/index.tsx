@@ -23,64 +23,26 @@ export default function handler() {
     return new ImageResponse(
       (
         <div
+          tw="flex w-full h-full p-10"
           style={{
-            display: "flex",
             backgroundColor: "#121212",
-            width: "100%",
-            height: "100%",
-            padding: 40,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              width: "100%",
-              height: "100%",
-              padding: "40px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "50%",
-                height: "100%",
-                justifyContent: "center",
-                position: "relative",
-                color: "white",
-              }}
-            >
-              <header style={{ position: "absolute", top: 0 }}>
+          <div tw="flex items-start justify-start w-full h-full">
+            <div tw="flex flex-col w-1/2 h-full justify-center relative text-white">
+              <header tw="absolute top-0">
                 {/* アプリ名 */}
-                <h1
-                  style={{
-                    fontSize: 40,
-                    fontWeight: "bold",
-                    textAlign: "left",
-                  }}
-                >
-                  {APP_NAME}
-                </h1>
+                <h1 tw="text-[40px] font-bold text-left">{APP_NAME}</h1>
               </header>
 
               {/* 説明文 */}
-              <p style={{ fontSize: 60, fontWeight: "bold" }}>{DESCRIPTION}</p>
+              <p tw="text-[60px] font-bold">{DESCRIPTION}</p>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "50%",
-                height: "100%",
-              }}
-            >
+            <div tw="flex flex-col w-1/2 h-full">
               <img
                 src={`${APP_URL}/images/notes_full.png`}
+                tw="w-full h-full"
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                 }}
               />

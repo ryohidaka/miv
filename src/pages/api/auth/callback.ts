@@ -29,7 +29,7 @@ const callback = async (req: NextApiRequest, res: NextApiResponse) => {
 
     setCookie("token", data.token, { req, res });
 
-    res.redirect("/");
+    res.redirect("/dashboard");
   } catch (error) {
     returnErrorResponse(res, error);
   }

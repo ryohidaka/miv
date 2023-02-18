@@ -3,6 +3,7 @@
 import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
+import { useLocale } from "@/hooks/locale";
 import { usePostsWithPagination } from "@/hooks/post";
 
 /**
@@ -10,6 +11,7 @@ import { usePostsWithPagination } from "@/hooks/post";
  * @returns
  */
 export default function GlobalTimeline() {
+  const { t } = useLocale();
   const url = "/api/notes/global-timeline";
   const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
@@ -19,7 +21,7 @@ export default function GlobalTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Global Timeline" />
+      <Heading text={t.GLOBAL_TIMELINE} />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

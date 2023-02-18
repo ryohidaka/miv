@@ -33,14 +33,14 @@ export const CommonImage = ({ image, className, thumbnail }: Props) => {
           blurDataURL={image.blurhash}
         />
       ) : (
-        <div
+        <span
           className={classNames(
             "grid h-full w-full place-content-center bg-gray-300 dark:bg-gray-700",
             className
           )}
         >
           <BsImageAlt className="h-12 w-12" />
-        </div>
+        </span>
       )}
     </>
   );

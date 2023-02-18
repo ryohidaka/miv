@@ -77,7 +77,7 @@ export default function handler() {
               }}
             >
               <img
-                src={`${APP_URL}/images/notes_full.png`}
+                src="https://pickey.vercel.app/images/notes_full.png"
                 style={{
                   width: "100%",
                   height: "100%",

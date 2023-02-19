@@ -24,6 +24,7 @@
     "cookies-next": "^2.1.1",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "json5": "^2.2.3",
     "mfm-js": "^0.23.3",
     "misskey-js": "^0.0.15",
     "next": "13.1.6",

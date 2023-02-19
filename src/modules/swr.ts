@@ -1,4 +1,5 @@
 import { Emoji } from "@/types/emoji";
+import { Instance } from "@/types/instance";
 import { Meta } from "@/types/meta";
 import { Post, PostState } from "@/types/post";
 import { User } from "@/types/user";
@@ -98,5 +99,16 @@ export const emojiFetcher = (url: string): Promise<Emoji[]> => {
       throw new Error(fetchError);
     }
     return res.json();
+  });
+};
+
+// インスタンス一覧取得処理
+export const instancesFetcher = (url: string): Promise<string> => {
+  return fetch(url).then(async (res) => {
+    // エラー発生時
+    if (!res.ok) {
+      throw new Error(fetchError);
+    }
+    return res.text();
   });
 };

@@ -4,6 +4,7 @@ import { useShowLoginModal } from "@/hooks/auth";
 import { APP_NAME, DESCRIPTION } from "@/modules/const";
 import Link from "next/link";
 import { useState } from "react";
+import { InstanceSelector } from "./InstanceSelector";
 
 /**
  * ログインモーダル
@@ -12,11 +13,16 @@ import { useState } from "react";
 export const LoginModal = () => {
   const { showLoginModal } = useShowLoginModal();
 
-  const [host, setHost] = useState<string>("misskey.io");
+  const [host, setHost] = useState<string>("");
   const loginUrl = `/api/auth/signin?host=${host}`;
 
   const handleChange = (value: string) => {
     const host = value.replace(/http|https/g, "");
+    setHost(host);
+  };
+
+  // インスタンスをリストから選択
+  const onChangeSelector = (host: string) => {
     setHost(host);
   };
 
@@ -50,6 +56,9 @@ export const LoginModal = () => {
 
                     <div className="grid grid-cols-1 gap-3">
                       <h2 className="text-center text-xl">ログイン</h2>
+
+                      {/* インスタンス一覧 */}
+                      <InstanceSelector onChange={onChangeSelector} />
 
                       <form className="grid grid-cols-1 gap-3">
                         <div>

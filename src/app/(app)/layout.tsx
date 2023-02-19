@@ -1,5 +1,3 @@
-"use client";
-
 import { LoginModal } from "@/components/Auth/LoginModal";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";

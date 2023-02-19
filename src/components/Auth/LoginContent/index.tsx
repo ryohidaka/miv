@@ -63,7 +63,7 @@ export const LoginContent = () => {
       >
         <div className="p-8 text-center">
           <h1 className="mb-4 text-6xl font-bold text-white">
-            Don't have an account ?
+            Don&apos;t have an account ?
           </h1>
 
           <h5 className="text-xl text-white">

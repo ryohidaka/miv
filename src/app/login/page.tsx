@@ -13,7 +13,7 @@ export default function LoginPage() {
     if (hasToken) {
       router.push("/dashboard");
     }
-  }, []);
+  }, [hasToken, router]);
 
   return (
     <div className="h-screen w-screen">

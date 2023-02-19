@@ -28,7 +28,7 @@ export const InstanceSelector = ({ onChange }: Props) => {
       >
         <option value="">Choose a instance</option>
         {instances.map((instance) => (
-          <option key={instance.name} value={instance.host}>
+          <option key={instance.host} value={instance.host}>
             {instance.name || instance.host}
           </option>
         ))}

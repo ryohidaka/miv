@@ -1,6 +1,7 @@
+"use client";
+
 import { emojisState } from "@/atoms/Emojis";
 import { useEmojis } from "@/hooks/emojis";
-import { Emoji } from "@/types/emoji";
 import { ReactNode, useEffect } from "react";
 import { useRecoilState } from "recoil";
 

@@ -22,18 +22,18 @@ export const LoginContent = () => {
   };
 
   return (
-    <div className="flex h-full w-full bg-white text-black shadow dark:bg-gray-800 dark:text-white">
+    <div className="grid grid-cols-1 h-full w-full text-black shadow dark:text-white md:grid-cols-2">
       {/* ログインフォーム */}
       <div
         id="signin"
-        className="flex h-full w-1/2 items-center justify-center"
+        className="flex h-full w-full items-center justify-center"
       >
         <div className="selection:bg-indigo-500 selection:text-white">
           <div className="flex items-center justify-center">
             <div className="flex-1 p-8">
               <div className="mx-auto overflow-hidden">
                 <div className="grid grid-cols-1 gap-10">
-                  <h1 className="text-5xl font-bold text-indigo-600">
+                  <h1 className="text-3xl font-bold text-indigo-600 md:text-5xl">
                     Welcome back!
                   </h1>
 
@@ -57,12 +57,12 @@ export const LoginContent = () => {
       <div
         id="overlay-right"
         className={classNames(
-          " flex h-full w-1/2 items-center justify-center",
+          " flex h-full w-full items-center justify-center",
           overlayBg
         )}
       >
         <div className="p-8 text-center">
-          <h1 className="mb-4 text-6xl font-bold text-white">
+          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
             Don&apos;t have an account ?
           </h1>
 

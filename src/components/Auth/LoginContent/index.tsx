@@ -33,7 +33,7 @@ export const LoginContent = () => {
             <div className="flex-1 p-8">
               <div className="mx-auto overflow-hidden">
                 <div className="grid grid-cols-1 gap-10">
-                  <h1 className="text-5xl font-bold text-indigo-600">
+                  <h1 className="text-3xl font-bold text-indigo-600 md:text-5xl">
                     Welcome back!
                   </h1>
 
@@ -62,7 +62,7 @@ export const LoginContent = () => {
         )}
       >
         <div className="p-8 text-center">
-          <h1 className="mb-4 text-6xl font-bold text-white">
+          <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
             Don&apos;t have an account ?
           </h1>
 

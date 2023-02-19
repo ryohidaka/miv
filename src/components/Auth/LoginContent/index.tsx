@@ -22,7 +22,7 @@ export const LoginContent = () => {
   };
 
   return (
-    <div className="flex h-full w-full bg-white text-black shadow dark:bg-gray-800 dark:text-white">
+    <div className="grid grid-cols-1 h-full w-full bg-white text-black shadow dark:bg-gray-800 dark:text-white md:grid-cols-2">
       {/* ログインフォーム */}
       <div
         id="signin"

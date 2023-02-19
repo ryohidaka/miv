@@ -26,7 +26,7 @@ export const LoginContent = () => {
       {/* ログインフォーム */}
       <div
         id="signin"
-        className="flex h-full w-1/2 items-center justify-center"
+        className="flex h-full w-full items-center justify-center"
       >
         <div className="selection:bg-indigo-500 selection:text-white">
           <div className="flex items-center justify-center">
@@ -57,7 +57,7 @@ export const LoginContent = () => {
       <div
         id="overlay-right"
         className={classNames(
-          " flex h-full w-1/2 items-center justify-center",
+          " flex h-full w-full items-center justify-center",
           overlayBg
         )}
       >

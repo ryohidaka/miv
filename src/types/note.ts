@@ -8,6 +8,7 @@ export type NotePost = {
   likedCount: number;
   isLiked?: boolean;
   tags?: string[];
+  url?: string;
 };
 
 export type NoteParams = {

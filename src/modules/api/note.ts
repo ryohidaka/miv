@@ -23,7 +23,11 @@ export const convertNotePosts = async (datas: NotePost[]): Promise<Post[]> => {
  * @param post
  * @returns
  */
-export const convertNotePost = async (post: NotePost): Promise<Post> => {
+export const convertNotePost = async (
+  post: NotePost,
+  host?: string
+): Promise<Post> => {
+  const sourceUrl = host ? `https://${host}/notes/${post.id}` : "";
   return {
     id: post.id,
     images: convertImages(post.files),
@@ -31,5 +35,6 @@ export const convertNotePost = async (post: NotePost): Promise<Post> => {
     text: post.text || "",
     description: post.text || "",
     tags: post.tags || [],
+    source: post.url || sourceUrl,
   };
 };

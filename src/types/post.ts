@@ -11,6 +11,7 @@ export type Post = {
   isLiked?: boolean;
   likedCount?: number;
   tags?: string[];
+  source?: string;
 };
 
 export type PostParams = {

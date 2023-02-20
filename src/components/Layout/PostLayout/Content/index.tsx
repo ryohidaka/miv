@@ -1,3 +1,5 @@
+"use client";
+
 import { CommonImage } from "@/components/Common/Image";
 import { NumberBadge } from "@/components/Common/SquareThumbnail/NumberBadge";
 import { Post } from "@/types/post";

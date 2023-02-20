@@ -1,8 +1,6 @@
-"use client";
-
-import { usePost } from "@/hooks/post";
 import DefaultTags from "@/lib/defaultTags";
 import { NEXT_SEO_DEFAULT } from "@/lib/next-seo.config";
+import { getGalleryPost } from "@/modules/ssr/gallery";
 import { PostParams } from "@/types/post";
 import type { NextSeoProps } from "next-seo";
 
@@ -10,12 +8,12 @@ type Props = {
   params: PostParams;
 };
 
-export default function Head({ params }: Props) {
-  // 投稿を取得
-  const url = `/api/gallery/${params.id}`;
-  const { data } = usePost(url);
+export default async function Head({ params }: Props) {
+  // タイトルを取得
+  const { title: postTitle, user } = await getGalleryPost(params.id);
+  const userName = user.name;
 
-  const title = data ? `${data.title} by ${data.user.name}` : "Gallery Post";
+  const title = `${postTitle} by ${userName}`;
 
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,

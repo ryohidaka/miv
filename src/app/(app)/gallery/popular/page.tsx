@@ -1,24 +1,18 @@
-"use client";
-
 import { Heading } from "@/components/Common/Heading";
-import { Viewer } from "@/components/Viewer";
-import { ViewerLayout } from "@/components/Viewer/Layout";
-import { usePosts } from "@/hooks/post";
+import { TileList } from "@/components/TileList";
+import { getGalleryPosts } from "@/modules/ssr/gallery";
 
 /**
  * 人気の投稿一覧
  * @returns
  */
-export default function GalleryPopular() {
-  const url = "/api/gallery/popular";
-  const { data, error, isLoading } = usePosts(url);
+export default async function GalleryPopular() {
+  const popularPosts = await getGalleryPosts("popular");
 
   return (
-    <ViewerLayout isLoading={isLoading} error={error}>
+    <>
       <Heading text="Popular Posts" />
-
-      {/* @ts-ignore */}
-      <Viewer posts={data} hasMore={true} isGallery />
-    </ViewerLayout>
+      <TileList posts={popularPosts} isGallery />
+    </>
   );
 }

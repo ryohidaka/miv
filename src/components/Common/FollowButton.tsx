@@ -2,6 +2,7 @@
 
 import { useUser } from "@/hooks/user";
 import { follow, unfollow } from "@/modules/following";
+import { getUser } from "@/modules/ssr/user";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 

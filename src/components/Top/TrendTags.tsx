@@ -1,16 +1,12 @@
-"use client";
-
-import { useTags } from "@/hooks/tags";
 import Link from "next/link";
+import { getTrendTags } from "@/modules/ssr/tag";
 
 /**
  * トレンドにあるハッシュタグ一覧
  * @returns
  */
-export const TrendTags = () => {
-  const url = "/api/tags/trend";
-  const tags = useTags(url);
-
+export const TrendTags = async () => {
+  const tags = await getTrendTags();
   return (
     <ul className="hidden gap-3 overflow-x-scroll py-10 md:flex">
       {tags?.map((tag) => (

@@ -1,8 +1,6 @@
-"use client";
-
-import { usePost } from "@/hooks/post";
 import DefaultTags from "@/lib/defaultTags";
 import { NEXT_SEO_DEFAULT } from "@/lib/next-seo.config";
+import { getNotePost } from "@/modules/ssr/notes";
 import { PostParams } from "@/types/post";
 import type { NextSeoProps } from "next-seo";
 
@@ -10,12 +8,10 @@ type Props = {
   params: PostParams;
 };
 
-export default function Head({ params }: Props) {
-  // 投稿を取得
-  const url = `/api/notes/${params.id}`;
-  const { data } = usePost(url);
+export default async function Head({ params }: Props) {
+  const { user } = await getNotePost(params.id);
 
-  const title = data ? `Post by ${data.user.name}` : "Post";
+  const title = `Post by ${user.name}`;
 
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,

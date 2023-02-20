@@ -1,5 +1,3 @@
-"use client";
-
 import { Viewer } from "@/components/Viewer";
 import { POSTS } from "@/modules/dummy/post";
 

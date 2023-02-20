@@ -1,5 +1,3 @@
-"use client";
-
 import { APP_NAME } from "@/modules/const";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";

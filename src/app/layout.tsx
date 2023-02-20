@@ -1,5 +1,3 @@
-"use client";
-
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import "@/app/globals.css";
 import Footer from "@/components/Footer";

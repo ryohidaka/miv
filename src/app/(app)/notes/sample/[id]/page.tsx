@@ -1,5 +1,3 @@
-"use client";
-
 import { PostLayout } from "@/components/Layout/PostLayout";
 import { POST } from "@/modules/dummy/post";
 

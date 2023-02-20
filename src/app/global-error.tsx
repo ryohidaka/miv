@@ -1,5 +1,3 @@
-"use client";
-
 import { ErrorAlert } from "@/components/Viewer/Layout/ErrorAlert";
 
 export default function GlobalError({

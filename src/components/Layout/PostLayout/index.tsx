@@ -3,6 +3,7 @@ import { FollowButton } from "@/components/Common/FollowButton";
 import { StickyTop } from "@/components/Common/StickyTop";
 import { Post } from "@/types/post";
 import { Content } from "./Content";
+import { OpenInInstances } from "./OpenInInstances";
 
 type Props = {
   post: Post;
@@ -29,6 +30,10 @@ export const PostLayout = ({ post }: Props) => {
 
             {/* フォローボタン */}
             <FollowButton userId={post.user.id} />
+
+            {/* インスタンスで開くボタン */}
+            {/* @ts-ignore */}
+            {post.source && <OpenInInstances url={post.source} />}
           </div>
         </StickyTop>
       </aside>

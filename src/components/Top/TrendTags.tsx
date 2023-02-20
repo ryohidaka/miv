@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { getTrendTags } from "@/modules/ssr/tag";
+import { getTags } from "@/modules/ssr/tag";
 
 /**
- * トレンドにあるハッシュタグ一覧
+ * ハッシュタグ一覧
  * @returns
  */
 export const TrendTags = async () => {
-  const tags = await getTrendTags();
+  const tags = await getTags();
   return (
-    <ul className="hidden gap-3 overflow-x-scroll py-10 md:flex">
+    <ul className="flr hidden flex-wrap gap-3 overflow-x-scroll py-10 md:flex">
       {tags?.map((tag) => (
         <li key={tag}>
           <Link href={`/tags/${tag}`} passHref>

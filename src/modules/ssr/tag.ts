@@ -10,3 +10,25 @@ export const getTrendTags = async () => {
   const tags: string[] = await res.json();
   return tags;
 };
+
+/**
+ * 使用率の高いハッシュタグ一覧
+ * @returns
+ */
+export const getFeaturedTags = async () => {
+  const path = `tags/list`;
+  const res = await fetchData(path);
+  const tags: string[] = await res.json();
+  return tags;
+};
+
+/**
+ * ハッシュタグ一覧
+ * @returns 
+ */
+export const getTags = async () => {
+  const trendTags = await getTrendTags()
+  const featuredTags = await getFeaturedTags()
+  return [...trendTags,...featuredTags]
+
+}

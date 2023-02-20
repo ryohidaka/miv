@@ -30,7 +30,7 @@ export default function Favorites() {
           <h2 className="px-3 text-3xl tracking-tighter md:p-0">
             {item.section}
           </h2>
-          <TopPosts url={item.url} isGallery={item.isGallery} hideUser />
+          <TopPosts url={item.url} isGallery={item.isGallery} />
         </section>
       ))}
     </>

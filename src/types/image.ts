@@ -3,4 +3,5 @@ export type Image = {
   url: string;
   thumbnailUrl?: string;
   blurhash?: string;
+  isSensitive?: boolean;
 };

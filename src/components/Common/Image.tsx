@@ -7,13 +7,14 @@ type Props = {
   image: ImageType;
   className?: string;
   thumbnail?: boolean;
+  isBlur?: boolean;
 };
 
 /**
  * 画像表示領域
  * @returns
  */
-export const CommonImage = ({ image, className, thumbnail }: Props) => {
+export const CommonImage = ({ image, className, thumbnail, isBlur }: Props) => {
   const src = thumbnail ? image.thumbnailUrl || image.url : image.url;
   return (
     <>
@@ -21,7 +22,8 @@ export const CommonImage = ({ image, className, thumbnail }: Props) => {
         <Image
           className={classNames(
             "!relative block h-full w-full object-contain",
-            className
+            className,
+            isBlur && "blur-md"
           )}
           key={image.id}
           src={src}

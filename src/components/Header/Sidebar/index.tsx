@@ -2,8 +2,8 @@
 
 import { newTabState } from "@/atoms/NewTab";
 import CommonDrawer from "@/components/Common/Drawer";
-import { deleteCookie } from "cookies-next";
 import { useRecoilState } from "recoil";
+import Logout from "./Logout";
 import SideMenu from "./SideMenu";
 
 type Props = {
@@ -18,13 +18,6 @@ type Props = {
 export default function Sidebar({ isOpen, onClose }: Props) {
   // 別タブ遷移設定を取得
   const [newTab, setNewTab] = useRecoilState(newTabState);
-
-  // ログアウト
-  const logout = () => {
-    deleteCookie("host");
-    deleteCookie("token");
-    location.reload();
-  };
 
   return (
     <CommonDrawer
@@ -56,9 +49,7 @@ export default function Sidebar({ isOpen, onClose }: Props) {
       </div>
 
       {/* ログアウト */}
-      <button className="btn-outline w-full" onClick={logout}>
-        Logout
-      </button>
+      <Logout />
     </CommonDrawer>
   );
 }

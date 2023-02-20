@@ -13,6 +13,7 @@ export const convertImages = (files: DriveFile[]): Image[] => {
       url: file.url,
       thumbnailUrl: file.thumbnailUrl,
       blurhash: file.blurhash,
+      isSensitive: file.isSensitive,
     };
     return image;
   });

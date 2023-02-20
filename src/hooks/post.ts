@@ -47,16 +47,6 @@ export const usePostsWithPagination = (url: string, mutate?: boolean) => {
 };
 
 /**
- * 投稿取得
- * @returns
- */
-export const usePost = (url: string) => {
-  const { data, error, isLoading } = useSWR<Post, Error>(url, postFetcher);
-
-  return { data, error, isLoading };
-};
-
-/**
  * ノートお気に入りフラグ取得
  * @param noteId
  * @returns

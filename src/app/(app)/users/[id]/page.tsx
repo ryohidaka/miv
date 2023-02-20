@@ -1,11 +1,7 @@
-"use client";
-
 import { TopPosts } from "@/components/Top/TopPosts";
 import UserHeader from "@/components/User/UserHeader";
-import { ViewerLayout } from "@/components/Viewer/Layout";
-import { useUser } from "@/hooks/user";
+import { getUser } from "@/modules/ssr/user";
 import { PostParams } from "@/types/post";
-import { User } from "@/types/user";
 
 type Props = {
   params: PostParams;
@@ -15,12 +11,12 @@ type Props = {
  * ユーザ情報表示
  * @returns
  */
-export default function ShowUser({ params }: Props) {
+export default async function ShowUser({ params }: Props) {
   // ユーザIDを取得
   const userId = params.id;
 
-  const { data, isLoading, error } = useUser(userId);
-
+  // ユーザ情報を取得
+  const user = await getUser(userId);
   const userItems = [
     {
       id: "user-notes",
@@ -37,23 +33,17 @@ export default function ShowUser({ params }: Props) {
   ];
 
   return (
-    <ViewerLayout isLoading={isLoading} error={error}>
-      <>
-        <UserHeader user={data as User} />
+    <>
+      <UserHeader user={user} />
 
-        {userItems.map((item) => (
-          <section
-            key={item.id}
-            id={item.id}
-            className="grid grid-cols-1 gap-6"
-          >
-            <h2 className="px-3 text-3xl tracking-tighter md:p-0">
-              {item.section}
-            </h2>
-            <TopPosts url={item.url} isGallery={item.isGallery} hideUser />
-          </section>
-        ))}
-      </>
-    </ViewerLayout>
+      {userItems.map((item) => (
+        <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">
+          <h2 className="px-3 text-3xl tracking-tighter md:p-0">
+            {item.section}
+          </h2>
+          <TopPosts url={item.url} isGallery={item.isGallery} hideUser />
+        </section>
+      ))}
+    </>
   );
 }

@@ -1,6 +1,9 @@
 import { Heading } from "@/components/Common/Heading";
-import { TopPosts } from "@/components/Top/TopPosts";
+import { TileList } from "@/components/TileList";
 import { TrendTags } from "@/components/Top/TrendTags";
+import { getGallery } from "@/modules/ssr/gallery";
+import { getTimelines } from "@/modules/ssr/notes";
+import { Post } from "@/types/post";
 import Link from "next/link";
 
 type Item = {
@@ -8,7 +11,7 @@ type Item = {
   contents: {
     subSection: string;
     url: string;
-    endpoint: string;
+    posts: Post[];
     isGallery?: boolean;
   }[];
 };
@@ -17,7 +20,9 @@ type Item = {
  * ホーム画面
  * @returns
  */
-export default function Home() {
+export default async function Home() {
+  const timelines = await getTimelines();
+  const gallery = await getGallery();
   const items: Item[] = [
     {
       section: "Gallery",
@@ -25,19 +30,19 @@ export default function Home() {
         {
           subSection: "Posts",
           url: "/gallery/posts",
-          endpoint: "/api/gallery/posts?limit=12",
+          posts: gallery.recent,
           isGallery: true,
         },
         {
           subSection: "Featured Gallery",
           url: "/gallery/featured",
-          endpoint: "/api/gallery/featured",
+          posts: gallery.featured,
           isGallery: true,
         },
         {
           subSection: "Popular Gallery",
           url: "/gallery/popular",
-          endpoint: "/api/gallery/popular",
+          posts: gallery.popular,
           isGallery: true,
         },
       ],
@@ -48,17 +53,17 @@ export default function Home() {
         {
           subSection: "Local Timeline",
           url: "/notes/local",
-          endpoint: "/api/notes/local-timeline?limit=12",
+          posts: timelines.local,
         },
         {
           subSection: "Hybrid Timeline",
           url: "/notes/hybrid",
-          endpoint: "/api/notes/hybrid-timeline?limit=12",
+          posts: timelines.hybrid,
         },
         {
           subSection: "Global Timeline",
           url: "/notes/global",
-          endpoint: "/api/notes/global-timeline?limit=12",
+          posts: timelines.global,
         },
       ],
     },
@@ -69,6 +74,7 @@ export default function Home() {
       <Heading text="Dashboard" />
 
       {/* トレンドにあるハッシュタグ一覧 */}
+      {/* @ts-ignore */}
       <TrendTags />
 
       <div className="grid grid-cols-1 gap-10">
@@ -90,10 +96,7 @@ export default function Home() {
                     more...
                   </Link>
                 </header>
-                <TopPosts
-                  url={content.endpoint}
-                  isGallery={content.isGallery}
-                />
+                <TileList posts={content.posts} isGallery={content.isGallery} />
               </section>
             ))}
           </section>

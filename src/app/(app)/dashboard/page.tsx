@@ -69,6 +69,7 @@ export default function Home() {
       <Heading text="Dashboard" />
 
       {/* トレンドにあるハッシュタグ一覧 */}
+      {/* @ts-ignore */}
       <TrendTags />
 
       <div className="grid grid-cols-1 gap-10">

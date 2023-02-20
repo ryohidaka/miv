@@ -1,9 +1,4 @@
-import {
-  fetcher,
-  postFetcher,
-  postStateFetcher,
-  swrInfiniteConfig,
-} from "@/modules/swr";
+import { fetcher, postStateFetcher, swrInfiniteConfig } from "@/modules/swr";
 import { Post, PostState } from "@/types/post";
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";

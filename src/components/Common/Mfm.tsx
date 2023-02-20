@@ -4,7 +4,6 @@ import { emojisState } from "@/atoms/Emojis";
 import { Emoji } from "@/types/emoji";
 import { Image as ImageType } from "@/types/image";
 import * as mfm from "mfm-js";
-import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { useRecoilState } from "recoil";

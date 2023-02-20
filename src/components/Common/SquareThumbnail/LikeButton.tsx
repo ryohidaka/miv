@@ -3,7 +3,6 @@
 import { like, unlike } from "@/modules/like";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 type Props = {

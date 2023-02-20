@@ -57,9 +57,11 @@ export const Mfm = ({ text }: Props) => {
               url: emoji?.url as string,
             };
             return (
-              <span key={index} className="relative h-4 w-4">
-                <CommonImage image={emojiImage} />
-              </span>
+              <CommonImage
+                key={index}
+                image={emojiImage}
+                className="!h-4 !w-4"
+              />
             );
           default:
             return <span key={index}></span>;

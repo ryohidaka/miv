@@ -38,7 +38,7 @@ export default function UserHeader({ user }: Props) {
         <h1 className="flex text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
           <Mfm text={user?.name} />
         </h1>
-        <p>
+        <p className="flex">
           <Mfm text={user?.description as string} />
         </p>
         <FollowButton userId={user.id} />
@@ -51,7 +51,7 @@ export default function UserHeader({ user }: Props) {
           <h1 className="flex text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
             <Mfm text={user?.name} />
           </h1>
-          <p>
+          <p className="flex items-center">
             <Mfm text={user?.description as string} />
           </p>
           <FollowButton userId={user.id} />

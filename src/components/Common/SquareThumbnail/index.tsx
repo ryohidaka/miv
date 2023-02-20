@@ -6,6 +6,7 @@ import { Image } from "@/types/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import { InvisibleButton } from "./InvisibleButton";
 import { LikeButton } from "./LikeButton";
 import { NumberBadge } from "./NumberBadge";
 
@@ -39,10 +40,20 @@ export const SquareThumbnail = ({
     setBlur(image.isSensitive as boolean);
   }, [image]);
 
+  const toggleInvivsible = () => {
+    console.log("toggle");
+    setBlur(!isBlur);
+  };
+
   return (
     <div className="relative aspect-square w-full overflow-hidden rounded-none md:rounded-xl">
       {/* 画像数表示バッジ */}
       <NumberBadge count={length} />
+
+      {/* 非表示ボタン */}
+      {image.isSensitive && (
+        <InvisibleButton isBlur={isBlur} handleClick={toggleInvivsible} />
+      )}
 
       <Link
         className="block aspect-square"

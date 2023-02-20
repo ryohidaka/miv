@@ -22,10 +22,10 @@ export default function UserHeader({ user }: Props) {
 
   return (
     <header>
-      <div className="relative w-screen md:!-left-12">
+      <div className="max-h-96">
         <CommonImage
           image={bannerImage}
-          className="aspect-video object-cover"
+          className="aspect-video max-h-96 object-cover"
         />
       </div>
 

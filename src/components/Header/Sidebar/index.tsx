@@ -3,6 +3,7 @@
 import CommonDrawer from "@/components/Common/Drawer";
 import Logout from "./Logout";
 import OpenInNewTab from "./OpenInNewTab";
+import ShowSensitive from "./ShowSensitive";
 import SideMenu from "./SideMenu";
 
 type Props = {
@@ -28,6 +29,9 @@ export default function Sidebar({ isOpen, onClose }: Props) {
 
       {/* 別タブ遷移設定 */}
       <OpenInNewTab />
+
+      {/* 画像非表示設定 */}
+      <ShowSensitive />
 
       {/* ログアウト */}
       <Logout />

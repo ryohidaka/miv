@@ -1,6 +1,7 @@
 "use client";
 
 import { newTabState } from "@/atoms/NewTab";
+import { showSensitiveState } from "@/atoms/ShowSensitive";
 import { CommonImage } from "@/components/Common/Image";
 import { Image } from "@/types/image";
 import Link from "next/link";
@@ -36,12 +37,15 @@ export const SquareThumbnail = ({
 
   const [isBlur, setBlur] = useState<boolean>(false);
 
+  const [showSensitive] = useRecoilState(showSensitiveState);
+
   useEffect(() => {
-    setBlur(image.isSensitive as boolean);
-  }, [image]);
+    if (!showSensitive) {
+      setBlur(image.isSensitive as boolean);
+    }
+  }, [image, showSensitive]);
 
   const toggleInvivsible = () => {
-    console.log("toggle");
     setBlur(!isBlur);
   };
 

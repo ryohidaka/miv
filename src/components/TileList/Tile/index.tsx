@@ -1,3 +1,5 @@
+"use client";
+
 import { scrollState } from "@/atoms/Scroll";
 import { SquareThumbnail } from "@/components/Common/SquareThumbnail";
 import { useNoteFavorited } from "@/hooks/post";

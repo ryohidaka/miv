@@ -32,3 +32,9 @@ export type UserNoteParams = NoteParams & {
 };
 
 export type NoteFavorite = { note: NotePost };
+
+export type HomeTimelineParams = NoteParams & {
+  includeMyRenotes: boolean;
+  includeRenotedMyNotes: boolean;
+  includeLocalRenotes: boolean;
+};

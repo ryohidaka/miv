@@ -21,3 +21,14 @@ export const getFeaturedTags = async () => {
   const tags: string[] = await res.json();
   return tags;
 };
+
+/**
+ * ハッシュタグ一覧
+ * @returns 
+ */
+export const getTags = async () => {
+  const trendTags = await getTrendTags()
+  const featuredTags = await getFeaturedTags()
+  return [...trendTags,...featuredTags]
+
+}

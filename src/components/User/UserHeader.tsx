@@ -35,7 +35,7 @@ export default function UserHeader({ user }: Props) {
           user={user}
           className="relative mx-auto !h-24 !w-24 object-cover"
         />
-        <h1 className="flex text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+        <h1 className="flex items-center text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
           <Mfm text={user?.name} />
         </h1>
         <p className="flex">
@@ -48,7 +48,7 @@ export default function UserHeader({ user }: Props) {
       <div className="relative -top-12 hidden p-3 md:block">
         <Avatar user={user} className="relative !h-24 !w-24" />
         <div className="grid grid-cols-1 gap-3 pl-36">
-          <h1 className="flex text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+          <h1 className="flex items-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
             <Mfm text={user?.name} />
           </h1>
           <p className="flex items-center">

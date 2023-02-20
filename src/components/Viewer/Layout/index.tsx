@@ -16,11 +16,7 @@ export const ViewerLayout = ({ children, isLoading, error }: Props) => {
   return (
     <>
       {/* エラー */}
-      {error && (
-        <div className="container">
-          <ErrorAlert />
-        </div>
-      )}
+      {error && <ErrorAlert />}
 
       {/* メインコンテンツ */}
       {!isLoading && !error && (
@@ -28,7 +24,7 @@ export const ViewerLayout = ({ children, isLoading, error }: Props) => {
       )}
 
       {/* ローディング */}
-      {isLoading && <Loading />}
+      {isLoading && <Loading isFullPage />}
     </>
   );
 };

@@ -2,7 +2,8 @@
 
 import { usePosts } from "@/hooks/post";
 import { TileList } from "../TileList";
-import { ViewerLayout } from "../Viewer/Layout";
+import { ErrorAlert } from "../Viewer/Layout/ErrorAlert";
+import { Loading } from "../Viewer/Layout/Loading";
 
 type Props = {
   url: string;
@@ -18,8 +19,21 @@ export const TopPosts = ({ url, isGallery, hideUser }: Props) => {
   const { data, isLoading, error } = usePosts(url);
 
   return (
-    <ViewerLayout isLoading={isLoading} error={error}>
-      <TileList posts={data} isGallery={isGallery} hideUser={hideUser} />
-    </ViewerLayout>
+    <>
+      {/* エラー */}
+      {error && <ErrorAlert />}
+
+      {/* メインコンテンツ */}
+      {!isLoading && !error && (
+        <TileList posts={data} isGallery={isGallery} hideUser={hideUser} />
+      )}
+
+      {/* ローディング */}
+      {isLoading && (
+        <div className="h-96 w-full">
+          <Loading />
+        </div>
+      )}
+    </>
   );
 };

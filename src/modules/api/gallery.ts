@@ -21,7 +21,8 @@ export const convertGalleryPosts = (datas: GalleryPost[]): Post[] => {
  * @param post
  * @returns
  */
-export const convertGalleryPost = (post: GalleryPost): Post => {
+export const convertGalleryPost = (post: GalleryPost, host?: string): Post => {
+  const sourceUrl = host ? `https://${host}/gallery/${post.id}` : "";
   return {
     id: post.id,
     images: convertImages(post.files),
@@ -31,5 +32,6 @@ export const convertGalleryPost = (post: GalleryPost): Post => {
     description: post.description,
     isLiked: post.isLiked,
     likedCount: post.likedCount,
+    source: sourceUrl,
   };
 };

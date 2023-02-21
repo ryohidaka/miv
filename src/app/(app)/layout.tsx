@@ -1,6 +1,5 @@
 "use client";
 
-import { LoginModal } from "@/components/Auth/LoginModal";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { EmojiProvider } from "@/components/Provider/EmojiProvider";
@@ -28,9 +27,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* 共通フッター */}
           <Footer />
-
-          {/* ログインモーダル */}
-          <LoginModal />
         </RecoilRoot>
       </body>
     </html>

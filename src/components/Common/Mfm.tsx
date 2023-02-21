@@ -29,7 +29,11 @@ export const Mfm = ({ text }: Props) => {
       {mfmTree.map((node, index) => {
         switch (node.type) {
           case "text":
-            return <span key={index}>{node.props.text}</span>;
+            return (
+              <span key={index} className="whitespace-pre-wrap">
+                {node.props.text}
+              </span>
+            );
           case "hashtag":
             const tag = node.props.hashtag;
             const tagUrl = `/tags/${tag}`;

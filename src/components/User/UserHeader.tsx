@@ -29,33 +29,18 @@ export default function UserHeader({ user }: Props) {
         />
       </div>
 
-      {/* モバイル用 */}
-      <div className="relative -top-12 -mb-12 grid grid-cols-1 gap-3 p-3 pt-0 md:hidden">
+      <div className="relative -top-12 -mb-12 grid grid-cols-1 gap-8 p-3 pt-0">
         <Avatar
           user={user}
-          className="relative mx-auto !h-24 !w-24 object-cover"
+          className="relative mx-auto !h-24 !w-24 object-cover md:mx-0"
         />
-        <h1 className="flex items-center text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+        <h1 className="flex items-center text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white md:text-left">
           <Mfm text={user?.name} />
         </h1>
-        <p className="flex flex-wrap items-center">
+        <p>
           <Mfm text={user?.description as string} />
         </p>
         <FollowButton userId={user.id} />
-      </div>
-
-      {/* PC用 */}
-      <div className="relative -top-12 hidden p-3 md:block">
-        <Avatar user={user} className="relative !h-24 !w-24" />
-        <div className="grid grid-cols-1 gap-3 pl-36">
-          <h1 className="flex items-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
-            <Mfm text={user?.name} />
-          </h1>
-          <p className="flex flex-wrap items-center">
-            <Mfm text={user?.description as string} />
-          </p>
-          <FollowButton userId={user.id} />
-        </div>
       </div>
     </header>
   );

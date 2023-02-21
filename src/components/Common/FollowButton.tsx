@@ -1,23 +1,19 @@
 "use client";
 
-import { useUser } from "@/hooks/user";
 import { follow, unfollow } from "@/modules/following";
-import { getUser } from "@/modules/ssr/user";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 type Props = {
   userId: string;
+  isFollowing?: boolean;
 };
 
 /**
  * フォローボタン
  * @returns
  */
-export const FollowButton = ({ userId }: Props) => {
-  // ユーザ情報を取得
-  const { data: user } = useUser(userId);
-
+export const FollowButton = ({ userId, isFollowing }: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
   const label = isActive ? "Following" : "Folow";
 
@@ -34,8 +30,8 @@ export const FollowButton = ({ userId }: Props) => {
   };
 
   useEffect(() => {
-    setActive(user?.isFollowing as boolean);
-  }, [user]);
+    setActive(isFollowing as boolean);
+  }, [isFollowing]);
 
   return (
     <button

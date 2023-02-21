@@ -5,7 +5,6 @@ export function middleware(req: NextRequest) {
   const hasHost = req.cookies.has("host");
   const hasToken = req.cookies.has("token");
   const isAuth = hasHost && hasToken;
-  console.log(isAuth);
 
   const loginPath = "/login";
   const { pathname } = req.nextUrl;
@@ -26,6 +25,7 @@ export function middleware(req: NextRequest) {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
+    "/login",
     "/dashboard",
     "/favorites",
     "/gallery/:path*",

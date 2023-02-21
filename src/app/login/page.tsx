@@ -15,9 +15,5 @@ export default function LoginPage() {
     }
   }, [hasToken, router]);
 
-  return (
-    <div className="h-screen w-screen">
-      <LoginContent />;
-    </div>
-  );
+  return <LoginContent />;
 }

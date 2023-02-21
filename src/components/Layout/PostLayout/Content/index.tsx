@@ -65,7 +65,6 @@ export const Content = ({ post }: Props) => {
           isLiked={post.isLiked as boolean}
           title={post?.title}
           description={post?.description as string}
-          tags={post?.tags}
         />
       </div>
     </>

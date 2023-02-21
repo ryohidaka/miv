@@ -2,8 +2,6 @@
 
 import { ExternalLink } from "@/components/Common/ExternalLink";
 import classNames from "classnames";
-
-import Link from "next/link";
 import { useState } from "react";
 import { InstanceForm } from "./InstanceForm";
 import { InstanceSelector } from "./InstanceSelector";
@@ -23,7 +21,7 @@ export const LoginContent = () => {
   };
 
   return (
-    <div className="grid h-full w-full grid-cols-1 text-black shadow dark:text-white md:grid-cols-2">
+    <div className="grid h-screen w-screen grid-cols-1 text-black shadow dark:text-white md:grid-cols-2">
       {/* ログインフォーム */}
       <div
         id="signin"

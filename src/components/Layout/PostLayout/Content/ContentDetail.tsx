@@ -6,20 +6,13 @@ type Props = {
   isLiked: boolean;
   title?: string;
   description?: string;
-  tags?: string[];
 };
 
 /**
  * コンテンツ詳細表示
  * @returns
  */
-export const ContentDetail = ({
-  postId,
-  isLiked,
-  title,
-  description,
-  tags,
-}: Props) => {
+export const ContentDetail = ({ postId, isLiked, title, description }: Props) => {
   return (
     <div className="grid grid-cols-1 gap-5 p-5">
       {/* メニュー */}

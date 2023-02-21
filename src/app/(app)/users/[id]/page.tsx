@@ -33,7 +33,7 @@ export default async function ShowUser({ params }: Props) {
   ];
 
   return (
-    <>
+    <div className="grid grid-cols-1 gap-10">
       {/* ユーザ情報 */}
       <UserHeader user={user} />
 
@@ -46,6 +46,6 @@ export default async function ShowUser({ params }: Props) {
           <TileList posts={item.posts} isGallery={item.isGallery} hideUser />
         </section>
       ))}
-    </>
+    </div>
   );
 }

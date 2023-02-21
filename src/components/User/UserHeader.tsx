@@ -37,7 +37,7 @@ export default function UserHeader({ user }: Props) {
         <h1 className="flex items-center text-center text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-white md:text-left">
           <Mfm text={user?.name} />
         </h1>
-        <p className="flex flex-wrap items-center">
+        <p>
           <Mfm text={user?.description as string} />
         </p>
         <FollowButton userId={user.id} />

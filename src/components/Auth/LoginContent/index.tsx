@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "@/components/Common/ExternalLink";
 import classNames from "classnames";
 
 import Link from "next/link";
@@ -22,7 +23,7 @@ export const LoginContent = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 h-full w-full text-black shadow dark:text-white md:grid-cols-2">
+    <div className="grid h-full w-full grid-cols-1 text-black shadow dark:text-white md:grid-cols-2">
       {/* ログインフォーム */}
       <div
         id="signin"
@@ -70,12 +71,13 @@ export const LoginContent = () => {
             Start your journey in one click
           </h5>
           <div className="mt-16">
-            <Link
+            <ExternalLink
               href="https://misskey-hub.net/instances.html"
-              className="rounded-full bg-transparent py-3 px-6 text-center font-bold uppercase text-white "
+              className="rounded-full bg-transparent py-3 px-6 text-center font-bold uppercase text-white hover:underline"
+              showIcon
             >
               List of instances
-            </Link>
+            </ExternalLink>
           </div>
         </div>
       </div>

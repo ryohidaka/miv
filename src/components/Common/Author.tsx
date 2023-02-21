@@ -20,7 +20,7 @@ export const Author = ({ user, className }: Props) => {
       <Avatar user={user} className={className} />
 
       {/* ユーザ名 */}
-      <p className="flex max-w-full items-center overflow-hidden text-ellipsis whitespace-nowrap text-sm">
+      <p className="flex h-5 max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
         <Mfm text={user?.name as string} />
       </p>
     </Link>

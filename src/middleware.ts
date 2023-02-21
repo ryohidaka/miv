@@ -9,9 +9,14 @@ export function middleware(req: NextRequest) {
   const loginPath = "/login";
   const { pathname } = req.nextUrl;
 
-  if (pathname === loginPath && isAuth) {
-    req.nextUrl.pathname = "/dashboard";
-    return NextResponse.redirect(req.nextUrl);
+  // ログイン画面の場合
+  if (pathname === loginPath) {
+    // 認証済み
+    if (isAuth) {
+      req.nextUrl.pathname = "/dashboard";
+      return NextResponse.redirect(req.nextUrl);
+    }
+    return NextResponse.next();
   }
 
   if (!isAuth) {

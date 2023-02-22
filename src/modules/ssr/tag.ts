@@ -24,11 +24,10 @@ export const getFeaturedTags = async () => {
 
 /**
  * ハッシュタグ一覧
- * @returns 
+ * @returns
  */
 export const getTags = async () => {
-  const trendTags = await getTrendTags()
-  const featuredTags = await getFeaturedTags()
-  return [...trendTags,...featuredTags]
-
-}
+  const trendTags = await getTrendTags();
+  const featuredTags = await getFeaturedTags();
+  return [...trendTags, ...featuredTags];
+};

@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  fetcher,
-  postFetcher,
-  postStateFetcher,
-  swrInfiniteConfig,
-} from "@/modules/swr";
-import { Post, PostState } from "@/types/post";
+import { fetcher, swrInfiniteConfig } from "@/modules/swr";
+import { Post } from "@/types/post";
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
 
@@ -47,15 +42,12 @@ export const usePostsWithPagination = (url: string, mutate?: boolean) => {
 };
 
 /**
- * ノートお気に入りフラグ取得
- * @param noteId
+ * お気に入りノート一覧取得
  * @returns
  */
-export const useNoteFavorited = (noteId: string) => {
-  const url = `/api/notes/${noteId}/state`;
-  const { data } = useSWR<PostState, Error>(url, postStateFetcher);
+export const useFavoritedNotes = (): string[] => {
+  const url = "/api/i/favorites/notes?limit=100";
+  const { data } = useSWR<Post[], Error>(url, fetcher);
 
-  const isFavorited = data?.isFavorited;
-
-  return isFavorited;
+  return data ? data.map((post) => post.id) : [];
 };

@@ -16,7 +16,7 @@
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "18.16.3",
     "@types/react": "18.2.6",
-    "@types/react-dom": "18.0.11",
+    "@types/react-dom": "18.2.4",
     "@types/react-scroll": "^1.8.6",
     "@types/uuid": "^9.0.1",
     "@vercel/og": "^0.5.3",

@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "next-sitemap": "^3.1.54",
+    "next-sitemap": "^4.0.9",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",

@@ -15,7 +15,7 @@ const DefaultTags: FC<DefaultTagsProps> = ({ updateMeta }) => {
         name="google-site-verification"
         content="ATEFILtNKSZV2E7hTujMC2rTNFyQpLKhJ0_PeBvjU-Q"
       />
-      <NextSeo useAppDir={true} {...NEXT_SEO_DEFAULT} {...updateMeta} />
+      <NextSeo {...NEXT_SEO_DEFAULT} {...updateMeta} />
     </>
   );
 };

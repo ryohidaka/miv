@@ -3,6 +3,7 @@
   "defaultLocale": "ja",
   "localeDetection": false,
   "pages": {
-    "*": ["common"]
+    "*": ["common"],
+    "/": ["home"]
   }
 }

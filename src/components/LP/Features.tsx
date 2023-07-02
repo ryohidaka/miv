@@ -1,30 +1,34 @@
 import Image from "next/image";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * LPの機能説明
  * @returns
  */
 export const LPFeatures = () => {
+  const { t } = useTranslation();
+
   const lists = [
     {
-      title: "List",
+      title: t("リスト表示"),
       image: "notes_full.png",
     },
     {
-      title: "User",
+      title: t("ユーザ表示"),
       image: "users.png",
     },
     {
-      title: "Image View",
+      title: t("画像表示"),
       image: "post.png",
     },
   ];
+
   return (
     <section id="features" className="py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="my-10 md:my-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:mb-6 lg:text-3xl">
-            Features
+            {t("機能")}
           </h2>
         </div>
 

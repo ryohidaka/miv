@@ -2,7 +2,6 @@ import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
 import { TrendTags } from "@/components/Top/TrendTags";
 import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
 
 type Item = {
   section: string;
@@ -19,26 +18,24 @@ type Item = {
  * @returns
  */
 export default function Home() {
-  const { t } = useTranslation();
-
   const items: Item[] = [
     {
-      section: t("ギャラリー"),
+      section: "Gallery",
       contents: [
         {
-          subSection: t("最近の投稿"),
+          subSection: "Posts",
           url: "/gallery/posts",
           endpoint: "/api/gallery/posts?limit=12",
           isGallery: true,
         },
         {
-          subSection: t("特集投稿"),
+          subSection: "Featured Gallery",
           url: "/gallery/featured",
           endpoint: "/api/gallery/featured",
           isGallery: true,
         },
         {
-          subSection: t("人気の投稿"),
+          subSection: "Popular Gallery",
           url: "/gallery/popular",
           endpoint: "/api/gallery/popular",
           isGallery: true,
@@ -46,20 +43,20 @@ export default function Home() {
       ],
     },
     {
-      section: t("タイムライン"),
+      section: "Timeline",
       contents: [
         {
-          subSection: t("ローカルタイムライン"),
+          subSection: "Local Timeline",
           url: "/notes/local",
           endpoint: "/api/notes/local-timeline?limit=12",
         },
         {
-          subSection: t("ソーシャルタイムライン"),
+          subSection: "Hybrid Timeline",
           url: "/notes/hybrid",
           endpoint: "/api/notes/hybrid-timeline?limit=12",
         },
         {
-          subSection: t("グローバルタイムライン"),
+          subSection: "Global Timeline",
           url: "/notes/global",
           endpoint: "/api/notes/global-timeline?limit=12",
         },
@@ -69,7 +66,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading text={t("ホーム")} />
+      <Heading text="Dashboard" />
 
       {/* トレンドにあるハッシュタグ一覧 */}
       {/* @ts-ignore */}
@@ -91,7 +88,7 @@ export default function Home() {
                     {content.subSection}
                   </h3>
                   <Link href={content.url} className="hyperlink">
-                    {t("もっと見る")}
+                    more...
                   </Link>
                 </header>
                 <TopPosts

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { InstanceForm } from "./InstanceForm";
 import { InstanceSelector } from "./InstanceSelector";
-import useTranslation from "next-translate/useTranslation";
 
 /**
  * ログインフォーム
@@ -16,8 +15,6 @@ export const LoginForm = () => {
     setHost(host);
   };
 
-  const { t } = useTranslation();
-
   return (
     <div id="signin" className="flex h-full w-full items-center justify-center">
       <div className="selection:bg-indigo-500 selection:text-white">
@@ -26,7 +23,7 @@ export const LoginForm = () => {
             <div className="mx-auto overflow-hidden">
               <div className="grid grid-cols-1 gap-10">
                 <h1 className="text-3xl font-bold text-indigo-600 md:text-5xl">
-                  {t("ようこそ")}
+                  Welcome back!
                 </h1>
 
                 {/* インスタンス一覧 */}
@@ -37,7 +34,7 @@ export const LoginForm = () => {
 
                 {/* ログインボタン */}
                 <a href={loginUrl} className="light-btn text-center">
-                  {t("ログイン")}
+                  Login
                 </a>
               </div>
             </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useInstanceList } from "@/hooks/auth";
-import useTranslation from "next-translate/useTranslation";
 
 type Props = {
   onChange: (host: string) => void;
@@ -13,15 +12,13 @@ type Props = {
  */
 export const InstanceSelector = ({ onChange }: Props) => {
   const instances = useInstanceList();
-  const { t } = useTranslation();
-
   return (
     <form>
       <label
         htmlFor="countries"
         className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
       >
-        {t("インスタンス一覧")}
+        Select an instance
       </label>
       <select
         id="instances"
@@ -29,7 +26,7 @@ export const InstanceSelector = ({ onChange }: Props) => {
         onChange={(e) => onChange(e.target.value)}
         defaultValue=""
       >
-        <option value="">{t("インスタンスを選択")}</option>
+        <option value="">Choose a instance</option>
         {instances.map((instance) => (
           <option key={instance.host} value={instance.host}>
             {instance.name || instance.host}

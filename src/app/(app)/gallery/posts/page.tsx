@@ -4,12 +4,15 @@ import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * ギャラリー画面
  * @returns
  */
 export default function GalleryPosts() {
+  const { t } = useTranslation();
+
   const url = "/api/gallery/posts";
   const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
@@ -19,7 +22,7 @@ export default function GalleryPosts() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Recent Posts" />
+      <Heading text={t("最近の投稿")} />
       <Viewer posts={data} hasMore={true} next={next} isGallery />
     </ViewerLayout>
   );

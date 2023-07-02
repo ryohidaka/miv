@@ -2,13 +2,16 @@
 
 import { showSensitiveState } from "@/atoms/ShowSensitive";
 import { useRecoilState } from "recoil";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * 画像非表示設定
  * @returns
  */
 export default function ShowSensitive() {
-  // 別タブ遷移設定を取得
+  const { t } = useTranslation();
+
+  // 表示設定を取得
   const [visible, setVisible] = useRecoilState(showSensitiveState);
 
   return (
@@ -25,7 +28,7 @@ export default function ShowSensitive() {
         htmlFor="default-checkbox"
         className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
       >
-        Show sensitive images
+        {t("センシティブな画像を常に表示する")}
       </label>
     </div>
   );

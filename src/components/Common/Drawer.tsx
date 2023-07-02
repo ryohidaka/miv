@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { ReactNode } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Drawer from "react-modern-drawer";
+import useTranslation from "next-translate/useTranslation";
 
 type Props = {
   isOpen: boolean;
@@ -24,6 +25,8 @@ export default function CommonDrawer({
   children,
   className,
 }: Props) {
+  const { t } = useTranslation();
+
   return (
     <Drawer
       customIdSuffix="drawer"
@@ -47,7 +50,7 @@ export default function CommonDrawer({
         className="absolute top-2.5 right-2.5 inline-flex items-center rounded-lg bg-transparent p-1.5 text-base text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
       >
         <AiOutlineClose onClick={onClose} />
-        <span className="sr-only">Close menu</span>
+        <span className="sr-only">{t("閉じる")}</span>
       </button>
       <div className="overflow-y-auto py-4">{children}</div>
     </Drawer>

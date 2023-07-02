@@ -1,3 +1,5 @@
+import useTranslation from "next-translate/useTranslation";
+
 type Props = {
   host: string;
   onChange: (host: string) => void;
@@ -12,6 +14,8 @@ export const InstanceForm = ({ host, onChange }: Props) => {
     const host = value.replace(/http|https/g, "");
     onChange(host);
   };
+  const { t } = useTranslation();
+
   return (
     <form className="grid grid-cols-1 gap-3">
       <div>
@@ -19,7 +23,7 @@ export const InstanceForm = ({ host, onChange }: Props) => {
           htmlFor="host"
           className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
         >
-          Instance URL
+          {t("インスタンスURL")}
         </label>
         <div className="flex">
           <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">

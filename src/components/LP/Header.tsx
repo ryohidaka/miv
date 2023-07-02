@@ -3,20 +3,23 @@
 import { APP_NAME } from "@/modules/const";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * LPのヘッダー
  * @returns
  */
 export const LPHeader = () => {
+  const { t } = useTranslation();
+
   const links = [
     {
       id: "home",
-      label: "Home",
+      label: t("ホーム"),
     },
     {
       id: "features",
-      label: "Features",
+      label: t("機能"),
     },
   ];
   return (

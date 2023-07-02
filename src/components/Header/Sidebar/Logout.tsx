@@ -1,12 +1,15 @@
 "use client";
 
 import { deleteCookie } from "cookies-next";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * ログアウトボタン
  * @returns
  */
 export default function Logout() {
+  const { t } = useTranslation();
+
   // ログアウト
   const logout = () => {
     deleteCookie("host");
@@ -16,7 +19,7 @@ export default function Logout() {
 
   return (
     <button className="btn-outline w-full" onClick={logout}>
-      Logout
+      {t("ログアウト")}
     </button>
   );
 }

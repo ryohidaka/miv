@@ -12,6 +12,8 @@ export const useQuery = () => {
   const params = useSearchParams();
 
   useEffect(() => {
+    if (!params) return;
+    
     const query = params.get("q") as string;
     setQuery(query);
   }, [params]);

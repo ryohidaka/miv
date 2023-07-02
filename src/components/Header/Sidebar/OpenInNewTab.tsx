@@ -2,12 +2,15 @@
 
 import { newTabState } from "@/atoms/NewTab";
 import { useRecoilState } from "recoil";
+import useTranslation from "next-translate/useTranslation";
 
 /**
  * 別タブ表示設定
  * @returns
  */
 export default function OpenInNewTab() {
+  const { t } = useTranslation();
+
   // 別タブ遷移設定を取得
   const [newTab, setNewTab] = useRecoilState(newTabState);
 
@@ -25,7 +28,7 @@ export default function OpenInNewTab() {
         htmlFor="default-checkbox"
         className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
       >
-        Open in new tab
+        {t("別タブで開く")}
       </label>
     </div>
   );

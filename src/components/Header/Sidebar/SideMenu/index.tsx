@@ -1,4 +1,5 @@
 import MenuLink from "./MenuLink";
+import useTranslation from "next-translate/useTranslation";
 
 type Props = {
   onClose: () => void;
@@ -9,6 +10,8 @@ type Props = {
  * @returns
  */
 export default function SideMenu({ onClose }: Props) {
+  const { t } = useTranslation();
+
   // ページ一覧
   const links = [
     {
@@ -16,49 +19,49 @@ export default function SideMenu({ onClose }: Props) {
       pages: [
         {
           url: "/dashboard",
-          label: "Dashboard",
+          label: t("ホーム"),
         },
         {
           url: "/favorites",
-          label: "Favorites",
+          label: t("お気に入り"),
         },
       ],
     },
     {
-      label: "Gallery",
+      label: t("ギャラリー"),
       pages: [
         {
           url: "/gallery/posts",
-          label: "Recent Posts",
+          label: t("最近の投稿"),
         },
         {
           url: "/gallery/featured",
-          label: "Featured Posts",
+          label: t("特集投稿"),
         },
         {
           url: "/gallery/popular",
-          label: "Popular Posts",
+          label: t("人気の投稿"),
         },
       ],
     },
     {
-      label: "Timeline",
+      label: t("タイムライン"),
       pages: [
         {
           url: "/notes/home",
-          label: "Home Timeline",
+          label: t("ホームタイムライン"),
         },
         {
           url: "/notes/local",
-          label: "Local Timeline",
+          label: t("ローカルタイムライン"),
         },
         {
           url: "/notes/hybrid",
-          label: "Social Timeline",
+          label: t("ソーシャルタイムライン"),
         },
         {
           url: "/notes/global",
-          label: "Global Timeline",
+          label: t("グローバルタイムライン"),
         },
       ],
     },

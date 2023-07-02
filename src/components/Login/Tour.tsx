@@ -1,6 +1,5 @@
 import { ExternalLink } from "@/components/Common/ExternalLink";
 import classNames from "classnames";
-import useTranslation from "next-translate/useTranslation";
 
 /**
  * 新規ユーザ用案内
@@ -9,8 +8,6 @@ import useTranslation from "next-translate/useTranslation";
 export const Tour = () => {
   const overlayBg =
     "bg-gradient-to-r from-blue-800 via-purple-800 to-indigo-800";
-
-  const { t } = useTranslation();
 
   return (
     <div
@@ -22,19 +19,17 @@ export const Tour = () => {
     >
       <div className="p-8 text-center">
         <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-          {t("新規登録")}
+          Don&apos;t have an account ?
         </h1>
 
-        <h5 className="text-xl text-white">
-          {t("リンク先からご希望のインスタンスを検索してください")}
-        </h5>
+        <h5 className="text-xl text-white">Start your journey in one click</h5>
         <div className="mt-16">
           <ExternalLink
             href="https://misskey-hub.net/instances.html"
             className="rounded-full bg-transparent py-3 px-6 text-center font-bold uppercase text-white hover:underline"
             showIcon
           >
-            {t("インスタンス一覧")}
+            List of instances
           </ExternalLink>
         </div>
       </div>

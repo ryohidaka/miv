@@ -1,7 +1,5 @@
-const nextTranslate = require("next-translate-plugin");
-
 /** @type {import('next').NextConfig} */
-const nextConfig = nextTranslate({
+const nextConfig = {
   experimental: {
     appDir: true,
     scrollRestoration: true,
@@ -9,7 +7,6 @@ const nextConfig = nextTranslate({
   images: {
     domains: ["pbs.twimg.com"],
   },
-  plugins: ["next-translate"],
-});
+};
 
 module.exports = nextConfig;

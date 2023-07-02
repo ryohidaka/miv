@@ -1,24 +1,21 @@
 import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
-import useTranslation from "next-translate/useTranslation";
 
 /**
  * お気に入り
  * @returns
  */
 export default function Favorites() {
-  const { t } = useTranslation();
-
   const userItems = [
     {
       id: "my-notes",
-      section: t("タイムライン"),
+      section: "Notes",
       url: `/api/i/favorites/notes?limit=12`,
       isGallery: false,
     },
     {
       id: "my-gallery",
-      section: t("ギャラリー"),
+      section: "Gallery",
       url: `/api/i/favorites/gallery?limit=12`,
       isGallery: true,
     },
@@ -26,7 +23,7 @@ export default function Favorites() {
 
   return (
     <>
-      <Heading text={t("お気に入り")} />
+      <Heading text="Favorites" />
 
       {userItems.map((item) => (
         <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">

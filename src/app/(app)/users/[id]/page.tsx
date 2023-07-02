@@ -2,7 +2,6 @@ import { TileList } from "@/components/TileList";
 import UserHeader from "@/components/User/UserHeader";
 import { getUserWithPosts } from "@/modules/ssr/user";
 import { PostParams } from "@/types/post";
-import useTranslation from "next-translate/useTranslation";
 
 type Props = {
   params: PostParams;
@@ -13,8 +12,6 @@ type Props = {
  * @returns
  */
 export default async function ShowUser({ params }: Props) {
-  const { t } = useTranslation();
-
   // ユーザIDを取得
   const userId = params.id;
 
@@ -23,13 +20,13 @@ export default async function ShowUser({ params }: Props) {
   const userItems = [
     {
       id: "user-notes",
-      section: t("タイムライン"),
+      section: "Notes",
       posts: notes,
       isGallery: false,
     },
     {
       id: "user-gallery",
-      section: t("ギャラリー"),
+      section: "Gallery",
       posts: gallery,
       isGallery: true,
     },

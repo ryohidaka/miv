@@ -4,15 +4,12 @@ import { Heading } from "@/components/Common/Heading";
 import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
-import useTranslation from "next-translate/useTranslation";
 
 /**
  * ホームタイムライン画面
  * @returns
  */
 export default function HomeTimeline() {
-  const { t } = useTranslation();
-
   const url = "/api/notes/timeline";
   const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
 
@@ -22,7 +19,7 @@ export default function HomeTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text={t("ホームタイムライン")} />
+      <Heading text="Home Timeline" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

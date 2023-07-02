@@ -5,15 +5,12 @@ import { Viewer } from "@/components/Viewer";
 import { ViewerLayout } from "@/components/Viewer/Layout";
 import { usePostsWithPagination } from "@/hooks/post";
 import { useQuery } from "@/hooks/search";
-import useTranslation from "next-translate/useTranslation";
 
 /**
  * ノート検索画面
  * @returns
  */
 export default function SearchNotes() {
-  const { t } = useTranslation();
-
   const query = useQuery();
 
   const url = `/api/notes/search?q=${query}`;
@@ -31,7 +28,7 @@ export default function SearchNotes() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text={t("検索")} />
+      <Heading text="Search" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

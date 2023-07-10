@@ -23,7 +23,7 @@
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "eslint": "8.44.0",
-    "eslint-config-next": "13.4.8",
+    "eslint-config-next": "13.4.9",
     "json5": "^2.2.3",
     "mfm-js": "^0.23.3",
     "misskey-js": "^0.0.16",

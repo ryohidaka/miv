@@ -21,7 +21,7 @@
     "@types/uuid": "^9.0.2",
     "@vercel/og": "^0.5.8",
     "classnames": "^2.3.2",
-    "cookies-next": "^2.1.1",
+    "cookies-next": "^2.1.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "json5": "^2.2.3",

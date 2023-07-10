@@ -11,7 +11,7 @@
     "format": "prettier --write src/**/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.6.0",
+    "@faker-js/faker": "^8.0.2",
     "@next/font": "13.4.9",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.4.1",

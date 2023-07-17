@@ -1,26 +1,15 @@
-"use client";
-
 import { Heading } from "@/components/Common/Heading";
-import { Viewer } from "@/components/Viewer";
-import { ViewerLayout } from "@/components/Viewer/Layout";
-import { usePostsWithPagination } from "@/hooks/post";
+import { HybridTimeline } from "@/components/Timeline/HybridTimeline";
 
 /**
  * ソーシャルタイムライン画面
  * @returns
  */
-export default function HybridTimeline() {
-  const url = "/api/notes/hybrid-timeline";
-  const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
-
-  const next = () => {
-    setSize(size + 1);
-  };
-
+export default function HybridTimelinePage() {
   return (
-    <ViewerLayout isLoading={isLoading} error={error}>
+    <>
       <Heading text="ソーシャルタイムライン" />
-      <Viewer posts={data} hasMore={true} next={next} />
-    </ViewerLayout>
+      <HybridTimeline />
+    </>
   );
 }

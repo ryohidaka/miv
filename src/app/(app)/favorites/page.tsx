@@ -1,6 +1,12 @@
 import { Heading } from "@/components/Common/Heading";
 import { TopPosts } from "@/components/Top/TopPosts";
 
+const title = "お気に入り・いいねした投稿";
+
+export const metadata = {
+  title,
+};
+
 /**
  * お気に入り
  * @returns
@@ -23,7 +29,7 @@ export default function Favorites() {
 
   return (
     <>
-      <Heading text="お気に入り・いいねした投稿" />
+      <Heading text={title} />
 
       {userItems.map((item) => (
         <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">

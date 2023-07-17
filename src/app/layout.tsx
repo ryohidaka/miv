@@ -1,8 +1,5 @@
-"use client";
-
-import { GoogleAnalytics } from "nextjs-google-analytics";
 import "@/app/globals.css";
-import Footer from "@/components/Footer";
+import { GAWrapper } from "@/components/Layout/GAwrapper";
 
 export default function RootLayout({
   children,
@@ -18,7 +15,7 @@ export default function RootLayout({
       <head />
       <body className="flex min-h-full max-w-full flex-col overscroll-y-none">
         {children}
-        <GoogleAnalytics strategy="lazyOnload" />
+        <GAWrapper />
       </body>
     </html>
   );

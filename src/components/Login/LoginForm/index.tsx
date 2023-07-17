@@ -23,18 +23,20 @@ export const LoginForm = () => {
             <div className="mx-auto overflow-hidden">
               <div className="grid grid-cols-1 gap-10">
                 <h1 className="text-3xl font-bold text-indigo-600 md:text-5xl">
-                  Welcome back!
+                  ようこそ!
                 </h1>
 
                 {/* インスタンス一覧 */}
                 <InstanceSelector onChange={handleChange} />
+
+                <p>もしくは</p>
 
                 {/* インスタンスURL入力欄 */}
                 <InstanceForm host={host} onChange={handleChange} />
 
                 {/* ログインボタン */}
                 <a href={loginUrl} className="light-btn text-center">
-                  Login
+                  ログイン
                 </a>
               </div>
             </div>

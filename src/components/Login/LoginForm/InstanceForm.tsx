@@ -19,7 +19,7 @@ export const InstanceForm = ({ host, onChange }: Props) => {
           htmlFor="host"
           className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
         >
-          Instance URL
+          インスタンスのURL
         </label>
         <div className="flex">
           <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">

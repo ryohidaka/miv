@@ -20,22 +20,22 @@ type Item = {
 export default function Home() {
   const items: Item[] = [
     {
-      section: "Gallery",
+      section: "ギャラリー",
       contents: [
         {
-          subSection: "Posts",
+          subSection: "最近の投稿",
           url: "/gallery/posts",
           endpoint: "/api/gallery/posts?limit=12",
           isGallery: true,
         },
         {
-          subSection: "Featured Gallery",
+          subSection: "ハイライトされた投稿",
           url: "/gallery/featured",
           endpoint: "/api/gallery/featured",
           isGallery: true,
         },
         {
-          subSection: "Popular Gallery",
+          subSection: "人気の投稿",
           url: "/gallery/popular",
           endpoint: "/api/gallery/popular",
           isGallery: true,
@@ -43,20 +43,20 @@ export default function Home() {
       ],
     },
     {
-      section: "Timeline",
+      section: "タイムライン",
       contents: [
         {
-          subSection: "Local Timeline",
+          subSection: "ローカルタイムライン",
           url: "/notes/local",
           endpoint: "/api/notes/local-timeline?limit=12",
         },
         {
-          subSection: "Hybrid Timeline",
+          subSection: "ソーシャルタイムライン",
           url: "/notes/hybrid",
           endpoint: "/api/notes/hybrid-timeline?limit=12",
         },
         {
-          subSection: "Global Timeline",
+          subSection: "グローバルタイムライン",
           url: "/notes/global",
           endpoint: "/api/notes/global-timeline?limit=12",
         },
@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading text="Dashboard" />
+      <Heading text="ダッシュボード" />
 
       {/* トレンドにあるハッシュタグ一覧 */}
       {/* @ts-ignore */}
@@ -88,7 +88,7 @@ export default function Home() {
                     {content.subSection}
                   </h3>
                   <Link href={content.url} className="hyperlink">
-                    more...
+                    もっと見る
                   </Link>
                 </header>
                 <TopPosts

@@ -6,6 +6,14 @@ type Props = {
   params: PostParams;
 };
 
+export async function generateMetadata({ params }: Props) {
+  // タイトルを取得
+  const { title: postTitle, user } = await getGalleryPost(params.id);
+  const userName = user.name;
+
+  return { title: `${postTitle} by ${userName}` };
+}
+
 /**
  * ギャラリー個別表示
  * @returns

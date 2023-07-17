@@ -11,7 +11,7 @@ type Props = {
 export const OpenInInstances = async ({ url }: Props) => {
   return (
     <ExternalLink href={url} showIcon className="justify-center py-3 text-sm">
-      Open in instance
+      インスタンスで開く
     </ExternalLink>
   );
 };

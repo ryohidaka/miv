@@ -1,14 +1,17 @@
-"use client";
-
 import { Heading } from "@/components/Common/Heading";
-import { Viewer } from "@/components/Viewer";
-import { ViewerLayout } from "@/components/Viewer/Layout";
-import { usePostsWithPagination } from "@/hooks/post";
+import { TagTimeline } from "@/components/Timeline/TagTimeline";
 import { TagParams } from "@/types/tag";
 
 type Props = {
   params: TagParams;
 };
+
+export async function generateMetadata({ params }: Props) {
+  // タグを取得
+  const tag = decodeURI(params.tag);
+
+  return { title: `#${tag}` };
+}
 
 /**
  * タグ画面
@@ -18,20 +21,10 @@ export default function Tag({ params }: Props) {
   // タグを取得
   const tag = decodeURI(params.tag);
 
-  const url = `/api/tags/${tag}`;
-
-  const { data, error, isLoading, size, setSize } = usePostsWithPagination(url);
-
-  const next = () => {
-    setSize(size + 1);
-  };
-
-  const title = `# ${tag}`;
-
   return (
-    <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text={title} />
-      <Viewer posts={data} hasMore={true} next={next} />
-    </ViewerLayout>
+    <>
+      <Heading text={`# ${tag}`} />
+      <TagTimeline tag={tag} />
+    </>
   );
 }

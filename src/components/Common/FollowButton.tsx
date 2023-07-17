@@ -15,7 +15,7 @@ type Props = {
  */
 export const FollowButton = ({ userId, isFollowing }: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
-  const label = isActive ? "Following" : "Folow";
+  const label = isActive ? "フォロー中" : "フォローする";
 
   const toggleFollowing = () => {
     try {

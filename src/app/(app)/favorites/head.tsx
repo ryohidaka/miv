@@ -5,7 +5,7 @@ import type { NextSeoProps } from "next-seo";
 export default function Head() {
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,
-    title: "Favorites",
+    title: "お気に入り・いいねした投稿",
   };
 
   return <DefaultTags updateMeta={updateMeta} />;

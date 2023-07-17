@@ -9,13 +9,13 @@ export default function Favorites() {
   const userItems = [
     {
       id: "my-notes",
-      section: "Notes",
+      section: "ノート",
       url: `/api/i/favorites/notes?limit=12`,
       isGallery: false,
     },
     {
       id: "my-gallery",
-      section: "Gallery",
+      section: "ギャラリー",
       url: `/api/i/favorites/gallery?limit=12`,
       isGallery: true,
     },
@@ -23,7 +23,7 @@ export default function Favorites() {
 
   return (
     <>
-      <Heading text="Favorites" />
+      <Heading text="お気に入り・いいねした投稿" />
 
       {userItems.map((item) => (
         <section key={item.id} id={item.id} className="grid grid-cols-1 gap-6">

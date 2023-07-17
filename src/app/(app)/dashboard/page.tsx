@@ -13,6 +13,12 @@ type Item = {
   }[];
 };
 
+const title = "ダッシュボード";
+
+export const metadata = {
+  title,
+};
+
 /**
  * ホーム画面
  * @returns
@@ -66,7 +72,7 @@ export default function Home() {
 
   return (
     <>
-      <Heading text="ダッシュボード" />
+      <Heading text={title} />
 
       {/* トレンドにあるハッシュタグ一覧 */}
       {/* @ts-ignore */}

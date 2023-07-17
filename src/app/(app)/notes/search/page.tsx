@@ -28,7 +28,7 @@ export default function SearchNotes() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Search" />
+      <Heading text="検索" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

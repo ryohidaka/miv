@@ -19,7 +19,7 @@ export default function HybridTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Social Timeline" />
+      <Heading text="ソーシャルタイムライン" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

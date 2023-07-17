@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@next/font": "13.4.9",
+    "@next/font": "13.4.10",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",

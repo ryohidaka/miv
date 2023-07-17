@@ -6,6 +6,13 @@ type Props = {
   params: TagParams;
 };
 
+export async function generateMetadata({ params }: Props) {
+  // タグを取得
+  const tag = decodeURI(params.tag);
+
+  return { title: `#${tag}` };
+}
+
 /**
  * タグ画面
  * @returns

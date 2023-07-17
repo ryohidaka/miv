@@ -25,7 +25,7 @@ export default function ShowSensitive() {
         htmlFor="default-checkbox"
         className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
       >
-        Show sensitive images
+        センシティブな画像を常に表示する
       </label>
     </div>
   );

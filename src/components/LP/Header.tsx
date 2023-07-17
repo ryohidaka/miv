@@ -12,11 +12,11 @@ export const LPHeader = () => {
   const links = [
     {
       id: "home",
-      label: "Home",
+      label: "ホーム",
     },
     {
       id: "features",
-      label: "Features",
+      label: "機能",
     },
   ];
   return (

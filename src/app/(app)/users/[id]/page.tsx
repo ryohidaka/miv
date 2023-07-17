@@ -1,11 +1,18 @@
 import { TileList } from "@/components/TileList";
 import UserHeader from "@/components/User/UserHeader";
-import { getUserWithPosts } from "@/modules/ssr/user";
+import { getUser, getUserWithPosts } from "@/modules/ssr/user";
 import { PostParams } from "@/types/post";
 
 type Props = {
   params: PostParams;
 };
+
+export async function generateMetadata({ params }: Props) {
+  // ユーザ名を取得
+  const { name } = await getUser(params.id);
+
+  return { title: name };
+}
 
 /**
  * ユーザ情報表示

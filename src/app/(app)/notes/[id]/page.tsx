@@ -6,6 +6,12 @@ type Props = {
   params: PostParams;
 };
 
+export async function generateMetadata({ params }: Props) {
+  const { user } = await getNotePost(params.id);
+
+  return { title: `${user.name} の投稿` };
+}
+
 /**
  * ノート個別表示
  * @returns

@@ -5,7 +5,7 @@ import type { NextSeoProps } from "next-seo";
 export default function Head() {
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,
-    title: "Gallery Posts",
+    title: "最近の投稿",
   };
 
   return <DefaultTags updateMeta={updateMeta} />;

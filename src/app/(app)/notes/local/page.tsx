@@ -19,7 +19,7 @@ export default function LocalTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Local Timeline" />
+      <Heading text="ローカルタイムライン" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

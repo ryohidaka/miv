@@ -19,17 +19,19 @@ export const Tour = () => {
     >
       <div className="p-8 text-center">
         <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-          Don&apos;t have an account ?
+          アカウントをお持ちでない場合は
         </h1>
 
-        <h5 className="text-xl text-white">Start your journey in one click</h5>
+        <h5 className="text-xl text-white">
+          インスタンス紹介ページから、お好きなインスタンスを選択しアカウントを作成してください。
+        </h5>
         <div className="mt-16">
           <ExternalLink
             href="https://misskey-hub.net/instances.html"
-            className="rounded-full bg-transparent py-3 px-6 text-center font-bold uppercase text-white hover:underline"
+            className="rounded-full bg-transparent px-6 py-3 text-center font-bold uppercase text-white hover:underline"
             showIcon
           >
-            List of instances
+            インスタンス紹介ページへ
           </ExternalLink>
         </div>
       </div>

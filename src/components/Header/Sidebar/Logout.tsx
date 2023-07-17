@@ -16,7 +16,7 @@ export default function Logout() {
 
   return (
     <button className="btn-outline w-full" onClick={logout}>
-      Logout
+      ログアウト
     </button>
   );
 }

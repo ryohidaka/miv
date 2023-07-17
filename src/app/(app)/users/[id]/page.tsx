@@ -20,13 +20,13 @@ export default async function ShowUser({ params }: Props) {
   const userItems = [
     {
       id: "user-notes",
-      section: "Notes",
+      section: "ノート",
       posts: notes,
       isGallery: false,
     },
     {
       id: "user-gallery",
-      section: "Gallery",
+      section: "ギャラリー",
       posts: gallery,
       isGallery: true,
     },

@@ -19,7 +19,7 @@ export default function GlobalTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Global Timeline" />
+      <Heading text="グローバルタイムライン" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

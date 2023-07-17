@@ -11,7 +11,7 @@ export default async function GalleryFeatured() {
 
   return (
     <>
-      <Heading text="Featured Posts" />
+      <Heading text="ハイライトされた投稿" />
       <TileList posts={featuredPosts} isGallery />
     </>
   );

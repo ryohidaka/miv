@@ -11,7 +11,7 @@ type Props = {
 export default async function Head({ params }: Props) {
   const { user } = await getNotePost(params.id);
 
-  const title = `Post by ${user.name}`;
+  const title = `${user.name} の投稿`;
 
   const updateMeta: NextSeoProps = {
     ...NEXT_SEO_DEFAULT,

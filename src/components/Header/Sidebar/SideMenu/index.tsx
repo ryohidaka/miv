@@ -16,49 +16,49 @@ export default function SideMenu({ onClose }: Props) {
       pages: [
         {
           url: "/dashboard",
-          label: "Dashboard",
+          label: "ダッシュボード",
         },
         {
           url: "/favorites",
-          label: "Favorites",
+          label: "お気に入り",
         },
       ],
     },
     {
-      label: "Gallery",
+      label: "ギャラリー",
       pages: [
         {
           url: "/gallery/posts",
-          label: "Recent Posts",
+          label: "最近の投稿",
         },
         {
           url: "/gallery/featured",
-          label: "Featured Posts",
+          label: "ハイライトされた投稿",
         },
         {
           url: "/gallery/popular",
-          label: "Popular Posts",
+          label: "人気の投稿",
         },
       ],
     },
     {
-      label: "Timeline",
+      label: "タイムライン",
       pages: [
         {
           url: "/notes/home",
-          label: "Home Timeline",
+          label: "ホームタイムライン",
         },
         {
           url: "/notes/local",
-          label: "Local Timeline",
+          label: "ローカルタイムライン",
         },
         {
           url: "/notes/hybrid",
-          label: "Social Timeline",
+          label: "ソーシャルタイムライン",
         },
         {
           url: "/notes/global",
-          label: "Global Timeline",
+          label: "グローバルタイムライン",
         },
       ],
     },

@@ -19,7 +19,7 @@ export default function GalleryPosts() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Recent Posts" />
+      <Heading text="最近の投稿" />
       <Viewer posts={data} hasMore={true} next={next} isGallery />
     </ViewerLayout>
   );

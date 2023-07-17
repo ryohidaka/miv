@@ -18,7 +18,7 @@ export const ContentDetail = ({ postId, isLiked, title, description }: Props) =>
       {/* メニュー */}
       <div id="menu" className="flex justify-end gap-5">
         <div id="like" className="flex items-center gap-1">
-          <span>Like !</span>
+          <span>いいね!</span>
           <LikeButton postId={postId} isLiked={isLiked} isOutline />
         </div>
       </div>

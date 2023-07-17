@@ -18,7 +18,7 @@ export const InstanceSelector = ({ onChange }: Props) => {
         htmlFor="countries"
         className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
       >
-        Select an instance
+        インスタンス一覧
       </label>
       <select
         id="instances"
@@ -26,7 +26,7 @@ export const InstanceSelector = ({ onChange }: Props) => {
         onChange={(e) => onChange(e.target.value)}
         defaultValue=""
       >
-        <option value="">Choose a instance</option>
+        <option value="">インスタンスを選択</option>
         {instances.map((instance) => (
           <option key={instance.host} value={instance.host}>
             {instance.name || instance.host}

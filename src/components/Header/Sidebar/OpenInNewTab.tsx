@@ -25,7 +25,7 @@ export default function OpenInNewTab() {
         htmlFor="default-checkbox"
         className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
       >
-        Open in new tab
+        別タブで開く
       </label>
     </div>
   );

@@ -19,7 +19,7 @@ export default function HomeTimeline() {
 
   return (
     <ViewerLayout isLoading={isLoading} error={error}>
-      <Heading text="Home Timeline" />
+      <Heading text="ホームタイムライン" />
       <Viewer posts={data} hasMore={true} next={next} />
     </ViewerLayout>
   );

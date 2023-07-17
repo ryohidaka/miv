@@ -11,7 +11,7 @@ export default async function GalleryPopular() {
 
   return (
     <>
-      <Heading text="Popular Posts" />
+      <Heading text="人気の投稿" />
       <TileList posts={popularPosts} isGallery />
     </>
   );

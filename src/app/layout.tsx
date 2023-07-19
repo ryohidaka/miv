@@ -9,7 +9,7 @@ import {
 
 export const metadata = {
   title: {
-    absolute: `${APP_NAME}: ${DESCRIPTION_SHORT}`,
+    absolute: `${APP_NAME} - ${DESCRIPTION_SHORT}`,
     default: APP_NAME,
     template: `%s | ${APP_NAME}`,
   },

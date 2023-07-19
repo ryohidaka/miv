@@ -1,8 +1,8 @@
 // アプリ名
-export const APP_NAME = "Pickey";
+export const APP_NAME = "MIV";
 
 // 説明文
-export const DESCRIPTION_SHORT = "Misskey用 イラスト画像ビュワー";
+export const DESCRIPTION_SHORT = "Misskey Illust Viewer";
 export const DESCRIPTION = "Misskey用 イラスト画像ビュワー";
 
 // アプリURL

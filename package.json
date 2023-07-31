@@ -22,7 +22,7 @@
     "@vercel/og": "^0.5.8",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.2",
-    "eslint": "8.45.0",
+    "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "json5": "^2.2.3",
     "mfm-js": "^0.23.3",

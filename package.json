@@ -34,7 +34,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-modern-drawer": "^1.2.0",
+    "react-modern-drawer": "^1.2.2",
     "react-scroll": "^1.8.9",
     "recoil": "^0.7.7",
     "recoil-persist": "^5.1.0",

@@ -38,7 +38,7 @@
     "react-scroll": "^1.8.9",
     "recoil": "^0.7.7",
     "recoil-persist": "^5.1.0",
-    "swr": "^2.2.2",
+    "swr": "^2.2.4",
     "typescript": "5.2.2",
     "uuid": "^9.0.1"
   },

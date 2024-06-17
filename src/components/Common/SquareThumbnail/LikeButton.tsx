@@ -48,7 +48,7 @@ export const LikeButton = ({
       className={classNames(
         "right-0 bottom-0 z-40 cursor-pointer p-1 text-3xl text-white",
         isActive && "red.400",
-        className
+        className,
       )}
       onClick={toggleLike}
     >

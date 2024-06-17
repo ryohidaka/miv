@@ -19,7 +19,7 @@ export const SearchTimeline = ({ query }: Props) => {
 
   const { data, error, isLoading, size, setSize } = usePostsWithPagination(
     url,
-    mutate
+    mutate,
   );
 
   const next = () => {

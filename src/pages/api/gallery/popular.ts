@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 const getGalleryFeatured = async (
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) => {
   try {
     const url = "/gallery/popular";

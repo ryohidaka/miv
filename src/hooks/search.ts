@@ -13,7 +13,7 @@ export const useQuery = () => {
 
   useEffect(() => {
     if (!params) return;
-    
+
     const query = params.get("q") as string;
     setQuery(query);
   }, [params]);

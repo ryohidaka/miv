@@ -23,7 +23,7 @@ export const CommonImage = ({ image, className, thumbnail, isBlur }: Props) => {
           className={classNames(
             "!relative block h-full w-full object-contain",
             className,
-            isBlur && "blur-md"
+            isBlur && "blur-md",
           )}
           key={image.id}
           src={src}
@@ -38,7 +38,7 @@ export const CommonImage = ({ image, className, thumbnail, isBlur }: Props) => {
         <span
           className={classNames(
             "grid h-full w-full place-content-center bg-gray-300 dark:bg-gray-700",
-            className
+            className,
           )}
         >
           <BsImageAlt className="h-12 w-12" />

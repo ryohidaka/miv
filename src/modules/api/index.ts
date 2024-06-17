@@ -10,13 +10,13 @@ export const NOTE_LIMIT = 40;
  */
 export const returnErrorResponse = (
   res: NextApiResponse,
-  error: Error | unknown
+  error: Error | unknown,
 ) => {
   res.status(500).json(
     JSON.stringify({
       status: "Error",
       error: error,
-    })
+    }),
   );
 };
 
@@ -31,7 +31,7 @@ export const apiRequest = async (
   path: string,
   req: NextApiRequest,
   res: NextApiResponse,
-  params?: object
+  params?: object,
 ) => {
   const host = getCookie("host", { req, res });
   const token = getCookie("token", { req, res });

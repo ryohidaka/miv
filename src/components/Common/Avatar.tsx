@@ -23,7 +23,7 @@ export const Avatar = ({ user, className }: Props) => {
       image={avatarImage}
       className={classNames(
         "aspect-square rounded-full !object-cover",
-        className
+        className,
       )}
     />
   );

@@ -31,7 +31,7 @@ export const DefaultAlert = ({ status, title, children }: Props) => {
     <div
       id="alert-additional-content-1"
       className={classNames(
-        `mb-4 p-4 text-${color}-800 dark:text-${color}-400 rounded-lg border border-${color}-300 bg-${color}-50 dark:border-${color}-800 dark:bg-gray-800`
+        `mb-4 p-4 text-${color}-800 dark:text-${color}-400 rounded-lg border border-${color}-300 bg-${color}-50 dark:border-${color}-800 dark:bg-gray-800`,
       )}
       role="alert"
     >

@@ -52,7 +52,7 @@ export default function handler() {
           </div>
         </div>
       ),
-      option
+      option,
     );
   } catch (e: any) {
     console.log(`${e.message}`);

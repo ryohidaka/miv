@@ -37,7 +37,7 @@ export const FollowButton = ({ userId, isFollowing }: Props) => {
     <button
       className={classNames(
         "mx-auto w-44 rounded-full  py-2.5 text-center text-sm font-bold text-white",
-        isActive ? "bg-gray-500 dark:bg-gray-800" : "bg-sky-500"
+        isActive ? "bg-gray-500 dark:bg-gray-800" : "bg-sky-500",
       )}
       onClick={toggleFollowing}
     >

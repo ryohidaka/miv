@@ -14,7 +14,7 @@ import { NextApiRequest, NextApiResponse } from "next";
  */
 const getFavoriteGallery = async (
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) => {
   try {
     const url = "/i/gallery/likes";

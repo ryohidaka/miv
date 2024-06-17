@@ -12,7 +12,12 @@ type Props = {
  * コンテンツ詳細表示
  * @returns
  */
-export const ContentDetail = ({ postId, isLiked, title, description }: Props) => {
+export const ContentDetail = ({
+  postId,
+  isLiked,
+  title,
+  description,
+}: Props) => {
   return (
     <div className="grid grid-cols-1 gap-5 p-5">
       {/* メニュー */}

@@ -13,7 +13,7 @@ import { NextApiRequest, NextApiResponse } from "next";
  */
 const getUserGalleryPosts = async (
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) => {
   try {
     const { id } = req.query;

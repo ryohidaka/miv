@@ -14,7 +14,7 @@ export const Tour = () => {
       id="overlay-right"
       className={classNames(
         "flex h-full w-full items-center justify-center",
-        overlayBg
+        overlayBg,
       )}
     >
       <div className="p-8 text-center">

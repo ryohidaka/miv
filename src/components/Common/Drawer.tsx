@@ -32,7 +32,7 @@ export default function CommonDrawer({
       direction={direction}
       className={classNames(
         "h-screen bg-white p-4 dark:!bg-gray-800",
-        className
+        className,
       )}
       lockBackgroundScroll={true}
     >

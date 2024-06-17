@@ -12,7 +12,7 @@ export const convertNotePosts = async (datas: NotePost[]): Promise<Post[]> => {
   const posts = await Promise.all(
     datas
       .filter((data: NotePost) => data.files.length > 0)
-      .map(async (data: NotePost) => convertNotePost(data))
+      .map(async (data: NotePost) => convertNotePost(data)),
   );
 
   return posts;
@@ -25,7 +25,7 @@ export const convertNotePosts = async (datas: NotePost[]): Promise<Post[]> => {
  */
 export const convertNotePost = async (
   post: NotePost,
-  host?: string
+  host?: string,
 ): Promise<Post> => {
   const sourceUrl = host ? `https://${host}/notes/${post.id}` : "";
   return {
